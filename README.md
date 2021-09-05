@@ -19,7 +19,7 @@ SPDX-License-Identifier: MIT
 [![REUSE Compliance Check](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/reuseaction.yml/badge.svg)](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/reuseaction.yml)
 [![Build and Test](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build-and-test.yml)
 
-This repository contains an example project that introduces `ApodiniMigrator` functionality in an [Apodini](https://github.com/Apodini/Apodini) Web Service. It consists of two targets `QONECTIQV1` and `QONECTIQV2`, both implementing an example Web Service and use `Migrator` configuration. Random changes have been applied on the first version `QONECTIQV1` that resulted in `QONECTIQV2`.
+This repository contains an example project that introduces `ApodiniMigrator` functionality in an [Apodini](https://github.com/Apodini/Apodini) Web Service. It consists of two targets `QONECTIQV1` and `QONECTIQV2`, both implementing an example Web Service and use `Migrator` configuration. Random changes in the models and `Handler`s have been applied on the first version `QONECTIQV1` that resulted in `QONECTIQV2`.
 
 ## Usage
 Below the `configuration` property of `QONECTIQV1` Web Service:
@@ -103,7 +103,7 @@ info org.apodini.migrator : Migration Guide served at http://0.0.0.0:8080/migrat
 notice codes.vapor.application : Server starting on http://0.0.0.0:8080
 ```
 
-Provided with a `Document` and a Migration guide, one can make use of [`migrator` CLI](https://github.com/Apodini/ApodiniMigrator) to automatically generate or migrate an intermediary client library.
+Provided with a `Document` and a Migration guide, one can make use of [`migrator` CLI](https://github.com/Apodini/ApodiniMigrator) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version, and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
 
 
 ## Contributing
