@@ -11,4 +11,5 @@ SPDX-License-Identifier: MIT
 Apodini contributors
 ====================
 
+* [Eldi Cano](https://github.com/eldcn)
 * [Paul Schmiedmayer](https://github.com/PSchmiedmayer)

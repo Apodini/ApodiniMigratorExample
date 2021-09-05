@@ -1,0 +1,25 @@
+//
+// This source file is part of the Apodini open source project
+//
+// SPDX-FileCopyrightText: 2019-2021 Paul Schmiedmayer and the Apodini project authors (see CONTRIBUTORS.md) <paul.schmiedmayer@tum.de>
+//
+// SPDX-License-Identifier: MIT
+//
+
+import Foundation
+
+struct User: ApodiniContent, Identifiable {
+    var id: UUID
+    var name: String
+    var surname: String
+    var password: String
+    var email: String
+    var birthday: Date
+    var subscribedToNewsLetter: Bool
+    var gender: Gender
+    var reviews: [Review]
+    var myEvents: [Event]
+    var participatingEvents: [Event]
+    var interestedIn: [Event]
+    var homeFeed: HomeFeed?
+}
