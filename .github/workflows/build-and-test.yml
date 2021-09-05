@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: MIT
 # 
 
-name: Build and Test
+name: Build
 
 on:
   push:
@@ -41,9 +41,6 @@ jobs:
     - name: Release Build
       if: matrix.configuration == 'release'
       run: swift build -c release
-    - name: Debug Build & Test
-      if: matrix.configuration == 'debug'
-      run: swift test -c debug --enable-code-coverage -Xswiftc -DCOVERAGE
   linux:
     name: Linux ${{ matrix.linux }} ${{ matrix.configuration }}
     container:
@@ -65,6 +62,3 @@ jobs:
     - name: Release Build
       if: matrix.configuration == 'release'
       run: swift build -c release
-    - name: Debug Build & Test
-      if: matrix.configuration == 'debug'
-      run: swift test -c debug
