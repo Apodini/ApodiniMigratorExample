@@ -9,6 +9,9 @@
 name: REUSE Compliance Check
 
 on:
+  push:
+    branches:
+      - develop
   pull_request:
   workflow_dispatch:
 
