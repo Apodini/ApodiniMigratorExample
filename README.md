@@ -103,7 +103,7 @@ info org.apodini.migrator : Migration Guide served at http://0.0.0.0:8080/migrat
 notice codes.vapor.application : Server starting on http://0.0.0.0:8080
 ```
 
-By default, configurations provided in source code in `configuration` property of the web service, overwrite the CLI arguments. Hence, make sure to use empty `Migrator()` initializer when running the web service via `migrator` subcommand, and use the arguments as presented above. Provided with a `Document` and a Migration guide, one can make use of [`migrator` CLI](https://github.com/Apodini/ApodiniMigrator) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version, and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
+By default, configurations provided in source code in `configuration` property of the web service, overwrite the CLI arguments. Hence, make sure to use empty `Migrator()` initializer when running the web service via `migrator` subcommand, and use the arguments as presented above. Provided with a `Document` and a Migration guide, one can make use of `migrator` CLI (see [example](https://github.com/Apodini/ApodiniMigrator#apodinimigratorexample)) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version, and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
 
 
 ## Contributing
