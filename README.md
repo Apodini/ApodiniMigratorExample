@@ -62,13 +62,14 @@ let document = app.storage.get(MigratorDocumentStorageKey.self)
 let migrationGuide = app.storage.get(MigrationGuideStorageKey.self)
 ```
 
-Once `Migrator` is registered in the `configuration` property of the Web Service, it automatically registeres a `migrator` subcommand to the web service consisting of three distinct subsubcommands, which run the Web Service:
+Once `Migrator` is registered in the `configuration` property of the Web Service, it automatically registers a `migrator` subcommand to the web service 
+consisting of three subsubcommands, which can start or run your Apodini Web Service:
 
 ```console
 $ swift run QONECTIQV1 migrator --help
 OVERVIEW: Root subcommand of `ApodiniMigrator`
 
-Runs an Apodini web service based on the configurations of a subsubcommand
+Starts or runs an Apodini web service based on the configurations of a subsubcommand
 
 USAGE: qonectiqv1 migrator <subcommand>
 
@@ -84,10 +85,18 @@ SUBCOMMANDS:
   compare                 A parsable command for generating the migration guide
 ```
 
-For the initial version of the Web Service `document` subsubcommand can be used as follows to run the web service and expose the document of the current version at `/api-document` endpoint as `yaml`:
+For the initial version of the Web Service `document` subsubcommand can be used as follows to expose the document of the current version at `./data` directory as `yaml`:
 
 ```console
-$ swift run QONECTIQV1 migrator document --doc-endpoint=api-document --doc-format=yaml
+$ swift run QONECTIQV1 migrator document --doc-directory=./data --doc-format=yaml
+info org.apodini.migrator : API Document exported at ./data/api_v1.0.0.yaml in yaml format
+```
+
+By default, `migrator` subsubcommands simply start the web service to execute migration related tasks and exit afterwards. If you want to additionally run 
+the web service via a `migrator` subsubcommand, include `--run-web-service` flag, e.g.: 
+
+```console
+$ swift run QONECTIQV1 migrator document --doc-endpoint=api-document --doc-format=yaml --run-web-service
 info org.apodini.migrator : API Document served at http://0.0.0.0:8080/api-document in yaml format
 notice codes.vapor.application : Server starting on http://0.0.0.0:8080
 ```
@@ -97,7 +106,7 @@ For the future versions of the Web Service, one can make use of either `read` or
 
 ```console
 $ swift run QONECTIQV1 migrator compare --old-document-path=./api_qonectiq1.0.0.yaml \
-> --doc-endpoint=api-document --doc-format=yaml --guide-endpoint=migration-guide
+> --doc-endpoint=api-document --doc-format=yaml --guide-endpoint=migration-guide --run-web-service
 info org.apodini.migrator : API Document served at http://0.0.0.0:8080/api-document in yaml format
 info org.apodini.migrator : Migration Guide served at http://0.0.0.0:8080/migration-guide in json format
 notice codes.vapor.application : Server starting on http://0.0.0.0:8080
