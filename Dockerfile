@@ -37,9 +37,9 @@ RUN cp "$(swift build --package-path /build -c release --show-bin-path)/QONECTIQ
 
 # Copy resources from the resources directory if the directories exist
 # Ensure that by default, neither the directory nor any of its contents are writable.
-RUN [ -d "$(swift build --package-path /build -c release --show-bin-path)/QONECTIQV2_ApodiniMigratorExample.resources" ] \
-    && mv "$(swift build --package-path /build -c release --show-bin-path)/QONECTIQV2_ApodiniMigratorExample.resources" ./ \
-    && chmod -R a-w ./QONECTIQV2_ApodiniMigratorExample.resources \
+RUN [ -d "$(swift build --package-path /build -c release --show-bin-path)/ApodiniMigratorExample_QONECTIQV2.resources" ] \
+    && mv "$(swift build --package-path /build -c release --show-bin-path)/ApodiniMigratorExample_QONECTIQV2.resources" ./ \
+    && chmod -R a-w ./ApodiniMigratorExample_QONECTIQV2.resources \
     || echo No resources to copy
 
 # ================================

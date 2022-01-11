@@ -30,7 +30,7 @@ struct QONECTIQV2: Apodini.WebService {
             // .directory export option might be useful during development to inspect the content
             documentConfig: .export(.directory("./data")),
             // compares the current API with the document stored at `Bundle.module`,
-            // and exports the automatically generated migration guide at http://0.0.0.0:8080/migration-guide in `yaml` format
+            // and exports the automatically generated migration guide at http://localhost/migration-guide in `yaml` format
             migrationGuideConfig: .compare(
                 .resource(.module, fileName: "api_qonectiq1.0.0", format: .json),
                 export: .endpoint("migration-guide", format: .json)

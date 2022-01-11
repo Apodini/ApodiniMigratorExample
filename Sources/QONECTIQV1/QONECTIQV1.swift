@@ -25,7 +25,7 @@ struct QONECTIQV1: Apodini.WebService {
         REST()
         
         Migrator(
-            // exports the document of the current version at http://0.0.0.0:8080/api-document in `yaml` format
+            // exports the document of the current version at http://localhost/api-document in `yaml` format
             documentConfig: .export(.endpoint("api-document", format: .yaml))
         )
     }
