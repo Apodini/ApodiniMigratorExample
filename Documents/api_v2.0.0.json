@@ -1,5 +1,5 @@
 {
-    "id": "A57D7200-613D-4E1F-8247-D11EEB893D7A",
+    "id": "42BC9E7C-8D5E-429F-B99B-E99DDD98C6C2",
     "info": {
         "serverPath": "http://localhost",
         "version": "v_2.0.0",
@@ -868,13 +868,19 @@
         }
     ],
     "components": {
-        "EventCategoryMediator": {
+        "HomeFeedCategory": {
             "object": {
                 "typeName": {
-                    "name": "EventCategoryMediator",
+                    "name": "HomeFeedCategory",
                     "defined-in": "QONECTIQV2"
                 },
                 "properties": [
+                    {
+                        "name": "categoryID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
                     {
                         "name": "title",
                         "type": {
@@ -882,18 +888,86 @@
                         }
                     },
                     {
-                        "name": "categoryGroup",
+                        "name": "imageURL",
                         "type": {
-                            "reference": "EventCategoryGroup"
+                            "scalar": "URL"
+                        }
+                    },
+                    {
+                        "name": "eventsAmount",
+                        "type": {
+                            "scalar": "UInt"
                         }
                     }
                 ]
             }
         },
-        "Event": {
+        "HomeFeed": {
             "object": {
                 "typeName": {
-                    "name": "Event",
+                    "name": "HomeFeed",
+                    "defined-in": "QONECTIQV2"
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "userID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "greeting",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "subtitle",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "searchBarText",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "events",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedEvent"
+                            }
+                        }
+                    },
+                    {
+                        "name": "categories",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedCategory"
+                            }
+                        }
+                    },
+                    {
+                        "name": "theme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        }
+                    }
+                ]
+            }
+        },
+        "EventCategory": {
+            "object": {
+                "typeName": {
+                    "name": "EventCategory",
                     "defined-in": "QONECTIQV2"
                 },
                 "properties": [
@@ -910,120 +984,27 @@
                         }
                     },
                     {
-                        "name": "summary",
+                        "name": "group",
                         "type": {
-                            "scalar": "String"
+                            "reference": "EventCategoryGroup"
                         }
-                    },
+                    }
+                ]
+            }
+        },
+        "Review": {
+            "object": {
+                "typeName": {
+                    "name": "Review",
+                    "defined-in": "QONECTIQV2"
+                },
+                "properties": [
                     {
-                        "name": "reviews",
-                        "type": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "type": {
-                            "scalar": "Date"
-                        }
-                    },
-                    {
-                        "name": "duration",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    },
-                    {
-                        "name": "imagePath",
-                        "type": {
-                            "scalar": "URL"
-                        }
-                    },
-                    {
-                        "name": "maxParticipants",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    },
-                    {
-                        "name": "organizer",
+                        "name": "id",
                         "type": {
                             "scalar": "UUID"
                         }
                     },
-                    {
-                        "name": "tags",
-                        "type": {
-                            "repeated": {
-                                "scalar": "String"
-                            }
-                        }
-                    },
-                    {
-                        "name": "location",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "category",
-                        "type": {
-                            "reference": "EventCategory"
-                        }
-                    }
-                ]
-            }
-        },
-        "HomeFeedTheme": {
-            "enum": {
-                "typeName": {
-                    "name": "HomeFeedTheme",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "basic",
-                        "rawValue": "basic"
-                    },
-                    {
-                        "name": "classic",
-                        "rawValue": "classic"
-                    },
-                    {
-                        "name": "dark",
-                        "rawValue": "dark"
-                    },
-                    {
-                        "name": "midnight",
-                        "rawValue": "midnight"
-                    },
-                    {
-                        "name": "sunset",
-                        "rawValue": "sunset"
-                    }
-                ]
-            }
-        },
-        "Empty": {
-            "object": {
-                "typeName": {
-                    "name": "Empty",
-                    "defined-in": "Apodini"
-                }
-            }
-        },
-        "ReviewForm": {
-            "object": {
-                "typeName": {
-                    "name": "ReviewForm",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
                     {
                         "name": "title",
                         "type": {
@@ -1037,6 +1018,18 @@
                         }
                     },
                     {
+                        "name": "eventID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "reviewerID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
                         "name": "summary",
                         "type": {
                             "scalar": "String"
@@ -1047,35 +1040,12 @@
                         "type": {
                             "reference": "Rating"
                         }
-                    }
-                ]
-            }
-        },
-        "UserBadge": {
-            "enum": {
-                "typeName": {
-                    "name": "UserBadge",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "newbie",
-                        "rawValue": "newbie"
                     },
                     {
-                        "name": "explorer",
-                        "rawValue": "explorer"
-                    },
-                    {
-                        "name": "achiever",
-                        "rawValue": "achiever"
-                    },
-                    {
-                        "name": "worldSaver",
-                        "rawValue": "worldSaver"
+                        "name": "displayReviewerName",
+                        "type": {
+                            "scalar": "Bool"
+                        }
                     }
                 ]
             }
@@ -1126,64 +1096,49 @@
                 ]
             }
         },
-        "EventCategory": {
+        "UserLogin": {
             "object": {
                 "typeName": {
-                    "name": "EventCategory",
+                    "name": "UserLogin",
                     "defined-in": "QONECTIQV2"
                 },
                 "properties": [
                     {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
+                        "name": "username",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "group",
+                        "name": "password",
                         "type": {
-                            "reference": "EventCategoryGroup"
+                            "scalar": "String"
                         }
                     }
                 ]
             }
         },
-        "HomeFeedCategory": {
-            "object": {
+        "Gender": {
+            "enum": {
                 "typeName": {
-                    "name": "HomeFeedCategory",
+                    "name": "Gender",
                     "defined-in": "QONECTIQV2"
                 },
-                "properties": [
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
                     {
-                        "name": "categoryID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
+                        "name": "male",
+                        "rawValue": "male"
                     },
                     {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
+                        "name": "female",
+                        "rawValue": "female"
                     },
                     {
-                        "name": "imageURL",
-                        "type": {
-                            "scalar": "URL"
-                        }
-                    },
-                    {
-                        "name": "eventsAmount",
-                        "type": {
-                            "scalar": "UInt"
-                        }
+                        "name": "undefined",
+                        "rawValue": "undefined"
                     }
                 ]
             }
@@ -1235,6 +1190,170 @@
                         "name": "preferredTheme",
                         "type": {
                             "reference": "HomeFeedTheme"
+                        }
+                    }
+                ]
+            }
+        },
+        "HomeFeedTheme": {
+            "enum": {
+                "typeName": {
+                    "name": "HomeFeedTheme",
+                    "defined-in": "QONECTIQV2"
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "basic",
+                        "rawValue": "basic"
+                    },
+                    {
+                        "name": "classic",
+                        "rawValue": "classic"
+                    },
+                    {
+                        "name": "dark",
+                        "rawValue": "dark"
+                    },
+                    {
+                        "name": "midnight",
+                        "rawValue": "midnight"
+                    },
+                    {
+                        "name": "sunset",
+                        "rawValue": "sunset"
+                    }
+                ]
+            }
+        },
+        "Empty": {
+            "object": {
+                "typeName": {
+                    "name": "Empty",
+                    "defined-in": "Apodini"
+                }
+            }
+        },
+        "EventCategoryMediator": {
+            "object": {
+                "typeName": {
+                    "name": "EventCategoryMediator",
+                    "defined-in": "QONECTIQV2"
+                },
+                "properties": [
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "categoryGroup",
+                        "type": {
+                            "reference": "EventCategoryGroup"
+                        }
+                    }
+                ]
+            }
+        },
+        "UserBadge": {
+            "enum": {
+                "typeName": {
+                    "name": "UserBadge",
+                    "defined-in": "QONECTIQV2"
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "newbie",
+                        "rawValue": "newbie"
+                    },
+                    {
+                        "name": "explorer",
+                        "rawValue": "explorer"
+                    },
+                    {
+                        "name": "achiever",
+                        "rawValue": "achiever"
+                    },
+                    {
+                        "name": "worldSaver",
+                        "rawValue": "worldSaver"
+                    }
+                ]
+            }
+        },
+        "HomeFeedEvent": {
+            "object": {
+                "typeName": {
+                    "name": "HomeFeedEvent",
+                    "defined-in": "QONECTIQV2"
+                },
+                "properties": [
+                    {
+                        "name": "eventID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "secondaryTitle",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "imageURL",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "eventsCount",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    }
+                ]
+            }
+        },
+        "EventMediator": {
+            "object": {
+                "typeName": {
+                    "name": "EventMediator",
+                    "defined-in": "QONECTIQV2"
+                },
+                "properties": [
+                    {
+                        "name": "date",
+                        "type": {
+                            "optional": {
+                                "scalar": "Date"
+                            }
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "scalar": "UInt"
                         }
                     }
                 ]
@@ -1338,15 +1457,15 @@
                 ]
             }
         },
-        "HomeFeedEvent": {
+        "Event": {
             "object": {
                 "typeName": {
-                    "name": "HomeFeedEvent",
+                    "name": "Event",
                     "defined-in": "QONECTIQV2"
                 },
                 "properties": [
                     {
-                        "name": "eventID",
+                        "name": "id",
                         "type": {
                             "scalar": "UUID"
                         }
@@ -1358,21 +1477,67 @@
                         }
                     },
                     {
-                        "name": "secondaryTitle",
+                        "name": "summary",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "imageURL",
+                        "name": "reviews",
                         "type": {
-                            "scalar": "String"
+                            "repeated": {
+                                "reference": "Review"
+                            }
                         }
                     },
                     {
-                        "name": "eventsCount",
+                        "name": "date",
+                        "type": {
+                            "scalar": "Date"
+                        }
+                    },
+                    {
+                        "name": "duration",
                         "type": {
                             "scalar": "UInt"
+                        }
+                    },
+                    {
+                        "name": "imagePath",
+                        "type": {
+                            "scalar": "URL"
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    },
+                    {
+                        "name": "organizer",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "type": {
+                            "repeated": {
+                                "scalar": "String"
+                            }
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "type": {
+                            "reference": "EventCategory"
                         }
                     }
                 ]
@@ -1456,160 +1621,13 @@
                 ]
             }
         },
-        "HomeFeed": {
+        "ReviewForm": {
             "object": {
                 "typeName": {
-                    "name": "HomeFeed",
+                    "name": "ReviewForm",
                     "defined-in": "QONECTIQV2"
                 },
                 "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "userID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "greeting",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "subtitle",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "searchBarText",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "events",
-                        "type": {
-                            "repeated": {
-                                "reference": "HomeFeedEvent"
-                            }
-                        }
-                    },
-                    {
-                        "name": "categories",
-                        "type": {
-                            "repeated": {
-                                "reference": "HomeFeedCategory"
-                            }
-                        }
-                    },
-                    {
-                        "name": "theme",
-                        "type": {
-                            "reference": "HomeFeedTheme"
-                        }
-                    }
-                ]
-            }
-        },
-        "Gender": {
-            "enum": {
-                "typeName": {
-                    "name": "Gender",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "male",
-                        "rawValue": "male"
-                    },
-                    {
-                        "name": "female",
-                        "rawValue": "female"
-                    },
-                    {
-                        "name": "undefined",
-                        "rawValue": "undefined"
-                    }
-                ]
-            }
-        },
-        "EventMediator": {
-            "object": {
-                "typeName": {
-                    "name": "EventMediator",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "date",
-                        "type": {
-                            "optional": {
-                                "scalar": "Date"
-                            }
-                        }
-                    },
-                    {
-                        "name": "duration",
-                        "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
-                        }
-                    },
-                    {
-                        "name": "maxParticipants",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    }
-                ]
-            }
-        },
-        "UserLogin": {
-            "object": {
-                "typeName": {
-                    "name": "UserLogin",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "username",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    }
-                ]
-            }
-        },
-        "Review": {
-            "object": {
-                "typeName": {
-                    "name": "Review",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
                     {
                         "name": "title",
                         "type": {
@@ -1623,18 +1641,6 @@
                         }
                     },
                     {
-                        "name": "eventID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "reviewerID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
                         "name": "summary",
                         "type": {
                             "scalar": "String"
@@ -1644,12 +1650,6 @@
                         "name": "rating",
                         "type": {
                             "reference": "Rating"
-                        }
-                    },
-                    {
-                        "name": "displayReviewerName",
-                        "type": {
-                            "scalar": "Bool"
                         }
                     }
                 ]

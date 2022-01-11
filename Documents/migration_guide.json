@@ -2,9 +2,9 @@
     "summary": "A summary of what changed between versions",
     "service-type": "REST",
     "api-spec": "Apodini DSL",
-    "document-id": "4A5E38BB-B332-4EEB-9881-B88531F93E34",
-    "from": "qonectiq_1.0.0",
-    "to": "qonectiq_2.0.0",
+    "document-id": "24449529-6E21-4779-8BF3-173057B10FA4",
+    "from": "v_1.0.0",
+    "to": "v_2.0.0",
     "compare-config": {
         "include-provider-support": false,
         "allowed-endpoint-id-update": false,
@@ -18,10 +18,10 @@
             },
             "change-type": "value-update",
             "from": {
-                "string-value": "http://0.0.0.0:8080/qonectiq1"
+                "string-value": "http://localhost/v1"
             },
             "to": {
-                "string-value": "http://0.0.0.0:8080/qonectiq2"
+                "string-value": "http://localhost/v2"
             },
             "breaking": true,
             "solvable": true
@@ -219,156 +219,6 @@
         },
         {
             "element": {
-                "object": "HomeFeedCategory",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "eventsCount",
-            "from": {
-                "string-value": "eventsCount"
-            },
-            "to": {
-                "string-value": "eventsAmount"
-            },
-            "similarity-score": 0.908485,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Event",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "location",
-                    "type": {
-                        "scalar": "String"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 0
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Event",
-                "target": "property-necessity"
-            },
-            "change-type": "value-update",
-            "target-id": "maxParticipants",
-            "from": {
-                "element": "optional"
-            },
-            "to": {
-                "element": "required"
-            },
-            "necessity-value": {
-                "json-value-id": 1
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "EventMediator",
-                "target": "property-necessity"
-            },
-            "change-type": "value-update",
-            "target-id": "maxParticipants",
-            "from": {
-                "element": "optional"
-            },
-            "to": {
-                "element": "required"
-            },
-            "necessity-value": {
-                "json-value-id": 2
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Gender",
-                "target": "case"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "undefined",
-                    "rawValue": "undefined"
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeedEvent",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "subtitle",
-            "from": {
-                "string-value": "subtitle"
-            },
-            "to": {
-                "string-value": "secondaryTitle"
-            },
-            "similarity-score": 0.634643,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeedEvent",
-                "target": "property"
-            },
-            "change-type": "property-change",
-            "target-id": "imageURL",
-            "from": {
-                "element": {
-                    "scalar": "URL"
-                }
-            },
-            "to": {
-                "element": {
-                    "scalar": "String"
-                }
-            },
-            "convert-from-to-script-id": 0,
-            "convert-to-from-script-id": 1,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Review",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "displayReviewerName",
-                    "type": {
-                        "scalar": "Bool"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 3
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
                 "object": "UserLogin",
                 "target": "property"
             },
@@ -399,59 +249,8 @@
                 }
             },
             "default-value": {
-                "json-value-id": 4
+                "json-value-id": 0
             },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "case"
-            },
-            "change-type": "rename",
-            "target-id": "unacceptable",
-            "from": {
-                "string-value": "unacceptable"
-            },
-            "to": {
-                "string-value": "terrible"
-            },
-            "similarity-score": 0.527778,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "raw-value"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": {
-                    "name": "unacceptable",
-                    "rawValue": "unacceptable"
-                }
-            },
-            "to": {
-                "element": {
-                    "name": "terrible",
-                    "rawValue": "terrible"
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "case"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "undefined"
-            },
-            "fallback-value": "none",
             "breaking": true,
             "solvable": true
         },
@@ -465,7 +264,7 @@
                 "element-id": "status"
             },
             "fallback-value": {
-                "json-value-id": 5
+                "json-value-id": 1
             },
             "breaking": true,
             "solvable": true
@@ -539,43 +338,6 @@
         },
         {
             "element": {
-                "object": "UserRegisterForm",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "surname",
-            "from": {
-                "string-value": "surname"
-            },
-            "to": {
-                "string-value": "lastname"
-            },
-            "similarity-score": 0.713095,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "UserRegisterForm",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "preferredTheme",
-                    "type": {
-                        "reference": "HomeFeedTheme"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 6
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
                 "object": "User",
                 "target": "property"
             },
@@ -610,6 +372,244 @@
         },
         {
             "element": {
+                "object": "UserRegisterForm",
+                "target": "property"
+            },
+            "change-type": "rename",
+            "target-id": "surname",
+            "from": {
+                "string-value": "surname"
+            },
+            "to": {
+                "string-value": "lastname"
+            },
+            "similarity-score": 0.713095,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "UserRegisterForm",
+                "target": "property"
+            },
+            "change-type": "addition",
+            "added-value": {
+                "element": {
+                    "name": "preferredTheme",
+                    "type": {
+                        "reference": "HomeFeedTheme"
+                    }
+                }
+            },
+            "default-value": {
+                "json-value-id": 2
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "enum": "Rating",
+                "target": "case"
+            },
+            "change-type": "rename",
+            "target-id": "unacceptable",
+            "from": {
+                "string-value": "unacceptable"
+            },
+            "to": {
+                "string-value": "terrible"
+            },
+            "similarity-score": 0.527778,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "enum": "Rating",
+                "target": "raw-value"
+            },
+            "change-type": "value-update",
+            "from": {
+                "element": {
+                    "name": "unacceptable",
+                    "rawValue": "unacceptable"
+                }
+            },
+            "to": {
+                "element": {
+                    "name": "terrible",
+                    "rawValue": "terrible"
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "enum": "Rating",
+                "target": "case"
+            },
+            "change-type": "deletion",
+            "deleted-value": {
+                "element-id": "undefined"
+            },
+            "fallback-value": "none",
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "Event",
+                "target": "property"
+            },
+            "change-type": "addition",
+            "added-value": {
+                "element": {
+                    "name": "location",
+                    "type": {
+                        "scalar": "String"
+                    }
+                }
+            },
+            "default-value": {
+                "json-value-id": 3
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "Event",
+                "target": "property-necessity"
+            },
+            "change-type": "value-update",
+            "target-id": "maxParticipants",
+            "from": {
+                "element": "optional"
+            },
+            "to": {
+                "element": "required"
+            },
+            "necessity-value": {
+                "json-value-id": 4
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "EventMediator",
+                "target": "property-necessity"
+            },
+            "change-type": "value-update",
+            "target-id": "maxParticipants",
+            "from": {
+                "element": "optional"
+            },
+            "to": {
+                "element": "required"
+            },
+            "necessity-value": {
+                "json-value-id": 5
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "HomeFeedCategory",
+                "target": "property"
+            },
+            "change-type": "rename",
+            "target-id": "eventsCount",
+            "from": {
+                "string-value": "eventsCount"
+            },
+            "to": {
+                "string-value": "eventsAmount"
+            },
+            "similarity-score": 0.908485,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "HomeFeedEvent",
+                "target": "property"
+            },
+            "change-type": "rename",
+            "target-id": "subtitle",
+            "from": {
+                "string-value": "subtitle"
+            },
+            "to": {
+                "string-value": "secondaryTitle"
+            },
+            "similarity-score": 0.634643,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "HomeFeedEvent",
+                "target": "property"
+            },
+            "change-type": "property-change",
+            "target-id": "imageURL",
+            "from": {
+                "element": {
+                    "scalar": "URL"
+                }
+            },
+            "to": {
+                "element": {
+                    "scalar": "String"
+                }
+            },
+            "convert-from-to-script-id": 0,
+            "convert-to-from-script-id": 1,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "object": "Review",
+                "target": "property"
+            },
+            "change-type": "addition",
+            "added-value": {
+                "element": {
+                    "name": "displayReviewerName",
+                    "type": {
+                        "scalar": "Bool"
+                    }
+                }
+            },
+            "default-value": {
+                "json-value-id": 6
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "enum": "Gender",
+                "target": "case"
+            },
+            "change-type": "addition",
+            "added-value": {
+                "element": {
+                    "name": "undefined",
+                    "rawValue": "undefined"
+                }
+            },
+            "default-value": "none",
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "element": {
                 "endpoint": "usersOfGender",
                 "target": "self"
             },
@@ -632,7 +632,7 @@
                     "handlerName": "SearchEventsHandler",
                     "deltaIdentifier": "searchEventsWithQuery",
                     "operation": "read",
-                    "path": "/qonectiq2/events/search",
+                    "path": "/events/search",
                     "parameters": [
                         {
                             "name": "searchQuery",
@@ -683,7 +683,7 @@
                     "handlerName": "ReviewsOfUserHandler",
                     "deltaIdentifier": "reviewsOfUserWithID",
                     "operation": "read",
-                    "path": "/qonectiq2/reviews/posted-from",
+                    "path": "/reviews/posted-from",
                     "parameters": [
                         {
                             "name": "userId",
@@ -734,7 +734,7 @@
                     "handlerName": "StatisticsHandler",
                     "deltaIdentifier": "statisticsOfUser",
                     "operation": "read",
-                    "path": "/qonectiq2/users/{userIdentifier}/statistics",
+                    "path": "/users/{userIdentifier}/statistics",
                     "parameters": [
                         {
                             "name": "userIdentifier",
@@ -774,54 +774,110 @@
         },
         {
             "element": {
-                "endpoint": "getCategoryWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/qonectiq1/categories/{id}"
-            },
-            "to": {
-                "element": "/qonectiq2/category"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoryWithID",
-                "target": "path-parameter"
+                "endpoint": "createCategory",
+                "target": "content-parameter"
             },
             "change-type": "parameter-change",
-            "parameter-target": "kind",
-            "target-id": "id",
+            "parameter-target": "type",
+            "target-id": "event",
             "from": {
-                "element": "path"
+                "element": {
+                    "reference": "EventCategory"
+                }
             },
             "to": {
-                "element": "lightweight"
+                "element": {
+                    "reference": "EventCategoryMediator"
+                }
             },
+            "convert-from-to-script-id": 2,
             "breaking": true,
             "solvable": true
         },
         {
             "element": {
-                "endpoint": "getReviewsOfEventWithID",
+                "endpoint": "getHomeFeedForUserWithID",
                 "target": "query-parameter"
             },
             "change-type": "addition",
             "added-value": {
                 "element": {
-                    "name": "ratingBetterThan",
+                    "name": "showPreviousEvents",
                     "type": {
-                        "reference": "Rating"
+                        "scalar": "Bool"
                     },
                     "kind": "lightweight",
-                    "necessity": "optional"
+                    "necessity": "required"
                 }
             },
-            "default-value": "none",
-            "breaking": false,
+            "default-value": {
+                "json-value-id": 7
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "endpoint": "getParticipantsOfEventWithID",
+                "target": "resource-path"
+            },
+            "change-type": "value-update",
+            "from": {
+                "element": "/events/{eventID}/participants"
+            },
+            "to": {
+                "element": "/events/{eventIdentifier}/participants"
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "endpoint": "getParticipantsOfEventWithID",
+                "target": "path-parameter"
+            },
+            "change-type": "rename",
+            "target-id": "eventID",
+            "from": {
+                "string-value": "eventID"
+            },
+            "to": {
+                "string-value": "eventIdentifier"
+            },
+            "similarity-score": 0.818095,
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "endpoint": "getEventsOfCategory",
+                "target": "http-method"
+            },
+            "change-type": "value-update",
+            "from": {
+                "element": "read"
+            },
+            "to": {
+                "element": "create"
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "element": {
+                "endpoint": "getEventsOfCategory",
+                "target": "query-parameter"
+            },
+            "change-type": "parameter-change",
+            "parameter-target": "kind",
+            "target-id": "group",
+            "from": {
+                "element": "lightweight"
+            },
+            "to": {
+                "element": "content"
+            },
+            "breaking": true,
             "solvable": true
         },
         {
@@ -860,61 +916,7 @@
                     "reference": "ReviewForm"
                 }
             },
-            "convert-to-from-script-id": 2,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getParticipantsOfEventWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/qonectiq1/events/{eventID}/participants"
-            },
-            "to": {
-                "element": "/qonectiq2/events/{eventIdentifier}/participants"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getParticipantsOfEventWithID",
-                "target": "path-parameter"
-            },
-            "change-type": "rename",
-            "target-id": "eventID",
-            "from": {
-                "string-value": "eventID"
-            },
-            "to": {
-                "string-value": "eventIdentifier"
-            },
-            "similarity-score": 0.818095,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "createCategory",
-                "target": "content-parameter"
-            },
-            "change-type": "parameter-change",
-            "parameter-target": "type",
-            "target-id": "event",
-            "from": {
-                "element": {
-                    "reference": "EventCategory"
-                }
-            },
-            "to": {
-                "element": {
-                    "reference": "EventCategoryMediator"
-                }
-            },
-            "convert-from-to-script-id": 3,
+            "convert-to-from-script-id": 3,
             "breaking": true,
             "solvable": true
         },
@@ -925,10 +927,10 @@
             },
             "change-type": "value-update",
             "from": {
-                "element": "/qonectiq1/events/{id}"
+                "element": "/events/{id}"
             },
             "to": {
-                "element": "/qonectiq2/events/{identifier}"
+                "element": "/events/{identifier}"
             },
             "breaking": true,
             "solvable": true
@@ -952,32 +954,52 @@
         },
         {
             "element": {
-                "endpoint": "getEventsOfCategory",
-                "target": "http-method"
+                "endpoint": "getReviewsOfEventWithID",
+                "target": "query-parameter"
+            },
+            "change-type": "addition",
+            "added-value": {
+                "element": {
+                    "name": "ratingBetterThan",
+                    "type": {
+                        "reference": "Rating"
+                    },
+                    "kind": "lightweight",
+                    "necessity": "optional"
+                }
+            },
+            "default-value": "none",
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "element": {
+                "endpoint": "getCategoryWithID",
+                "target": "resource-path"
             },
             "change-type": "value-update",
             "from": {
-                "element": "read"
+                "element": "/categories/{id}"
             },
             "to": {
-                "element": "create"
+                "element": "/category"
             },
             "breaking": true,
             "solvable": true
         },
         {
             "element": {
-                "endpoint": "getEventsOfCategory",
-                "target": "query-parameter"
+                "endpoint": "getCategoryWithID",
+                "target": "path-parameter"
             },
             "change-type": "parameter-change",
             "parameter-target": "kind",
-            "target-id": "group",
+            "target-id": "id",
             "from": {
-                "element": "lightweight"
+                "element": "path"
             },
             "to": {
-                "element": "content"
+                "element": "lightweight"
             },
             "breaking": true,
             "solvable": true
@@ -989,10 +1011,10 @@
             },
             "change-type": "value-update",
             "from": {
-                "element": "/qonectiq1/categories/group/{groupCategory}"
+                "element": "/categories/group/{groupCategory}"
             },
             "to": {
-                "element": "/qonectiq2/categories/group"
+                "element": "/categories/group"
             },
             "breaking": true,
             "solvable": true
@@ -1030,71 +1052,34 @@
             },
             "breaking": true,
             "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getHomeFeedForUserWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/qonectiq1/home-feed/{userID}"
-            },
-            "to": {
-                "element": "/qonectiq2/home/{userID}"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getHomeFeedForUserWithID",
-                "target": "query-parameter"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "showPreviousEvents",
-                    "type": {
-                        "scalar": "Bool"
-                    },
-                    "kind": "lightweight",
-                    "necessity": "required"
-                }
-            },
-            "default-value": {
-                "json-value-id": 7
-            },
-            "breaking": true,
-            "solvable": true
         }
     ],
     "scripts": {
-        "1": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "2": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"A386D285-2672-4551-9D5B-554388135125\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"6D7BAF93-5AC0-4248-8C8D-10B8BBF74610\", 'reviewerID': \"C41AE78B-A5D8-42EF-AF29-F77202C0E0E3\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
         "0": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "3": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}"
+        "2": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
+        "1": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "3": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"67287CBE-242A-4FDB-AEC9-BE38BEF8543E\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"85132ACE-27FC-4B6A-A698-954B7F02C446\", 'reviewerID': \"2A9D5A8F-1170-4CDA-BCB0-880CF10AB156\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}"
     },
     "json-values": {
-        "2": "0",
+        "4": "0",
+        "2": "\"basic\"",
+        "6": "false",
+        "3": "\"\"",
+        "5": "0",
+        "0": "\"basic\"",
         "7": "false",
-        "6": "\"basic\"",
-        "0": "\"\"",
-        "3": "false",
-        "4": "\"basic\"",
-        "1": "0",
-        "5": "\"available\""
+        "1": "\"available\""
     },
     "updated-json-representations": {
-        "HomeFeedCategory": "{\n\"categoryID\" : \"20D67FDF-19F2-4B62-B804-0AA0DF7D4C0D\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
-        "EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}",
-        "HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"4F5EC6AA-5D6F-44B4-8AED-F44EEF7D65D7\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"5017C796-9044-4E7F-96C4-C2F075C72914\"\n}",
-        "User": "{\n\"birthday\" : 652528800,\n\"email\" : \"\",\n\"gender\" : \"male\",\n\"homeFeed\" : null,\n\"id\" : \"66910D09-C08C-490D-811B-118449641679\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
-        "Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"0AB8D209-BCBB-4F76-925A-446FD5025F54\",\n\"id\" : \"C2FD8507-C11E-4F92-888F-129F048F03DB\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"5546D7D9-E51F-4EC0-96F6-0A5E0E7DA45B\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "HomeFeedEvent": "{\n\"eventID\" : \"0BC69106-C2DD-4E68-8ECF-8A3057323E59\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
         "UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}",
-        "UserRegisterForm": "{\n\"birthday\" : 652528800,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
-        "HomeFeedEvent": "{\n\"eventID\" : \"69CEECAB-4849-42B6-B741-6FE55D37F1D8\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
-        "EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"C656AAA4-3BD7-4AD5-B4F5-0C627063849F\",\n\"title\" : \"\"\n}",
-        "Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"EB08E7B4-0078-41B3-8EE1-F110F5F444AC\",\n\"title\" : \"\"\n},\n\"date\" : 652528800,\n\"duration\" : 0,\n\"id\" : \"C658B39A-F996-4B41-BFE1-444F7C71CFDC\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"C57D2691-6307-44A9-9ECD-4E19D4E56495\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}"
+        "EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"40910717-46D8-4EBE-B91C-2E417B2AE530\",\n\"title\" : \"\"\n}",
+        "HomeFeedCategory": "{\n\"categoryID\" : \"6D11EB99-897E-4E47-ACEB-383D30809A48\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
+        "User": "{\n\"birthday\" : 663591600,\n\"email\" : \"\",\n\"gender\" : \"male\",\n\"homeFeed\" : null,\n\"id\" : \"B5D5F804-AD98-4455-9F5B-B70817E03A10\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
+        "Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"747B4286-CFF7-487D-B6C4-3E2336B2FAB4\",\n\"id\" : \"8C42E93C-65CA-4C88-BC0E-3A1CFFA04733\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"B032DF5E-F26A-4255-98C0-79E0AE47FD97\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"715FB98E-C60E-4442-88C5-1EFB95077E08\",\n\"title\" : \"\"\n},\n\"date\" : 663591600,\n\"duration\" : 0,\n\"id\" : \"777CB673-16FA-48BB-8AC2-FE2EE4F919FC\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"2453F08B-3E6C-40FD-820B-49C2F4EB18F3\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
+        "UserRegisterForm": "{\n\"birthday\" : 663591600,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
+        "HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"2FDC0135-2E3B-4CB4-A144-FFD3AB50A625\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"8AE3029F-A005-467B-BA94-127984279572\"\n}",
+        "EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}"
     }
 }

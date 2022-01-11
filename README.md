@@ -105,7 +105,7 @@ For the future versions of the Web Service, one can make use of either `read` or
 
 
 ```console
-$ swift run QONECTIQV2 migrator compare --old-document-path ./Documents/api_qonectiq1.0.0.json --doc-endpoint api-document --guide-endpoint migration-guide --run-web-service
+$ swift run QONECTIQV2 migrator compare --old-document-path ./Documents/api_v1.0.0.json --doc-endpoint api-document --guide-endpoint migration-guide --run-web-service
 info org.apodini.migrator : API Document served at /api-document in json format
 info org.apodini.migrator : Migration Guide served at /migration-guide in json format
 info org.apodini.application : Server starting on 0.0.0.0:80
