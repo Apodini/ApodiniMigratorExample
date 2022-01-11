@@ -27,7 +27,7 @@ WORKDIR /build
 COPY . .
 
 # Build everything, with optimizations
-RUN swift build -c release QONECTIQV2
+RUN swift build -c release
 
 # Switch to the staging area
 WORKDIR /staging
