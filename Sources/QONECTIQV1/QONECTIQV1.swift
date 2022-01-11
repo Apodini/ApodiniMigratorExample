@@ -31,6 +31,6 @@ struct QONECTIQV1: Apodini.WebService {
     }
     
     var metadata: Metadata {
-        Version(prefix: "qonectiq", major: 1, minor: 0, patch: 0)
+        Version(major: 1, minor: 0, patch: 0)
     }
 }

@@ -24,7 +24,7 @@ let package = Package(
         .macOS(.v11)
     ],
     dependencies: [
-        .package(url: "https://github.com/Apodini/Apodini.git", .upToNextMinor(from: "0.7.0"))
+        .package(url: "https://github.com/Apodini/Apodini.git", .branch("feature/bugfix"))
     ],
     targets: [
         .executableTarget(
