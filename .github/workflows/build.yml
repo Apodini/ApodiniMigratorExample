@@ -17,9 +17,10 @@ on:
 jobs:
   build_and_test:
     name: Build and Test
-    uses: Apodini/.github/.github/workflows/build-and-test.yml@v1
+    uses: Apodini/.github/.github/workflows/build-and-test.yml@feature/dockerimprovements
     with:
       packagename: ApodiniMigratorExample
+      test: false
       testdocc: false
   docker-compose-test:
     name: Docker Compose Test
