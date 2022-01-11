@@ -22,7 +22,7 @@ struct QONECTIQV1: Apodini.WebService {
     }
     
     var configuration: Configuration {
-        REST()
+        REST(versionAsRootPrefix: true)
         
         Migrator(
             // exports the document of the current version at http://localhost/api-document in `yaml` format
