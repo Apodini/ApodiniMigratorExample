@@ -122,7 +122,7 @@ info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorEx
 info org.apodini.migrator.rest : Package ApodiniMigratorExampleClient was migrated successfully. You can open the package via ApodiniMigratorExampleClient/Package.swift
 ```
 
-The resulting client library can be inspected in the `ApodiniMigratorExampleClient` folder.
+The resulting client library can be inspected in the `ApodiniMigratorExampleClient` folder, the files have only been updated to contain a REUSE compatible licensing information.
 
 ## Contributing
 Contributions to this project are welcome. Please make sure to read the [contribution guidelines](https://github.com/Apodini/.github/blob/main/CONTRIBUTING.md) and the [contributor covenant code of conduct](https://github.com/Apodini/.github/blob/main/CODE_OF_CONDUCT.md) first.
