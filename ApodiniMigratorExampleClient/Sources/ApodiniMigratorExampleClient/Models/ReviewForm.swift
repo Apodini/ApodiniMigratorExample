@@ -42,7 +42,7 @@ public struct ReviewForm: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(content, forKey: .content)
-        try container.encode(try Rating.from(rating, script: 24), forKey: .rating)
+        try container.encode(try Rating.from(rating, script: 0), forKey: .rating)
         try container.encode(summary, forKey: .summary)
         try container.encode(title, forKey: .title)
     }
@@ -52,7 +52,7 @@ public struct ReviewForm: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         content = try container.decode(String.self, forKey: .content)
-        rating = try Rating.from(try container.decode(Rating.self, forKey: .rating), script: 25)
+        rating = try Rating.from(try container.decode(Rating.self, forKey: .rating), script: 1)
         summary = try container.decode(String.self, forKey: .summary)
         title = try container.decode(String.self, forKey: .title)
     }

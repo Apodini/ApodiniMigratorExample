@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension HomeFeed {
-    /// API call for HomeFeedHandler at: {userID}
+    /// API call for HomeFeedHandler at: home/{userID}
     static func getHomeFeedForUserWithID(
         showPreviousEvents: Bool = try! Bool.instance(from: 7),
         userID: UUID,
@@ -30,7 +30,7 @@ public extension HomeFeed {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<HomeFeed>(
-            path: "\(userID)",
+            path: "home/\(userID)",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,

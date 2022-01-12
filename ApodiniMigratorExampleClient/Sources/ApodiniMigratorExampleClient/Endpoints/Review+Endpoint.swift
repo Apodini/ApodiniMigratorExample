@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension Review {
-    /// API call for AddReviewHandler at: 
+    /// API call for AddReviewHandler at: reviews
     static func addReviewToEvent(
         displayName: Bool?,
         eventID: UUID,
@@ -34,7 +34,7 @@ public extension Review {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<ReviewForm>(
-            path: "",
+            path: "reviews",
             httpMethod: .post,
             parameters: parameters,
             headers: headers,
@@ -44,12 +44,12 @@ public extension Review {
         )
         
         return NetworkingService.trigger(handler)
-            .tryMap { try Review.from($0, script: 28) }
+            .tryMap { try Review.from($0, script: 29) }
             .eraseToAnyPublisher()
     }
     
     
-    /// API call for ReviewsHandler at: 
+    /// API call for ReviewsHandler at: reviews
     static func getReviewsOfEventWithID(
         eventID: UUID,
         ratingBetterThan: Rating?,
@@ -70,7 +70,7 @@ public extension Review {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[Review]>(
-            path: "",
+            path: "reviews",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,
@@ -83,7 +83,7 @@ public extension Review {
     }
     
     
-    /// API call for ReviewsOfUserHandler at: posted-from
+    /// API call for ReviewsOfUserHandler at: reviews/posted-from
     static func reviewsOfUserWithID(
         userId: UUID,
         authorization: String? = nil,
@@ -102,7 +102,7 @@ public extension Review {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[Review]>(
-            path: "posted-from",
+            path: "reviews/posted-from",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,

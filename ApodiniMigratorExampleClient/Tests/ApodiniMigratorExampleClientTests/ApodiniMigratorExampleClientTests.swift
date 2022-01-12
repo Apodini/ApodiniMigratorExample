@@ -39,16 +39,16 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         {
         "category" : {
         "group" : "marketing",
-        "id" : "8FBC4917-201C-40AC-8993-0F5F57599146",
+        "id" : "3118A51A-51A2-406A-8832-EE950C192569",
         "status" : "available",
         "title" : ""
         },
         "date" : 663678000,
         "duration" : 0,
-        "id" : "EE94FD89-A076-4EC9-AF78-76A49C728FCD",
+        "id" : "8350B94E-2584-47F7-88A3-05F2BEA1F7DE",
         "imagePath" : "https://github.com/Apodini/Apodini",
         "maxParticipants" : null,
-        "organizer" : "0E775EF5-3A61-4665-A110-0A652BA48C51",
+        "organizer" : "92759F36-1F12-457E-ACD3-764BDF5593CA",
         "reviews" : [],
         "summary" : "",
         "tags" : [],
@@ -65,7 +65,7 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         """
         {
         "group" : "marketing",
-        "id" : "EDA91E6B-3211-4264-875C-F8C634640332",
+        "id" : "BB97662B-2D5D-4C53-B05B-308DA36767FC",
         "status" : "available",
         "title" : ""
         }
@@ -116,10 +116,10 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         "categories" : [],
         "events" : [],
         "greeting" : "",
-        "id" : "B093216C-1480-44A9-919C-8014BEA25247",
+        "id" : "B56AEFA4-076C-4CBD-9F5C-83326F797325",
         "searchBarText" : "",
         "subtitle" : "",
-        "userID" : "7E575669-6D7F-49E5-BE77-D75CDB6ECE9B"
+        "userID" : "74476BB0-FE1B-4F86-BE0C-8F8CCAEB7AC4"
         }
         """
         
@@ -131,7 +131,7 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         let json: JSONValue =
         """
         {
-        "categoryID" : "2370339A-1B62-411C-BD5B-FD1878D0D84D",
+        "categoryID" : "C50329DE-AD23-42A8-95C4-64D29C76BA3F",
         "eventsCount" : 0,
         "imageURL" : "https://github.com/Apodini/Apodini",
         "title" : ""
@@ -146,7 +146,7 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         let json: JSONValue =
         """
         {
-        "eventID" : "3EE7D805-1CC5-4BB4-B953-BF0647622D26",
+        "eventID" : "6C5AD9BB-E622-4689-ACEF-5575A90A3227",
         "eventsCount" : 0,
         "imageURL" : "https://github.com/Apodini/Apodini",
         "subtitle" : "",
@@ -173,10 +173,10 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         """
         {
         "content" : "",
-        "eventID" : "6401B0B3-D6B6-4D0B-9F47-719144B2924A",
-        "id" : "14FB4B5F-79DD-46E6-B183-40D22000159F",
+        "eventID" : "24FC33C2-A754-4938-874D-3F5D685BD448",
+        "id" : "CA85B336-8845-4340-9314-B6BA5F842EF0",
         "rating" : "outstanding",
-        "reviewerID" : "99EDE485-5F0C-4093-943F-0F5EBB8952A3",
+        "reviewerID" : "66A5DAF5-0DC8-4A06-83D4-116CE0902317",
         "summary" : "",
         "title" : ""
         }
@@ -210,7 +210,7 @@ final class ApodiniMigratorExampleClientTests: XCTestCase {
         "eventsOfInterest" : [],
         "experience" : "beginner",
         "homeFeed" : null,
-        "id" : "6081B0FB-00DD-4143-9DD2-696904992428",
+        "id" : "F3713384-542F-4A85-A3E8-CC6C39846155",
         "name" : "",
         "ownEvents" : [],
         "participatingEvents" : [],

@@ -36,7 +36,7 @@ public struct UserRegisterForm: Codable {
         email: String,
         name: String,
         password: String,
-        preferredTheme: HomeFeedTheme = try! HomeFeedTheme.instance(from: 0),
+        preferredTheme: HomeFeedTheme = try! HomeFeedTheme.instance(from: 3),
         subscribedToNewsLetter: Bool,
         surname: String
     ) {

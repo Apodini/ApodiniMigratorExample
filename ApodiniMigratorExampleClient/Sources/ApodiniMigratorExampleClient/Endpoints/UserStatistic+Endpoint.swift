@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension UserStatistic {
-    /// API call for StatisticsHandler at: {userIdentifier}/statistics
+    /// API call for StatisticsHandler at: users/{userIdentifier}/statistics
     static func statisticsOfUser(
         userIdentifier: UUID,
         authorization: String? = nil,
@@ -26,7 +26,7 @@ public extension UserStatistic {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<UserStatistic>(
-            path: "\(userIdentifier)/statistics",
+            path: "users/\(userIdentifier)/statistics",
             httpMethod: .get,
             parameters: [:],
             headers: headers,

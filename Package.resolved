@@ -14,9 +14,9 @@
         "package": "Apodini",
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
-          "branch": "feature/bugfix",
-          "revision": "c5c128c870a6a6f4b69cc9b3ab8e5313d53fee6d",
-          "version": null
+          "branch": null,
+          "revision": "9fba450e31d4f173f430e9e90994a366e8a3d974",
+          "version": "0.7.1"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
           "branch": null,
-          "revision": "b224604bedf270e4c08ba94bbfc1ebfd99c6b9ae",
-          "version": "0.2.0"
+          "revision": "9863ba8296576753afbb453de091c7b0e40e3dc3",
+          "version": "0.2.1"
         }
       },
       {
@@ -267,8 +267,8 @@
         "repositoryURL": "https://github.com/apple/swift-crypto.git",
         "state": {
           "branch": null,
-          "revision": "9c53b7a758bb849a7df1bd2314395f5f0c14306f",
-          "version": "2.0.3"
+          "revision": "a8911e0fadc25aef1071d582355bd1037a176060",
+          "version": "2.0.4"
         }
       },
       {
@@ -330,8 +330,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio.git",
         "state": {
           "branch": null,
-          "revision": "213eb6887e526e0dfac526a2eae559a1893ebbac",
-          "version": "2.36.0"
+          "revision": "51c3fc2e4a0fcdf4a25089b288dd65b73df1b0ef",
+          "version": "2.37.0"
         }
       },
       {
@@ -357,8 +357,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-ssl.git",
         "state": {
           "branch": null,
-          "revision": "2b329e37e9dd34fb382655181a680261d58cbbf1",
-          "version": "2.17.1"
+          "revision": "52a486ff6de9bc3e26bf634c5413c41c5fa89ca5",
+          "version": "2.17.2"
         }
       },
       {
@@ -366,8 +366,8 @@
         "repositoryURL": "https://github.com/apple/swift-nio-transport-services.git",
         "state": {
           "branch": null,
-          "revision": "e7f5278a26442dc46783ba7e063643d524e414a0",
-          "version": "1.11.3"
+          "revision": "8ab824b140d0ebcd87e9149266ddc353e3705a3e",
+          "version": "1.11.4"
         }
       },
       {

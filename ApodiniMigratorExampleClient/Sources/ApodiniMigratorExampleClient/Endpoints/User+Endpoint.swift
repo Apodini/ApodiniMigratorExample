@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension User {
-    /// API call for GetUserHandler at: {userID}
+    /// API call for GetUserHandler at: users/{userID}
     static func getUserWithID(
         userID: UUID,
         authorization: String? = nil,
@@ -27,7 +27,7 @@ public extension User {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<User>(
-            path: "\(userID)",
+            path: "users/\(userID)",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -40,7 +40,7 @@ public extension User {
     }
     
     
-    /// API call for UserLoginHandler at: 
+    /// API call for UserLoginHandler at: login
     static func login(
         login: UserLogin,
         authorization: String? = nil,
@@ -56,7 +56,7 @@ public extension User {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<User>(
-            path: "",
+            path: "login",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -69,7 +69,7 @@ public extension User {
     }
     
     
-    /// API call for UserRegisterFormHandler at: 
+    /// API call for UserRegisterFormHandler at: register
     static func register(
         userForm: UserRegisterForm,
         authorization: String? = nil,
@@ -85,7 +85,7 @@ public extension User {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<User>(
-            path: "",
+            path: "register",
             httpMethod: .post,
             parameters: [:],
             headers: headers,
@@ -98,7 +98,7 @@ public extension User {
     }
     
     
-    /// API call for GetAllUsersHandler at: 
+    /// API call for GetAllUsersHandler at: users
     static func getAllUsers(
         authorization: String? = nil,
         httpHeaders: HTTPHeaders = [:]
@@ -113,7 +113,7 @@ public extension User {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[User]>(
-            path: "",
+            path: "users",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -126,7 +126,7 @@ public extension User {
     }
     
     
-    /// API call for GetParticipantsOfEventHandler at: {eventID}/participants
+    /// API call for GetParticipantsOfEventHandler at: events/{eventID}/participants
     static func getParticipantsOfEventWithID(
         eventID: UUID,
         authorization: String? = nil,
@@ -142,7 +142,7 @@ public extension User {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[User]>(
-            path: "\(eventID)/participants",
+            path: "events/\(eventID)/participants",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -155,7 +155,7 @@ public extension User {
     }
     
     
-    /// API call for ExperienceUsersHandler at: experience/{experience}
+    /// API call for ExperienceUsersHandler at: users/experience/{experience}
     @available(*, deprecated, message: "This endpoint is not available in the new version anymore. Calling this method results in a failing promise!")
     static func usersOfExperience(
         experience: Experience,

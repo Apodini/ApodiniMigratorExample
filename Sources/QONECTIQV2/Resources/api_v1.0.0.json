@@ -1,5 +1,5 @@
 {
-    "id": "E3EFCD66-D91A-42D9-9DB4-80E2F80E55F4",
+    "id": "5CC3A85A-2083-4E33-8D49-E38DC1EDF76D",
     "version": "2.0.0",
     "service": {
         "version": "v_1.0.0",
@@ -836,240 +836,6 @@
         }
     ],
     "types": {
-        "Event": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "Event"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "reviews",
-                        "type": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "type": {
-                            "scalar": "Date"
-                        }
-                    },
-                    {
-                        "name": "duration",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    },
-                    {
-                        "name": "imagePath",
-                        "type": {
-                            "scalar": "URL"
-                        }
-                    },
-                    {
-                        "name": "maxParticipants",
-                        "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
-                        }
-                    },
-                    {
-                        "name": "organizer",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "tags",
-                        "type": {
-                            "repeated": {
-                                "scalar": "String"
-                            }
-                        }
-                    },
-                    {
-                        "name": "category",
-                        "type": {
-                            "reference": "EventCategory"
-                        }
-                    }
-                ]
-            }
-        },
-        "Experience": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "Experience"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "male",
-                        "rawValue": "male"
-                    },
-                    {
-                        "name": "female",
-                        "rawValue": "female"
-                    }
-                ]
-            }
-        },
-        "UserLogin": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "UserLogin"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "userName",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    }
-                ]
-            }
-        },
-        "Review": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "Review"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "content",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "eventID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "reviewerID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "rating",
-                        "type": {
-                            "reference": "Rating"
-                        }
-                    }
-                ]
-            }
-        },
-        "Rating": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "Rating"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "outstanding",
-                        "rawValue": "outstanding"
-                    },
-                    {
-                        "name": "exceedsExpectation",
-                        "rawValue": "exceedsExpectation"
-                    },
-                    {
-                        "name": "meetsExpectation",
-                        "rawValue": "meetsExpectation"
-                    },
-                    {
-                        "name": "needsImprovement",
-                        "rawValue": "needsImprovement"
-                    },
-                    {
-                        "name": "unacceptable",
-                        "rawValue": "unacceptable"
-                    },
-                    {
-                        "name": "undefined",
-                        "rawValue": "undefined"
-                    }
-                ]
-            }
-        },
-        "Empty": {
-            "object": {
-                "typeName": {
-                    "defined-in": "Apodini",
-                    "rootComponent": {
-                        "name": "Empty"
-                    }
-                }
-            }
-        },
         "ReviewForm": {
             "object": {
                 "typeName": {
@@ -1106,142 +872,49 @@
                 ]
             }
         },
-        "HomeFeed": {
+        "UserRegisterForm": {
             "object": {
                 "typeName": {
                     "defined-in": "QONECTIQV1",
                     "rootComponent": {
-                        "name": "HomeFeed"
+                        "name": "UserRegisterForm"
                     }
                 },
                 "properties": [
                     {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "userID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "greeting",
+                        "name": "name",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "subtitle",
+                        "name": "surname",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "searchBarText",
+                        "name": "password",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "events",
+                        "name": "birthday",
                         "type": {
-                            "repeated": {
-                                "reference": "HomeFeedEvent"
-                            }
+                            "scalar": "Date"
                         }
                     },
                     {
-                        "name": "categories",
-                        "type": {
-                            "repeated": {
-                                "reference": "HomeFeedCategory"
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        "EventCategoryGroup": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "EventCategoryGroup"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "marketing",
-                        "rawValue": "marketing"
-                    },
-                    {
-                        "name": "blogging",
-                        "rawValue": "blogging"
-                    },
-                    {
-                        "name": "coding",
-                        "rawValue": "coding"
-                    },
-                    {
-                        "name": "cooking",
-                        "rawValue": "cooking"
-                    },
-                    {
-                        "name": "dating",
-                        "rawValue": "dating"
-                    },
-                    {
-                        "name": "travellinng",
-                        "rawValue": "travellinng"
-                    },
-                    {
-                        "name": "studying",
-                        "rawValue": "studying"
-                    },
-                    {
-                        "name": "science",
-                        "rawValue": "science"
-                    }
-                ]
-            }
-        },
-        "EventCategory": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "EventCategory"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
+                        "name": "email",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "group",
+                        "name": "subscribedToNewsLetter",
                         "type": {
-                            "reference": "EventCategoryGroup"
-                        }
-                    },
-                    {
-                        "name": "status",
-                        "type": {
-                            "reference": "CategoryStatus"
+                            "scalar": "Bool"
                         }
                     }
                 ]
@@ -1347,74 +1020,49 @@
                 ]
             }
         },
-        "HomeFeedCategory": {
-            "object": {
+        "EventCategoryGroup": {
+            "enum": {
                 "typeName": {
                     "defined-in": "QONECTIQV1",
                     "rootComponent": {
-                        "name": "HomeFeedCategory"
+                        "name": "EventCategoryGroup"
                     }
                 },
-                "properties": [
-                    {
-                        "name": "categoryID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "imageURL",
-                        "type": {
-                            "scalar": "URL"
-                        }
-                    },
-                    {
-                        "name": "eventsCount",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    }
-                ]
-            }
-        },
-        "EventMediator": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV1",
-                    "rootComponent": {
-                        "name": "EventMediator"
-                    }
+                "rawValueType": {
+                    "scalar": "String"
                 },
-                "properties": [
+                "cases": [
                     {
-                        "name": "date",
-                        "type": {
-                            "optional": {
-                                "scalar": "Date"
-                            }
-                        }
+                        "name": "marketing",
+                        "rawValue": "marketing"
                     },
                     {
-                        "name": "duration",
-                        "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
-                        }
+                        "name": "blogging",
+                        "rawValue": "blogging"
                     },
                     {
-                        "name": "maxParticipants",
-                        "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
-                        }
+                        "name": "coding",
+                        "rawValue": "coding"
+                    },
+                    {
+                        "name": "cooking",
+                        "rawValue": "cooking"
+                    },
+                    {
+                        "name": "dating",
+                        "rawValue": "dating"
+                    },
+                    {
+                        "name": "travellinng",
+                        "rawValue": "travellinng"
+                    },
+                    {
+                        "name": "studying",
+                        "rawValue": "studying"
+                    },
+                    {
+                        "name": "science",
+                        "rawValue": "science"
                     }
                 ]
             }
@@ -1484,23 +1132,263 @@
                 ]
             }
         },
-        "UserRegisterForm": {
+        "Rating": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "Rating"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "outstanding",
+                        "rawValue": "outstanding"
+                    },
+                    {
+                        "name": "exceedsExpectation",
+                        "rawValue": "exceedsExpectation"
+                    },
+                    {
+                        "name": "meetsExpectation",
+                        "rawValue": "meetsExpectation"
+                    },
+                    {
+                        "name": "needsImprovement",
+                        "rawValue": "needsImprovement"
+                    },
+                    {
+                        "name": "unacceptable",
+                        "rawValue": "unacceptable"
+                    },
+                    {
+                        "name": "undefined",
+                        "rawValue": "undefined"
+                    }
+                ]
+            }
+        },
+        "Empty": {
+            "object": {
+                "typeName": {
+                    "defined-in": "Apodini",
+                    "rootComponent": {
+                        "name": "Empty"
+                    }
+                }
+            }
+        },
+        "Event": {
             "object": {
                 "typeName": {
                     "defined-in": "QONECTIQV1",
                     "rootComponent": {
-                        "name": "UserRegisterForm"
+                        "name": "Event"
                     }
                 },
                 "properties": [
                     {
-                        "name": "name",
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "title",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "surname",
+                        "name": "summary",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "reviews",
+                        "type": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "type": {
+                            "scalar": "Date"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    },
+                    {
+                        "name": "imagePath",
+                        "type": {
+                            "scalar": "URL"
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        }
+                    },
+                    {
+                        "name": "organizer",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "type": {
+                            "repeated": {
+                                "scalar": "String"
+                            }
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "type": {
+                            "reference": "EventCategory"
+                        }
+                    }
+                ]
+            }
+        },
+        "HomeFeedCategory": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "HomeFeedCategory"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "categoryID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "imageURL",
+                        "type": {
+                            "scalar": "URL"
+                        }
+                    },
+                    {
+                        "name": "eventsCount",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    }
+                ]
+            }
+        },
+        "Experience": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "Experience"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "beginner",
+                        "rawValue": "beginner"
+                    },
+                    {
+                        "name": "expert",
+                        "rawValue": "expert"
+                    }
+                ]
+            }
+        },
+        "Review": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "Review"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "eventID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "reviewerID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "summary",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "rating",
+                        "type": {
+                            "reference": "Rating"
+                        }
+                    }
+                ]
+            }
+        },
+        "UserLogin": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "UserLogin"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "userName",
                         "type": {
                             "scalar": "String"
                         }
@@ -1510,23 +1398,135 @@
                         "type": {
                             "scalar": "String"
                         }
-                    },
+                    }
+                ]
+            }
+        },
+        "HomeFeed": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "HomeFeed"
+                    }
+                },
+                "properties": [
                     {
-                        "name": "birthday",
+                        "name": "id",
                         "type": {
-                            "scalar": "Date"
+                            "scalar": "UUID"
                         }
                     },
                     {
-                        "name": "email",
+                        "name": "userID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "greeting",
                         "type": {
                             "scalar": "String"
                         }
                     },
                     {
-                        "name": "subscribedToNewsLetter",
+                        "name": "subtitle",
                         "type": {
-                            "scalar": "Bool"
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "searchBarText",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "events",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedEvent"
+                            }
+                        }
+                    },
+                    {
+                        "name": "categories",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedCategory"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "EventMediator": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "EventMediator"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "date",
+                        "type": {
+                            "optional": {
+                                "scalar": "Date"
+                            }
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "EventCategory": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV1",
+                    "rootComponent": {
+                        "name": "EventCategory"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "group",
+                        "type": {
+                            "reference": "EventCategoryGroup"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "type": {
+                            "reference": "CategoryStatus"
                         }
                     }
                 ]

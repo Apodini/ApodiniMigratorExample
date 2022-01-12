@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
           "branch": null,
-          "revision": "c2bb44275a82ec61de70e114d07eafc803d73f41",
-          "version": "0.1.4"
+          "revision": "9863ba8296576753afbb453de091c7b0e40e3dc3",
+          "version": "0.2.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniTypeInformation.git",
         "state": {
           "branch": null,
-          "revision": "95109a6f3cf93a828d1b0adf2cdc299e31fe5e87",
-          "version": "0.2.1"
+          "revision": "b4e73a6f92bd0930c9f1f8a857504b85b943dd88",
+          "version": "0.3.0"
         }
       },
       {
@@ -89,6 +89,15 @@
           "branch": null,
           "revision": "83b23d940471b313427da226196661856f6ba3e0",
           "version": "0.4.4"
+        }
+      },
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/apple/swift-collections.git",
+        "state": {
+          "branch": null,
+          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+          "version": "1.0.2"
         }
       },
       {

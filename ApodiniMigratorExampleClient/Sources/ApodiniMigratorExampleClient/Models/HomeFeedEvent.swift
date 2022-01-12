@@ -47,7 +47,7 @@ public struct HomeFeedEvent: Codable {
         
         try container.encode(eventID, forKey: .eventID)
         try container.encode(eventsCount, forKey: .eventsCount)
-        try container.encode(try String.from(imageURL, script: 26), forKey: .imageURL)
+        try container.encode(try String.from(imageURL, script: 12), forKey: .imageURL)
         try container.encode(subtitle, forKey: .subtitle)
         try container.encode(title, forKey: .title)
     }
@@ -58,7 +58,7 @@ public struct HomeFeedEvent: Codable {
         
         eventID = try container.decode(UUID.self, forKey: .eventID)
         eventsCount = try container.decode(UInt.self, forKey: .eventsCount)
-        imageURL = try URL.from(try container.decode(String.self, forKey: .imageURL), script: 27)
+        imageURL = try URL.from(try container.decode(String.self, forKey: .imageURL), script: 13)
         subtitle = try container.decode(String.self, forKey: .subtitle)
         title = try container.decode(String.self, forKey: .title)
     }

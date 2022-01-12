@@ -40,7 +40,7 @@ public struct HomeFeed: Codable {
         id: UUID,
         searchBarText: String,
         subtitle: String,
-        theme: HomeFeedTheme = try! HomeFeedTheme.instance(from: 3),
+        theme: HomeFeedTheme = try! HomeFeedTheme.instance(from: 1),
         userID: UUID
     ) {
         self.categories = categories
@@ -57,8 +57,8 @@ public struct HomeFeed: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(try [HomeFeedCategory].from(categories, script: 18), forKey: .categories)
-        try container.encode(try [HomeFeedEvent].from(events, script: 16), forKey: .events)
+        try container.encode(try [HomeFeedCategory].from(categories, script: 4), forKey: .categories)
+        try container.encode(try [HomeFeedEvent].from(events, script: 2), forKey: .events)
         try container.encode(greeting, forKey: .greeting)
         try container.encode(id, forKey: .id)
         try container.encode(searchBarText, forKey: .searchBarText)
@@ -71,8 +71,8 @@ public struct HomeFeed: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        categories = try [HomeFeedCategory].from(try container.decode([HomeFeedCategory].self, forKey: .categories), script: 19)
-        events = try [HomeFeedEvent].from(try container.decode([HomeFeedEvent].self, forKey: .events), script: 17)
+        categories = try [HomeFeedCategory].from(try container.decode([HomeFeedCategory].self, forKey: .categories), script: 5)
+        events = try [HomeFeedEvent].from(try container.decode([HomeFeedEvent].self, forKey: .events), script: 3)
         greeting = try container.decode(String.self, forKey: .greeting)
         id = try container.decode(UUID.self, forKey: .id)
         searchBarText = try container.decode(String.self, forKey: .searchBarText)

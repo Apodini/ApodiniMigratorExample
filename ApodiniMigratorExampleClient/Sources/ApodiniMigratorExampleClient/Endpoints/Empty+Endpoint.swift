@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension Empty {
-    /// API call for CreateCategoryHandler at: 
+    /// API call for CreateCategoryHandler at: categories
     static func createCategory(
         event: EventCategory,
         authorization: String? = nil,
@@ -26,11 +26,11 @@ public extension Empty {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Empty>(
-            path: "",
+            path: "categories",
             httpMethod: .post,
             parameters: [:],
             headers: headers,
-            content: NetworkingService.encode(try! EventCategoryMediator.from(event, script: 29)),
+            content: NetworkingService.encode(try! EventCategoryMediator.from(event, script: 28)),
             authorization: authorization,
             errors: errors
         )
@@ -39,7 +39,7 @@ public extension Empty {
     }
     
     
-    /// API call for CreateEventHandler at: 
+    /// API call for CreateEventHandler at: events
     static func createEvent(
         event: Event,
         authorization: String? = nil,
@@ -55,7 +55,7 @@ public extension Empty {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Empty>(
-            path: "",
+            path: "events",
             httpMethod: .post,
             parameters: [:],
             headers: headers,
@@ -68,7 +68,7 @@ public extension Empty {
     }
     
     
-    /// API call for DeleteUserHandler at: {userID}
+    /// API call for DeleteUserHandler at: users/{userID}
     static func deleteUserWithID(
         userID: UUID,
         authorization: String? = nil,
@@ -84,7 +84,7 @@ public extension Empty {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Empty>(
-            path: "\(userID)",
+            path: "users/\(userID)",
             httpMethod: .delete,
             parameters: [:],
             headers: headers,

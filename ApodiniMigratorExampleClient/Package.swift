@@ -14,15 +14,21 @@ import PackageDescription
 let package = Package(
     name: "ApodiniMigratorExampleClient",
     platforms: [
-        .macOS(.v12), .iOS(.v14)
+        .macOS(.v11), .iOS(.v13)
     ],
     products: [
         .library(name: "ApodiniMigratorExampleClient", targets: ["ApodiniMigratorExampleClient"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Apodini/ApodiniMigrator.git", .upToNextMinor(from: "0.1.0"))
+        .package(url: "https://github.com/Apodini/ApodiniMigrator.git", .upToNextMinor(from: "0.2.0"))
     ],
     targets: [
+        .executableTarget(
+            name: "ExampleClient",
+            dependencies: [
+                .target(name: "ApodiniMigratorExampleClient")
+            ]
+        ),
         .target(
             name: "ApodiniMigratorExampleClient",
             dependencies: [

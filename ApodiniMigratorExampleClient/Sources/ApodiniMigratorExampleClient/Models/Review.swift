@@ -35,7 +35,7 @@ public struct Review: Codable {
     // MARK: - Initializer
     public init(
         content: String,
-        displayReviewerName: Bool = try! Bool.instance(from: 4),
+        displayReviewerName: Bool = try! Bool.instance(from: 6),
         eventID: UUID,
         id: UUID,
         rating: Rating,
@@ -61,7 +61,7 @@ public struct Review: Codable {
         try container.encode(displayReviewerName, forKey: .displayReviewerName)
         try container.encode(eventID, forKey: .eventID)
         try container.encode(id, forKey: .id)
-        try container.encode(try Rating.from(rating, script: 20), forKey: .rating)
+        try container.encode(try Rating.from(rating, script: 26), forKey: .rating)
         try container.encode(reviewerID, forKey: .reviewerID)
         try container.encode(summary, forKey: .summary)
         try container.encode(title, forKey: .title)
@@ -75,7 +75,7 @@ public struct Review: Codable {
         displayReviewerName = try container.decode(Bool.self, forKey: .displayReviewerName)
         eventID = try container.decode(UUID.self, forKey: .eventID)
         id = try container.decode(UUID.self, forKey: .id)
-        rating = try Rating.from(try container.decode(Rating.self, forKey: .rating), script: 21)
+        rating = try Rating.from(try container.decode(Rating.self, forKey: .rating), script: 27)
         reviewerID = try container.decode(UUID.self, forKey: .reviewerID)
         summary = try container.decode(String.self, forKey: .summary)
         title = try container.decode(String.self, forKey: .title)

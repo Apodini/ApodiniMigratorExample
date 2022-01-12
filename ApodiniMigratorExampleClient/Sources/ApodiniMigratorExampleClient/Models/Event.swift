@@ -47,7 +47,7 @@ public struct Event: Codable {
         duration: UInt,
         id: UUID,
         imagePath: URL,
-        location: String = try! String.instance(from: 1),
+        location: String = try! String.instance(from: 4),
         maxParticipants: UInt?,
         organizer: UUID,
         reviews: [Review],
@@ -73,15 +73,15 @@ public struct Event: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(try EventCategory.from(category, script: 14), forKey: .category)
+        try container.encode(try EventCategory.from(category, script: 10), forKey: .category)
         try container.encode(date, forKey: .date)
         try container.encode(duration, forKey: .duration)
         try container.encode(id, forKey: .id)
         try container.encode(imagePath, forKey: .imagePath)
         try container.encode(location, forKey: .location)
-        try container.encode(maxParticipants ?? (try UInt.instance(from: 2)), forKey: .maxParticipants)
+        try container.encode(maxParticipants ?? (try UInt.instance(from: 5)), forKey: .maxParticipants)
         try container.encode(organizer, forKey: .organizer)
-        try container.encode(try [Review].from(reviews, script: 12), forKey: .reviews)
+        try container.encode(try [Review].from(reviews, script: 8), forKey: .reviews)
         try container.encode(summary, forKey: .summary)
         try container.encode(tags, forKey: .tags)
         try container.encode(title, forKey: .title)
@@ -91,7 +91,7 @@ public struct Event: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        category = try EventCategory.from(try container.decode(EventCategory.self, forKey: .category), script: 15)
+        category = try EventCategory.from(try container.decode(EventCategory.self, forKey: .category), script: 11)
         date = try container.decode(Date.self, forKey: .date)
         duration = try container.decode(UInt.self, forKey: .duration)
         id = try container.decode(UUID.self, forKey: .id)
@@ -99,7 +99,7 @@ public struct Event: Codable {
         location = try container.decode(String.self, forKey: .location)
         maxParticipants = try container.decodeIfPresent(UInt.self, forKey: .maxParticipants)
         organizer = try container.decode(UUID.self, forKey: .organizer)
-        reviews = try [Review].from(try container.decode([Review].self, forKey: .reviews), script: 13)
+        reviews = try [Review].from(try container.decode([Review].self, forKey: .reviews), script: 9)
         summary = try container.decode(String.self, forKey: .summary)
         tags = try container.decode([String].self, forKey: .tags)
         title = try container.decode(String.self, forKey: .title)

@@ -39,7 +39,7 @@ public struct EventMediator: Codable {
         
         try container.encodeIfPresent(date, forKey: .date)
         try container.encodeIfPresent(duration, forKey: .duration)
-        try container.encode(maxParticipants ?? (try UInt.instance(from: 5)), forKey: .maxParticipants)
+        try container.encode(maxParticipants ?? (try UInt.instance(from: 0)), forKey: .maxParticipants)
     }
     
     // MARK: - Decodable

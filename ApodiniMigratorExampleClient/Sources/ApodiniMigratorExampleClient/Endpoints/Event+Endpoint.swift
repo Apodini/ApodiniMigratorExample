@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension Event {
-    /// API call for DeleteEventHandler at: {id}
+    /// API call for DeleteEventHandler at: events/{id}
     static func deleteEventWithID(
         id: UUID,
         authorization: String? = nil,
@@ -26,7 +26,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Event>(
-            path: "\(id)",
+            path: "events/\(id)",
             httpMethod: .delete,
             parameters: [:],
             headers: headers,
@@ -39,7 +39,7 @@ public extension Event {
     }
     
     
-    /// API call for GetEventHandler at: {id}
+    /// API call for GetEventHandler at: events/{id}
     static func getEventWithID(
         id: UUID,
         authorization: String? = nil,
@@ -55,7 +55,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Event>(
-            path: "\(id)",
+            path: "events/\(id)",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -68,7 +68,7 @@ public extension Event {
     }
     
     
-    /// API call for UpdateEventHandler at: {eventID}
+    /// API call for UpdateEventHandler at: events/{eventID}
     static func updateEventWithID(
         eventID: UUID,
         eventMediator: EventMediator,
@@ -85,7 +85,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<Event>(
-            path: "\(eventID)",
+            path: "events/\(eventID)",
             httpMethod: .put,
             parameters: [:],
             headers: headers,
@@ -98,7 +98,7 @@ public extension Event {
     }
     
     
-    /// API call for GetEventsHandler at: 
+    /// API call for GetEventsHandler at: events
     static func getAllEvents(
         authorization: String? = nil,
         httpHeaders: HTTPHeaders = [:]
@@ -113,7 +113,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[Event]>(
-            path: "",
+            path: "events",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -126,7 +126,7 @@ public extension Event {
     }
     
     
-    /// API call for CategoryEventsHandler at: category
+    /// API call for CategoryEventsHandler at: events/category
     static func getEventsOfCategory(
         group: EventCategoryGroup,
         authorization: String? = nil,
@@ -142,7 +142,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[Event]>(
-            path: "category",
+            path: "events/category",
             httpMethod: .post,
             parameters: [:],
             headers: headers,
@@ -155,7 +155,7 @@ public extension Event {
     }
     
     
-    /// API call for SearchEventsHandler at: search
+    /// API call for SearchEventsHandler at: events/search
     static func searchEventsWithQuery(
         searchQuery: String,
         authorization: String? = nil,
@@ -174,7 +174,7 @@ public extension Event {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[Event]>(
-            path: "search",
+            path: "events/search",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,

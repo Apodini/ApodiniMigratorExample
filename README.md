@@ -117,6 +117,7 @@ The following script demonstrates pulling, building, and running the Apodini Mig
 ```console
 $ git clone https://github.com/Apodini/ApodiniMigrator
 $ cd ApodiniMigrator
+$ git checkout 0.2.1
 $ swift run migrator migrate --package-name ApodiniMigratorExampleClient --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
 info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorExampleClient
 info org.apodini.migrator.rest : Package ApodiniMigratorExampleClient was migrated successfully. You can open the package via ApodiniMigratorExampleClient/Package.swift

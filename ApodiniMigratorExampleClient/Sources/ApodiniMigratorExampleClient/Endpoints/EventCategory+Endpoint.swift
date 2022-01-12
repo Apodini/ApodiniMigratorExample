@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: - Endpoints
 public extension EventCategory {
-    /// API call for GetCategoryHandler at: 
+    /// API call for GetCategoryHandler at: category
     static func getCategoryWithID(
         id: UUID,
         authorization: String? = nil,
@@ -29,7 +29,7 @@ public extension EventCategory {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<EventCategory>(
-            path: "",
+            path: "category",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,
@@ -42,7 +42,7 @@ public extension EventCategory {
     }
     
     
-    /// API call for GetCategoriesHandler at: 
+    /// API call for GetCategoriesHandler at: categories
     static func getAllCategories(
         authorization: String? = nil,
         httpHeaders: HTTPHeaders = [:]
@@ -57,7 +57,7 @@ public extension EventCategory {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[EventCategory]>(
-            path: "",
+            path: "categories",
             httpMethod: .get,
             parameters: [:],
             headers: headers,
@@ -70,7 +70,7 @@ public extension EventCategory {
     }
     
     
-    /// API call for GroupCategoriesHandler at: group
+    /// API call for GroupCategoriesHandler at: categories/group
     static func getCategoriesOfGroup(
         groupCategory: EventCategoryGroup,
         authorization: String? = nil,
@@ -89,7 +89,7 @@ public extension EventCategory {
         errors.addError(500, message: "Internal server error")
         
         let handler = Handler<[EventCategory]>(
-            path: "group",
+            path: "categories/group",
             httpMethod: .get,
             parameters: parameters,
             headers: headers,

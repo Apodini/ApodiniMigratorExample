@@ -41,7 +41,7 @@ public struct EventCategory: Codable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(try EventCategoryGroup.from(group, script: 22), forKey: .group)
+        try container.encode(try EventCategoryGroup.from(group, script: 6), forKey: .group)
         try container.encode(id, forKey: .id)
         try container.encode(title, forKey: .title)
     }
@@ -50,9 +50,9 @@ public struct EventCategory: Codable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        group = try EventCategoryGroup.from(try container.decode(EventCategoryGroup.self, forKey: .group), script: 23)
+        group = try EventCategoryGroup.from(try container.decode(EventCategoryGroup.self, forKey: .group), script: 7)
         id = try container.decode(UUID.self, forKey: .id)
-        status = try CategoryStatus.instance(from: 6)
+        status = try CategoryStatus.instance(from: 2)
         title = try container.decode(String.self, forKey: .title)
     }
 }
