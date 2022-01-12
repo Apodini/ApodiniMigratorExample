@@ -111,8 +111,18 @@ info org.apodini.migrator : Migration Guide served at /migration-guide in json f
 info org.apodini.application : Server starting on 0.0.0.0:80
 ```
 
-By default, configurations provided in source code in `configuration` property of the web service, overwrite the CLI arguments. Hence, make sure to use empty `Migrator()` initializer when running the web service via `migrator` subcommand, and use the arguments as presented above. Provided with a `Document` and a Migration guide, one can make use of `migrator` CLI (see [example](https://github.com/Apodini/ApodiniMigrator#apodinimigratorexample)) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version, and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
+The configurations provided via CLI arguments overwrite the configuration in source code in the `configuration` property of the web service. Provided with a `Document` and a Migration guide, one can make use of `migrator` CLI (see [example](https://github.com/Apodini/ApodiniMigrator#apodinimigratorexample)) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
 
+The following script demonstrates pulling, building, and running the Apodini Migrator to generate a client library of version 1 of the web service migrated to talk to version 2:
+```console
+$ git clone https://github.com/Apodini/ApodiniMigrator
+$ cd ApodiniMigrator
+$ swift run migrator migrate --package-name ApodiniMigratorExampleClient --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
+info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorExampleClient
+info org.apodini.migrator.rest : Package ApodiniMigratorExampleClient was migrated successfully. You can open the package via ApodiniMigratorExampleClient/Package.swift
+```
+
+The resulting client library can be inspected in the `ApodiniMigratorExampleClient` folder.
 
 ## Contributing
 Contributions to this project are welcome. Please make sure to read the [contribution guidelines](https://github.com/Apodini/.github/blob/main/CONTRIBUTING.md) and the [contributor covenant code of conduct](https://github.com/Apodini/.github/blob/main/CODE_OF_CONDUCT.md) first.
