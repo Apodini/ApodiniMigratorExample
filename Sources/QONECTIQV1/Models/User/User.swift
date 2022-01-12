@@ -16,7 +16,7 @@ struct User: ApodiniContent, Identifiable {
     var email: String
     var birthday: Date
     var subscribedToNewsLetter: Bool
-    var gender: Gender
+    var experience: Experience
     var reviews: [Review]
     var ownEvents: [Event]
     var participatingEvents: [Event]

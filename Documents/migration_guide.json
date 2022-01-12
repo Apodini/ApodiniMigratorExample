@@ -1,1085 +1,1523 @@
 {
     "summary": "A summary of what changed between versions",
-    "service-type": "REST",
-    "api-spec": "Apodini DSL",
-    "document-id": "24449529-6E21-4779-8BF3-173057B10FA4",
+    "document-id": "8B80097C-CF6F-4B29-8BE6-B8C152E0CA6D",
+    "version": "2.0.0",
     "from": "v_1.0.0",
     "to": "v_2.0.0",
     "compare-config": {
         "include-provider-support": false,
         "allowed-endpoint-id-update": false,
-        "allowed-type-rename": false
+        "allowed-type-rename": false,
+        "encoderConfiguration": {
+            "dateEncodingStrategy": "deferredToDate",
+            "dataEncodingStrategy": "base64"
+        }
     },
-    "changes": [
+    "serviceChanges": [
         {
-            "element": {
-                "networking": "NetworkingService",
-                "target": "base-url"
+            "type": "update",
+            "id": "SERVICE_INFO_ID",
+            "updated": {
+                "type": "version",
+                "from": "v_1.0.0",
+                "to": "v_2.0.0"
             },
-            "change-type": "value-update",
-            "from": {
-                "string-value": "http://localhost/v1"
-            },
-            "to": {
-                "string-value": "http://localhost/v2"
-            },
-            "breaking": true,
+            "breaking": false,
             "solvable": true
         },
         {
-            "element": {
-                "enum": "CategoryStatus",
-                "target": "self"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "CategoryStatus"
-            },
-            "fallback-value": "none",
-            "breaking": false,
-            "solvable": false
-        },
-        {
-            "element": {
-                "object": "EventCategoryMediator",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "object": {
-                        "typeName": {
-                            "name": "EventCategoryMediator",
-                            "defined-in": "QONECTIQV2"
-                        },
-                        "properties": [
-                            {
-                                "name": "title",
-                                "type": {
-                                    "scalar": "String"
-                                }
+            "type": "update",
+            "id": "SERVICE_INFO_ID",
+            "updated": {
+                "type": "exporter",
+                "exporter": {
+                    "type": "update",
+                    "id": "rest",
+                    "updated": {
+                        "from": {
+                            "type": "rest",
+                            "encoderConfiguration": {
+                                "dateEncodingStrategy": "deferredToDate",
+                                "dataEncodingStrategy": "base64"
                             },
-                            {
-                                "name": "categoryGroup",
-                                "type": {
-                                    "reference": "EventCategoryGroup"
-                                }
+                            "decoderConfiguration": {
+                                "dateDecodingStrategy": "deferredToDate",
+                                "dataDecodingStrategy": "base64"
                             }
-                        ]
-                    }
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "HomeFeedTheme",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "enum": {
-                        "typeName": {
-                            "name": "HomeFeedTheme",
-                            "defined-in": "QONECTIQV2"
                         },
-                        "rawValueType": {
-                            "scalar": "String"
-                        },
-                        "cases": [
-                            {
-                                "name": "basic",
-                                "rawValue": "basic"
+                        "to": {
+                            "type": "rest",
+                            "encoderConfiguration": {
+                                "dateEncodingStrategy": "deferredToDate",
+                                "dataEncodingStrategy": "base64"
                             },
-                            {
-                                "name": "classic",
-                                "rawValue": "classic"
-                            },
-                            {
-                                "name": "dark",
-                                "rawValue": "dark"
-                            },
-                            {
-                                "name": "midnight",
-                                "rawValue": "midnight"
-                            },
-                            {
-                                "name": "sunset",
-                                "rawValue": "sunset"
+                            "decoderConfiguration": {
+                                "dateDecodingStrategy": "deferredToDate",
+                                "dataDecodingStrategy": "base64"
                             }
-                        ]
-                    }
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "UserBadge",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "enum": {
-                        "typeName": {
-                            "name": "UserBadge",
-                            "defined-in": "QONECTIQV2"
-                        },
-                        "rawValueType": {
-                            "scalar": "String"
-                        },
-                        "cases": [
-                            {
-                                "name": "newbie",
-                                "rawValue": "newbie"
-                            },
-                            {
-                                "name": "explorer",
-                                "rawValue": "explorer"
-                            },
-                            {
-                                "name": "achiever",
-                                "rawValue": "achiever"
-                            },
-                            {
-                                "name": "worldSaver",
-                                "rawValue": "worldSaver"
-                            }
-                        ]
-                    }
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "UserStatistic",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "object": {
-                        "typeName": {
-                            "name": "UserStatistic",
-                            "defined-in": "QONECTIQV2"
-                        },
-                        "properties": [
-                            {
-                                "name": "userID",
-                                "type": {
-                                    "scalar": "UUID"
-                                }
-                            },
-                            {
-                                "name": "participatingEventsCount",
-                                "type": {
-                                    "scalar": "UInt"
-                                }
-                            },
-                            {
-                                "name": "createdEventsCount",
-                                "type": {
-                                    "scalar": "UInt"
-                                }
-                            },
-                            {
-                                "name": "topCategory",
-                                "type": {
-                                    "reference": "EventCategory"
-                                }
-                            },
-                            {
-                                "name": "registeredSince",
-                                "type": {
-                                    "scalar": "Date"
-                                }
-                            },
-                            {
-                                "name": "badge",
-                                "type": {
-                                    "reference": "UserBadge"
-                                }
-                            }
-                        ]
-                    }
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "UserLogin",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "userName",
-            "from": {
-                "string-value": "userName"
-            },
-            "to": {
-                "string-value": "username"
-            },
-            "similarity-score": 0.950000,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeed",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "theme",
-                    "type": {
-                        "reference": "HomeFeedTheme"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 0
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "EventCategory",
-                "target": "property"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "status"
-            },
-            "fallback-value": {
-                "json-value-id": 1
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "EventCategoryGroup",
-                "target": "case"
-            },
-            "change-type": "rename",
-            "target-id": "travellinng",
-            "from": {
-                "string-value": "travellinng"
-            },
-            "to": {
-                "string-value": "travel"
-            },
-            "similarity-score": 0.909091,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "EventCategoryGroup",
-                "target": "raw-value"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": {
-                    "name": "travellinng",
-                    "rawValue": "travellinng"
-                }
-            },
-            "to": {
-                "element": {
-                    "name": "travel",
-                    "rawValue": "travel"
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "EventCategoryGroup",
-                "target": "case"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "studying"
-            },
-            "fallback-value": "none",
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "EventCategoryGroup",
-                "target": "case"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "entertainment",
-                    "rawValue": "entertainment"
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "User",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "ownEvents",
-            "from": {
-                "string-value": "ownEvents"
-            },
-            "to": {
-                "string-value": "myEvents"
-            },
-            "similarity-score": 0.750000,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "User",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "eventsOfInterest",
-            "from": {
-                "string-value": "eventsOfInterest"
-            },
-            "to": {
-                "string-value": "interestedIn"
-            },
-            "similarity-score": 0.622685,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "UserRegisterForm",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "surname",
-            "from": {
-                "string-value": "surname"
-            },
-            "to": {
-                "string-value": "lastname"
-            },
-            "similarity-score": 0.713095,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "UserRegisterForm",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "preferredTheme",
-                    "type": {
-                        "reference": "HomeFeedTheme"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 2
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "case"
-            },
-            "change-type": "rename",
-            "target-id": "unacceptable",
-            "from": {
-                "string-value": "unacceptable"
-            },
-            "to": {
-                "string-value": "terrible"
-            },
-            "similarity-score": 0.527778,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "raw-value"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": {
-                    "name": "unacceptable",
-                    "rawValue": "unacceptable"
-                }
-            },
-            "to": {
-                "element": {
-                    "name": "terrible",
-                    "rawValue": "terrible"
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Rating",
-                "target": "case"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "undefined"
-            },
-            "fallback-value": "none",
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Event",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "location",
-                    "type": {
-                        "scalar": "String"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 3
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Event",
-                "target": "property-necessity"
-            },
-            "change-type": "value-update",
-            "target-id": "maxParticipants",
-            "from": {
-                "element": "optional"
-            },
-            "to": {
-                "element": "required"
-            },
-            "necessity-value": {
-                "json-value-id": 4
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "EventMediator",
-                "target": "property-necessity"
-            },
-            "change-type": "value-update",
-            "target-id": "maxParticipants",
-            "from": {
-                "element": "optional"
-            },
-            "to": {
-                "element": "required"
-            },
-            "necessity-value": {
-                "json-value-id": 5
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeedCategory",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "eventsCount",
-            "from": {
-                "string-value": "eventsCount"
-            },
-            "to": {
-                "string-value": "eventsAmount"
-            },
-            "similarity-score": 0.908485,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeedEvent",
-                "target": "property"
-            },
-            "change-type": "rename",
-            "target-id": "subtitle",
-            "from": {
-                "string-value": "subtitle"
-            },
-            "to": {
-                "string-value": "secondaryTitle"
-            },
-            "similarity-score": 0.634643,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "HomeFeedEvent",
-                "target": "property"
-            },
-            "change-type": "property-change",
-            "target-id": "imageURL",
-            "from": {
-                "element": {
-                    "scalar": "URL"
-                }
-            },
-            "to": {
-                "element": {
-                    "scalar": "String"
-                }
-            },
-            "convert-from-to-script-id": 0,
-            "convert-to-from-script-id": 1,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "object": "Review",
-                "target": "property"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "displayReviewerName",
-                    "type": {
-                        "scalar": "Bool"
-                    }
-                }
-            },
-            "default-value": {
-                "json-value-id": 6
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "enum": "Gender",
-                "target": "case"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "undefined",
-                    "rawValue": "undefined"
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "usersOfGender",
-                "target": "self"
-            },
-            "change-type": "deletion",
-            "deleted-value": {
-                "element-id": "usersOfGender"
-            },
-            "fallback-value": "none",
-            "breaking": true,
-            "solvable": false
-        },
-        {
-            "element": {
-                "endpoint": "searchEventsWithQuery",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "handlerName": "SearchEventsHandler",
-                    "deltaIdentifier": "searchEventsWithQuery",
-                    "operation": "read",
-                    "path": "/events/search",
-                    "parameters": [
-                        {
-                            "name": "searchQuery",
-                            "type": {
-                                "scalar": "String"
-                            },
-                            "kind": "lightweight",
-                            "necessity": "required"
-                        }
-                    ],
-                    "response": {
-                        "repeated": {
-                            "reference": "Event"
                         }
                     },
-                    "errors": [
-                        {
-                            "code": 401,
-                            "message": "Unauthorized"
-                        },
-                        {
-                            "code": 403,
-                            "message": "Forbidden"
-                        },
-                        {
-                            "code": 404,
-                            "message": "Not found"
-                        },
-                        {
-                            "code": 500,
-                            "message": "Internal server error"
-                        }
-                    ]
+                    "breaking": true,
+                    "solvable": true
                 }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "reviewsOfUserWithID",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "handlerName": "ReviewsOfUserHandler",
-                    "deltaIdentifier": "reviewsOfUserWithID",
-                    "operation": "read",
-                    "path": "/reviews/posted-from",
-                    "parameters": [
-                        {
-                            "name": "userId",
-                            "type": {
-                                "scalar": "UUID"
-                            },
-                            "kind": "lightweight",
-                            "necessity": "required"
-                        }
-                    ],
-                    "response": {
-                        "repeated": {
-                            "reference": "Review"
-                        }
-                    },
-                    "errors": [
-                        {
-                            "code": 401,
-                            "message": "Unauthorized"
-                        },
-                        {
-                            "code": 403,
-                            "message": "Forbidden"
-                        },
-                        {
-                            "code": 404,
-                            "message": "Not found"
-                        },
-                        {
-                            "code": 500,
-                            "message": "Internal server error"
-                        }
-                    ]
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "statisticsOfUser",
-                "target": "self"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "handlerName": "StatisticsHandler",
-                    "deltaIdentifier": "statisticsOfUser",
-                    "operation": "read",
-                    "path": "/users/{userIdentifier}/statistics",
-                    "parameters": [
-                        {
-                            "name": "userIdentifier",
-                            "type": {
-                                "scalar": "UUID"
-                            },
-                            "kind": "path",
-                            "necessity": "required"
-                        }
-                    ],
-                    "response": {
-                        "reference": "UserStatistic"
-                    },
-                    "errors": [
-                        {
-                            "code": 401,
-                            "message": "Unauthorized"
-                        },
-                        {
-                            "code": 403,
-                            "message": "Forbidden"
-                        },
-                        {
-                            "code": 404,
-                            "message": "Not found"
-                        },
-                        {
-                            "code": 500,
-                            "message": "Internal server error"
-                        }
-                    ]
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "createCategory",
-                "target": "content-parameter"
-            },
-            "change-type": "parameter-change",
-            "parameter-target": "type",
-            "target-id": "event",
-            "from": {
-                "element": {
-                    "reference": "EventCategory"
-                }
-            },
-            "to": {
-                "element": {
-                    "reference": "EventCategoryMediator"
-                }
-            },
-            "convert-from-to-script-id": 2,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getHomeFeedForUserWithID",
-                "target": "query-parameter"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "showPreviousEvents",
-                    "type": {
-                        "scalar": "Bool"
-                    },
-                    "kind": "lightweight",
-                    "necessity": "required"
-                }
-            },
-            "default-value": {
-                "json-value-id": 7
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getParticipantsOfEventWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/events/{eventID}/participants"
-            },
-            "to": {
-                "element": "/events/{eventIdentifier}/participants"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getParticipantsOfEventWithID",
-                "target": "path-parameter"
-            },
-            "change-type": "rename",
-            "target-id": "eventID",
-            "from": {
-                "string-value": "eventID"
-            },
-            "to": {
-                "string-value": "eventIdentifier"
-            },
-            "similarity-score": 0.818095,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getEventsOfCategory",
-                "target": "http-method"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "read"
-            },
-            "to": {
-                "element": "create"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getEventsOfCategory",
-                "target": "query-parameter"
-            },
-            "change-type": "parameter-change",
-            "parameter-target": "kind",
-            "target-id": "group",
-            "from": {
-                "element": "lightweight"
-            },
-            "to": {
-                "element": "content"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "addReviewToEvent",
-                "target": "query-parameter"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "displayName",
-                    "type": {
-                        "scalar": "Bool"
-                    },
-                    "kind": "lightweight",
-                    "necessity": "optional"
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "addReviewToEvent",
-                "target": "response"
-            },
-            "change-type": "response-change",
-            "from": {
-                "element": {
-                    "reference": "Review"
-                }
-            },
-            "to": {
-                "element": {
-                    "reference": "ReviewForm"
-                }
-            },
-            "convert-to-from-script-id": 3,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "deleteEventWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/events/{id}"
-            },
-            "to": {
-                "element": "/events/{identifier}"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "deleteEventWithID",
-                "target": "path-parameter"
-            },
-            "change-type": "rename",
-            "target-id": "id",
-            "from": {
-                "string-value": "id"
-            },
-            "to": {
-                "string-value": "identifier"
-            },
-            "similarity-score": 0.786667,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getReviewsOfEventWithID",
-                "target": "query-parameter"
-            },
-            "change-type": "addition",
-            "added-value": {
-                "element": {
-                    "name": "ratingBetterThan",
-                    "type": {
-                        "reference": "Rating"
-                    },
-                    "kind": "lightweight",
-                    "necessity": "optional"
-                }
-            },
-            "default-value": "none",
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoryWithID",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/categories/{id}"
-            },
-            "to": {
-                "element": "/category"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoryWithID",
-                "target": "path-parameter"
-            },
-            "change-type": "parameter-change",
-            "parameter-target": "kind",
-            "target-id": "id",
-            "from": {
-                "element": "path"
-            },
-            "to": {
-                "element": "lightweight"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoriesOfGroup",
-                "target": "resource-path"
-            },
-            "change-type": "value-update",
-            "from": {
-                "element": "/categories/group/{groupCategory}"
-            },
-            "to": {
-                "element": "/categories/group"
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoriesOfGroup",
-                "target": "path-parameter"
-            },
-            "change-type": "rename",
-            "target-id": "groupCategory",
-            "from": {
-                "string-value": "groupCategory"
-            },
-            "to": {
-                "string-value": "group"
-            },
-            "similarity-score": 0.876923,
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "element": {
-                "endpoint": "getCategoriesOfGroup",
-                "target": "path-parameter"
-            },
-            "change-type": "parameter-change",
-            "parameter-target": "kind",
-            "target-id": "groupCategory",
-            "from": {
-                "element": "path"
-            },
-            "to": {
-                "element": "lightweight"
             },
             "breaking": true,
             "solvable": true
         }
     ],
+    "modelChanges": [
+        {
+            "type": "removal",
+            "id": "CategoryStatus",
+            "breaking": false,
+            "solvable": false
+        },
+        {
+            "type": "addition",
+            "id": "EventCategoryMediator",
+            "added": {
+                "object": {
+                    "typeName": {
+                        "defined-in": "QONECTIQV2",
+                        "rootComponent": {
+                            "name": "EventCategoryMediator"
+                        }
+                    },
+                    "properties": [
+                        {
+                            "name": "title",
+                            "type": {
+                                "scalar": "String"
+                            }
+                        },
+                        {
+                            "name": "categoryGroup",
+                            "type": {
+                                "reference": "EventCategoryGroup"
+                            }
+                        }
+                    ]
+                }
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "addition",
+            "id": "HomeFeedTheme",
+            "added": {
+                "enum": {
+                    "typeName": {
+                        "defined-in": "QONECTIQV2",
+                        "rootComponent": {
+                            "name": "HomeFeedTheme"
+                        }
+                    },
+                    "rawValueType": {
+                        "scalar": "String"
+                    },
+                    "cases": [
+                        {
+                            "name": "basic",
+                            "rawValue": "basic"
+                        },
+                        {
+                            "name": "classic",
+                            "rawValue": "classic"
+                        },
+                        {
+                            "name": "dark",
+                            "rawValue": "dark"
+                        },
+                        {
+                            "name": "midnight",
+                            "rawValue": "midnight"
+                        },
+                        {
+                            "name": "sunset",
+                            "rawValue": "sunset"
+                        }
+                    ]
+                }
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "addition",
+            "id": "UserStatistic",
+            "added": {
+                "object": {
+                    "typeName": {
+                        "defined-in": "QONECTIQV2",
+                        "rootComponent": {
+                            "name": "UserStatistic"
+                        }
+                    },
+                    "properties": [
+                        {
+                            "name": "userID",
+                            "type": {
+                                "scalar": "UUID"
+                            }
+                        },
+                        {
+                            "name": "participatingEventsCount",
+                            "type": {
+                                "scalar": "UInt"
+                            }
+                        },
+                        {
+                            "name": "createdEventsCount",
+                            "type": {
+                                "scalar": "UInt"
+                            }
+                        },
+                        {
+                            "name": "topCategory",
+                            "type": {
+                                "reference": "EventCategory"
+                            }
+                        },
+                        {
+                            "name": "registeredSince",
+                            "type": {
+                                "scalar": "Date"
+                            }
+                        },
+                        {
+                            "name": "badge",
+                            "type": {
+                                "reference": "UserBadge"
+                            }
+                        }
+                    ]
+                }
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "addition",
+            "id": "UserBadge",
+            "added": {
+                "enum": {
+                    "typeName": {
+                        "defined-in": "QONECTIQV2",
+                        "rootComponent": {
+                            "name": "UserBadge"
+                        }
+                    },
+                    "rawValueType": {
+                        "scalar": "String"
+                    },
+                    "cases": [
+                        {
+                            "name": "newbie",
+                            "rawValue": "newbie"
+                        },
+                        {
+                            "name": "explorer",
+                            "rawValue": "explorer"
+                        },
+                        {
+                            "name": "achiever",
+                            "rawValue": "achiever"
+                        },
+                        {
+                            "name": "worldSaver",
+                            "rawValue": "worldSaver"
+                        }
+                    ]
+                }
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "surname",
+                    "to": "lastname",
+                    "similarity": 0.713095,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "preferredTheme",
+                    "added": {
+                        "name": "preferredTheme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        }
+                    },
+                    "defaultValue": 0,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "eventsCount",
+                    "to": "eventsAmount",
+                    "similarity": 0.908485,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedEvent",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "subtitle",
+                    "to": "secondaryTitle",
+                    "similarity": 0.634643,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedEvent",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "imageURL",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "scalar": "URL"
+                        },
+                        "to": {
+                            "scalar": "String"
+                        },
+                        "forwardMigration": 0,
+                        "backwardMigration": 1
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventMediator",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "maxParticipants",
+                    "updated": {
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 1
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "ReviewForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "rating",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Rating"
+                        },
+                        "to": {
+                            "reference": "Rating"
+                        },
+                        "forwardMigration": 2,
+                        "backwardMigration": 3,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserLogin",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "userName",
+                    "to": "username",
+                    "similarity": 0.950000,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "ownEvents",
+                    "to": "myEvents",
+                    "similarity": 0.750000,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "ownEvents",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 4,
+                        "backwardMigration": 5,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "eventsOfInterest",
+                    "to": "interestedIn",
+                    "similarity": 0.622685,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "eventsOfInterest",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 6,
+                        "backwardMigration": 7,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "experience",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Experience"
+                        },
+                        "to": {
+                            "reference": "Experience"
+                        },
+                        "forwardMigration": 8,
+                        "backwardMigration": 9,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "participatingEvents",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 10,
+                        "backwardMigration": 11,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "reviews",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "forwardMigration": 12,
+                        "backwardMigration": 13,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "homeFeed",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "optional": {
+                                "reference": "HomeFeed"
+                            }
+                        },
+                        "to": {
+                            "optional": {
+                                "reference": "HomeFeed"
+                            }
+                        },
+                        "forwardMigration": 14,
+                        "backwardMigration": 15,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Experience",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "addition",
+                    "id": "unclassified",
+                    "added": {
+                        "name": "unclassified",
+                        "rawValue": "unclassified"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "removal",
+                    "id": "status",
+                    "fallbackValue": 2,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "group",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "to": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "forwardMigration": 16,
+                        "backwardMigration": 17,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "idChange",
+                    "from": "unacceptable",
+                    "to": "terrible",
+                    "similarity": 0.527778,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "update",
+                    "id": "unacceptable",
+                    "updated": {
+                        "type": "rawValue",
+                        "from": "unacceptable",
+                        "to": "terrible"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "removal",
+                    "id": "undefined",
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "idChange",
+                    "from": "travellinng",
+                    "to": "travel",
+                    "similarity": 0.909091,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "update",
+                    "id": "travellinng",
+                    "updated": {
+                        "type": "rawValue",
+                        "from": "travellinng",
+                        "to": "travel"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "removal",
+                    "id": "studying",
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "addition",
+                    "id": "entertainment",
+                    "added": {
+                        "name": "entertainment",
+                        "rawValue": "entertainment"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "location",
+                    "added": {
+                        "name": "location",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    "defaultValue": 3,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "category",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategory"
+                        },
+                        "to": {
+                            "reference": "EventCategory"
+                        },
+                        "forwardMigration": 18,
+                        "backwardMigration": 19
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "maxParticipants",
+                    "updated": {
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 4
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "reviews",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "forwardMigration": 20,
+                        "backwardMigration": 21,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Review",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "displayReviewerName",
+                    "added": {
+                        "name": "displayReviewerName",
+                        "type": {
+                            "scalar": "Bool"
+                        }
+                    },
+                    "defaultValue": 5,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Review",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "rating",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Rating"
+                        },
+                        "to": {
+                            "reference": "Rating"
+                        },
+                        "forwardMigration": 22,
+                        "backwardMigration": 23,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeed",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "theme",
+                    "added": {
+                        "name": "theme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        }
+                    },
+                    "defaultValue": 6,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeed",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "categories",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "HomeFeedCategory"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "HomeFeedCategory"
+                            }
+                        },
+                        "forwardMigration": 24,
+                        "backwardMigration": 25,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeed",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "events",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "HomeFeedEvent"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "HomeFeedEvent"
+                            }
+                        },
+                        "forwardMigration": 26,
+                        "backwardMigration": 27,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        }
+    ],
+    "endpointChanges": [
+        {
+            "type": "removal",
+            "id": "usersOfExperience",
+            "breaking": true,
+            "solvable": false
+        },
+        {
+            "type": "addition",
+            "id": "searchEventsWithQuery",
+            "added": {
+                "deltaIdentifier": "searchEventsWithQuery",
+                "identifiers": {
+                    "EndpointPath": "/events/search",
+                    "HandlerName": "SearchEventsHandler",
+                    "Operation": "read"
+                },
+                "communicationalPattern": "requestResponse",
+                "parameters": [
+                    {
+                        "name": "searchQuery",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "required"
+                    }
+                ],
+                "response": {
+                    "repeated": {
+                        "reference": "Event"
+                    }
+                },
+                "errors": [
+                    {
+                        "code": 401,
+                        "message": "Unauthorized"
+                    },
+                    {
+                        "code": 403,
+                        "message": "Forbidden"
+                    },
+                    {
+                        "code": 404,
+                        "message": "Not found"
+                    },
+                    {
+                        "code": 500,
+                        "message": "Internal server error"
+                    }
+                ]
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "addition",
+            "id": "reviewsOfUserWithID",
+            "added": {
+                "deltaIdentifier": "reviewsOfUserWithID",
+                "identifiers": {
+                    "EndpointPath": "/reviews/posted-from",
+                    "HandlerName": "ReviewsOfUserHandler",
+                    "Operation": "read"
+                },
+                "communicationalPattern": "requestResponse",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "required"
+                    }
+                ],
+                "response": {
+                    "repeated": {
+                        "reference": "Review"
+                    }
+                },
+                "errors": [
+                    {
+                        "code": 401,
+                        "message": "Unauthorized"
+                    },
+                    {
+                        "code": 403,
+                        "message": "Forbidden"
+                    },
+                    {
+                        "code": 404,
+                        "message": "Not found"
+                    },
+                    {
+                        "code": 500,
+                        "message": "Internal server error"
+                    }
+                ]
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "addition",
+            "id": "statisticsOfUser",
+            "added": {
+                "deltaIdentifier": "statisticsOfUser",
+                "identifiers": {
+                    "EndpointPath": "/users/{userIdentifier}/statistics",
+                    "HandlerName": "StatisticsHandler",
+                    "Operation": "read"
+                },
+                "communicationalPattern": "requestResponse",
+                "parameters": [
+                    {
+                        "name": "userIdentifier",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "kind": "path",
+                        "necessity": "required"
+                    }
+                ],
+                "response": {
+                    "reference": "UserStatistic"
+                },
+                "errors": [
+                    {
+                        "code": 401,
+                        "message": "Unauthorized"
+                    },
+                    {
+                        "code": 403,
+                        "message": "Forbidden"
+                    },
+                    {
+                        "code": 404,
+                        "message": "Not found"
+                    },
+                    {
+                        "code": 500,
+                        "message": "Internal server error"
+                    }
+                ]
+            },
+            "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "displayName",
+                    "added": {
+                        "name": "displayName",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "optional"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "response",
+                "from": {
+                    "reference": "Review"
+                },
+                "to": {
+                    "reference": "ReviewForm"
+                },
+                "backwardsMigration": 28
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getReviewsOfEventWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "ratingBetterThan",
+                    "added": {
+                        "name": "ratingBetterThan",
+                        "type": {
+                            "reference": "Rating"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "optional"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "createCategory",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "event",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategory"
+                        },
+                        "to": {
+                            "reference": "EventCategoryMediator"
+                        },
+                        "forwardMigration": 29
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "deleteEventWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/events/{id}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/events/{identifier}"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "deleteEventWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "idChange",
+                    "from": "id",
+                    "to": "identifier",
+                    "similarity": 0.786667,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getHomeFeedForUserWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/home-feed/{userID}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/home/{userID}"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getHomeFeedForUserWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "showPreviousEvents",
+                    "added": {
+                        "name": "showPreviousEvents",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "required"
+                    },
+                    "defaultValue": 7,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getEventsOfCategory",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "Operation",
+                    "updated": {
+                        "from": {
+                            "id": "Operation",
+                            "value": "read"
+                        },
+                        "to": {
+                            "id": "Operation",
+                            "value": "create"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getEventsOfCategory",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "group",
+                    "updated": {
+                        "type": "parameterType",
+                        "from": "lightweight",
+                        "to": "content"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getParticipantsOfEventWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/events/{eventID}/participants"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/events/{eventIdentifier}/participants"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getParticipantsOfEventWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "idChange",
+                    "from": "eventID",
+                    "to": "eventIdentifier",
+                    "similarity": 0.818095,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getCategoriesOfGroup",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/categories/group/{groupCategory}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/categories/group"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoriesOfGroup",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "idChange",
+                    "from": "groupCategory",
+                    "to": "group",
+                    "similarity": 0.876923,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getCategoriesOfGroup",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "groupCategory",
+                    "updated": {
+                        "type": "parameterType",
+                        "from": "path",
+                        "to": "lightweight"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getCategoryWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/categories/{id}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/category"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoryWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "id",
+                    "updated": {
+                        "type": "parameterType",
+                        "from": "path",
+                        "to": "lightweight"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        }
+    ],
     "scripts": {
+        "3": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "5": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "21": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "27": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "28": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"A2F1EE7E-D4EB-44D2-AE5F-C623D92DB00E\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"4D6CA0A5-60E5-4614-A967-711D81F3AE10\", 'reviewerID': \"12C97136-841E-45D0-963F-43430763F5EA\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
+        "10": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "18": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'id': parsedFrom.id, 'title': parsedFrom.title, 'group': parsedFrom.group})\n}",
+        "29": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
+        "12": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "13": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "15": "function convert(ignoredTo) {\n    return JSON.stringify(null)\n}",
+        "22": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
         "0": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "2": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
+        "11": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "2": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "26": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
         "1": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "3": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"67287CBE-242A-4FDB-AEC9-BE38BEF8543E\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"85132ACE-27FC-4B6A-A698-954B7F02C446\", 'reviewerID': \"2A9D5A8F-1170-4CDA-BCB0-880CF10AB156\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}"
+        "9": "function convert(ignoredTo) {\n    return JSON.stringify(\"beginner\")\n}",
+        "17": "function convert(ignoredTo) {\n    return JSON.stringify(\"marketing\")\n}",
+        "14": "function convert(ignoredFrom) {\n    return JSON.stringify(null)\n}",
+        "20": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "4": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "8": "function convert(ignoredFrom) {\n    return JSON.stringify(\"beginner\")\n}",
+        "23": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "6": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "7": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "19": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': parsedTo.id, 'title': parsedTo.title, 'group': parsedTo.group})\n}",
+        "25": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "24": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "16": "function convert(ignoredFrom) {\n    return JSON.stringify(\"marketing\")\n}"
     },
     "json-values": {
         "4": "0",
-        "2": "\"basic\"",
-        "6": "false",
+        "6": "\"basic\"",
         "3": "\"\"",
-        "5": "0",
-        "0": "\"basic\"",
+        "1": "0",
+        "2": "\"available\"",
         "7": "false",
-        "1": "\"available\""
+        "5": "false",
+        "0": "\"basic\""
     },
     "updated-json-representations": {
-        "HomeFeedEvent": "{\n\"eventID\" : \"0BC69106-C2DD-4E68-8ECF-8A3057323E59\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
-        "UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}",
-        "EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"40910717-46D8-4EBE-B91C-2E417B2AE530\",\n\"title\" : \"\"\n}",
-        "HomeFeedCategory": "{\n\"categoryID\" : \"6D11EB99-897E-4E47-ACEB-383D30809A48\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
-        "User": "{\n\"birthday\" : 663591600,\n\"email\" : \"\",\n\"gender\" : \"male\",\n\"homeFeed\" : null,\n\"id\" : \"B5D5F804-AD98-4455-9F5B-B70817E03A10\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
-        "Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"747B4286-CFF7-487D-B6C4-3E2336B2FAB4\",\n\"id\" : \"8C42E93C-65CA-4C88-BC0E-3A1CFFA04733\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"B032DF5E-F26A-4255-98C0-79E0AE47FD97\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
-        "Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"715FB98E-C60E-4442-88C5-1EFB95077E08\",\n\"title\" : \"\"\n},\n\"date\" : 663591600,\n\"duration\" : 0,\n\"id\" : \"777CB673-16FA-48BB-8AC2-FE2EE4F919FC\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"2453F08B-3E6C-40FD-820B-49C2F4EB18F3\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
-        "UserRegisterForm": "{\n\"birthday\" : 663591600,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
-        "HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"2FDC0135-2E3B-4CB4-A144-FFD3AB50A625\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"8AE3029F-A005-467B-BA94-127984279572\"\n}",
-        "EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}"
+        "QONECTIQV2.HomeFeedCategory": "{\n\"categoryID\" : \"2D07C31F-3573-4A2A-9253-8E05D137F564\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}",
+        "QONECTIQV2.ReviewForm": "{\n\"content\" : \"\",\n\"rating\" : \"outstanding\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.UserRegisterForm": "{\n\"birthday\" : 663678000,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
+        "QONECTIQV2.User": "{\n\"birthday\" : 663678000,\n\"email\" : \"\",\n\"experience\" : \"beginner\",\n\"homeFeed\" : null,\n\"id\" : \"ECF5D1B9-E02B-4E00-B3CF-BA06E39A581F\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
+        "QONECTIQV2.Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"42307717-3B37-4412-8589-9AC9918179F8\",\n\"id\" : \"28F08CE4-20A5-49E3-8E74-18752143F78D\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"784B9AA0-9C69-4C00-9C18-CA12E3637BE4\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"D39145AE-E82F-4EF2-BC00-7C07E6A5F9E7\",\n\"title\" : \"\"\n},\n\"date\" : 663678000,\n\"duration\" : 0,\n\"id\" : \"B211E48E-E084-4E23-856B-C103F717B221\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"7A0D36CF-11C0-4E0D-8E48-7417AF1A5038\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
+        "QONECTIQV2.EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}",
+        "QONECTIQV2.HomeFeedEvent": "{\n\"eventID\" : \"4C89DBB3-A737-4C9D-A996-C6746E3147EC\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"81780251-DD35-4C35-B89F-C2260351D382\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"48A17C80-908B-41C3-B858-1A30DAAA9F9B\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"E6031DB1-95CA-4EDC-ADD7-0455A2F7D5E8\"\n}"
     }
 }

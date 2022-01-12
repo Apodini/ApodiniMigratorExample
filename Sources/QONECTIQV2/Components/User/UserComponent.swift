@@ -15,7 +15,7 @@ struct UserComponent: Component {
     var userID: User.ID
     
     @Parameter(.http(.path))
-    var gender: Gender
+    var experience: Experience
     
     var content: some Component {
         Group("users") {
