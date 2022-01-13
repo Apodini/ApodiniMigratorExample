@@ -15,7 +15,7 @@ struct UserComponent: Component {
     var userID: User.ID
     
     @Parameter(.http(.path))
-    var gender: Gender
+    var experience: Experience
     
     var content: some Component {
         Group("users") {
@@ -31,9 +31,9 @@ struct UserComponent: Component {
                 .identified(by: "getAllUsers")
             
             
-            Group("gender", $gender) {
-                GenderUsersHandler(gender: $gender)
-                    .identified(by: "usersOfGender")
+            Group("experience", $experience) {
+                ExperienceUsersHandler(experience: $experience)
+                    .identified(by: "usersOfExperience")
             }
         }
         
@@ -98,10 +98,10 @@ struct UserLoginHandler: Handler {
     }
 }
 
-// MARK: - GenderUsersHandler
-struct GenderUsersHandler: Handler {
+// MARK: - ExperienceUsersHandler
+struct ExperienceUsersHandler: Handler {
     @Binding
-    var gender: Gender
+    var experience: Experience
     
     func handle() throws -> [User] {
         [try .instance(or: notFound)]

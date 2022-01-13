@@ -8,10 +8,9 @@
 
 import Foundation
 
-enum Gender: String, ApodiniContent, CustomStringConvertible, LosslessStringConvertible {
-    case male
-    case female
-    case undefined
+enum Experience: String, ApodiniContent, CustomStringConvertible, LosslessStringConvertible {
+    case beginner
+    case expert
     
     var description: String {
         rawValue

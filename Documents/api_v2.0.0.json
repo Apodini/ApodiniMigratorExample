@@ -1,23 +1,34 @@
 {
-    "id": "F773D044-3517-49C5-8B6B-97DDC094EF84",
-    "info": {
-        "serverPath": "http://0.0.0.0:8080",
-        "version": "qonectiq_2.0.0",
-        "encoderConfiguration": {
-            "dateEncodingStrategy": "deferredToDate",
-            "dataEncodingStrategy": "base64"
+    "id": "B1DE0BCB-C9BE-433B-8722-5FCAC5E17EFD",
+    "version": "2.0.0",
+    "service": {
+        "version": "v_2.0.0",
+        "http": {
+            "hostname": "localhost",
+            "port": 80
         },
-        "decoderConfiguration": {
-            "dateDecodingStrategy": "deferredToDate",
-            "dataDecodingStrategy": "base64"
+        "exporters": {
+            "rest": {
+                "encoderConfiguration": {
+                    "dateEncodingStrategy": "deferredToDate",
+                    "dataEncodingStrategy": "base64"
+                },
+                "decoderConfiguration": {
+                    "dateDecodingStrategy": "deferredToDate",
+                    "dataDecodingStrategy": "base64"
+                }
+            }
         }
     },
     "endpoints": [
         {
-            "handlerName": "GetEventHandler",
             "deltaIdentifier": "getEventWithID",
-            "operation": "read",
-            "path": "/qonectiq2/events/{id}",
+            "identifiers": {
+                "EndpointPath": "/events/{id}",
+                "HandlerName": "GetEventHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "id",
@@ -51,10 +62,13 @@
             ]
         },
         {
-            "handlerName": "DeleteEventHandler",
             "deltaIdentifier": "deleteEventWithID",
-            "operation": "delete",
-            "path": "/qonectiq2/events/{identifier}",
+            "identifiers": {
+                "EndpointPath": "/events/{identifier}",
+                "HandlerName": "DeleteEventHandler",
+                "Operation": "delete"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "identifier",
@@ -88,10 +102,13 @@
             ]
         },
         {
-            "handlerName": "UpdateEventHandler",
             "deltaIdentifier": "updateEventWithID",
-            "operation": "update",
-            "path": "/qonectiq2/events/{eventID}",
+            "identifiers": {
+                "EndpointPath": "/events/{eventID}",
+                "HandlerName": "UpdateEventHandler",
+                "Operation": "update"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "eventID",
@@ -133,10 +150,13 @@
             ]
         },
         {
-            "handlerName": "GetParticipantsOfEventHandler",
             "deltaIdentifier": "getParticipantsOfEventWithID",
-            "operation": "read",
-            "path": "/qonectiq2/events/{eventIdentifier}/participants",
+            "identifiers": {
+                "EndpointPath": "/events/{eventIdentifier}/participants",
+                "HandlerName": "GetParticipantsOfEventHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "eventIdentifier",
@@ -172,10 +192,13 @@
             ]
         },
         {
-            "handlerName": "SearchEventsHandler",
             "deltaIdentifier": "searchEventsWithQuery",
-            "operation": "read",
-            "path": "/qonectiq2/events/search",
+            "identifiers": {
+                "EndpointPath": "/events/search",
+                "HandlerName": "SearchEventsHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "searchQuery",
@@ -211,10 +234,13 @@
             ]
         },
         {
-            "handlerName": "GetEventsHandler",
             "deltaIdentifier": "getAllEvents",
-            "operation": "read",
-            "path": "/qonectiq2/events",
+            "identifiers": {
+                "EndpointPath": "/events",
+                "HandlerName": "GetEventsHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [],
             "response": {
                 "repeated": {
@@ -241,10 +267,13 @@
             ]
         },
         {
-            "handlerName": "CreateEventHandler",
             "deltaIdentifier": "createEvent",
-            "operation": "create",
-            "path": "/qonectiq2/events",
+            "identifiers": {
+                "EndpointPath": "/events",
+                "HandlerName": "CreateEventHandler",
+                "Operation": "create"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "event",
@@ -278,10 +307,13 @@
             ]
         },
         {
-            "handlerName": "CategoryEventsHandler",
             "deltaIdentifier": "getEventsOfCategory",
-            "operation": "create",
-            "path": "/qonectiq2/events/category",
+            "identifiers": {
+                "EndpointPath": "/events/category",
+                "HandlerName": "CategoryEventsHandler",
+                "Operation": "create"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "group",
@@ -317,10 +349,13 @@
             ]
         },
         {
-            "handlerName": "CreateCategoryHandler",
             "deltaIdentifier": "createCategory",
-            "operation": "create",
-            "path": "/qonectiq2/categories",
+            "identifiers": {
+                "EndpointPath": "/categories",
+                "HandlerName": "CreateCategoryHandler",
+                "Operation": "create"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "event",
@@ -354,10 +389,13 @@
             ]
         },
         {
-            "handlerName": "GetCategoriesHandler",
             "deltaIdentifier": "getAllCategories",
-            "operation": "read",
-            "path": "/qonectiq2/categories",
+            "identifiers": {
+                "EndpointPath": "/categories",
+                "HandlerName": "GetCategoriesHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [],
             "response": {
                 "repeated": {
@@ -384,10 +422,13 @@
             ]
         },
         {
-            "handlerName": "GroupCategoriesHandler",
             "deltaIdentifier": "getCategoriesOfGroup",
-            "operation": "read",
-            "path": "/qonectiq2/categories/group",
+            "identifiers": {
+                "EndpointPath": "/categories/group",
+                "HandlerName": "GroupCategoriesHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "group",
@@ -423,10 +464,13 @@
             ]
         },
         {
-            "handlerName": "GetCategoryHandler",
             "deltaIdentifier": "getCategoryWithID",
-            "operation": "read",
-            "path": "/qonectiq2/category",
+            "identifiers": {
+                "EndpointPath": "/category",
+                "HandlerName": "GetCategoryHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "id",
@@ -460,10 +504,13 @@
             ]
         },
         {
-            "handlerName": "HomeFeedHandler",
             "deltaIdentifier": "getHomeFeedForUserWithID",
-            "operation": "read",
-            "path": "/qonectiq2/home/{userID}",
+            "identifiers": {
+                "EndpointPath": "/home/{userID}",
+                "HandlerName": "HomeFeedHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userID",
@@ -505,10 +552,13 @@
             ]
         },
         {
-            "handlerName": "ReviewsHandler",
             "deltaIdentifier": "getReviewsOfEventWithID",
-            "operation": "read",
-            "path": "/qonectiq2/reviews",
+            "identifiers": {
+                "EndpointPath": "/reviews",
+                "HandlerName": "ReviewsHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "eventID",
@@ -552,10 +602,13 @@
             ]
         },
         {
-            "handlerName": "AddReviewHandler",
             "deltaIdentifier": "addReviewToEvent",
-            "operation": "create",
-            "path": "/qonectiq2/reviews",
+            "identifiers": {
+                "EndpointPath": "/reviews",
+                "HandlerName": "AddReviewHandler",
+                "Operation": "create"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "eventID",
@@ -613,10 +666,13 @@
             ]
         },
         {
-            "handlerName": "ReviewsOfUserHandler",
             "deltaIdentifier": "reviewsOfUserWithID",
-            "operation": "read",
-            "path": "/qonectiq2/reviews/posted-from",
+            "identifiers": {
+                "EndpointPath": "/reviews/posted-from",
+                "HandlerName": "ReviewsOfUserHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userId",
@@ -652,10 +708,13 @@
             ]
         },
         {
-            "handlerName": "GetUserHandler",
             "deltaIdentifier": "getUserWithID",
-            "operation": "read",
-            "path": "/qonectiq2/users/{userID}",
+            "identifiers": {
+                "EndpointPath": "/users/{userID}",
+                "HandlerName": "GetUserHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userID",
@@ -689,10 +748,13 @@
             ]
         },
         {
-            "handlerName": "DeleteUserHandler",
             "deltaIdentifier": "deleteUserWithID",
-            "operation": "delete",
-            "path": "/qonectiq2/users/{userID}",
+            "identifiers": {
+                "EndpointPath": "/users/{userID}",
+                "HandlerName": "DeleteUserHandler",
+                "Operation": "delete"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userID",
@@ -726,10 +788,13 @@
             ]
         },
         {
-            "handlerName": "StatisticsHandler",
             "deltaIdentifier": "statisticsOfUser",
-            "operation": "read",
-            "path": "/qonectiq2/users/{userIdentifier}/statistics",
+            "identifiers": {
+                "EndpointPath": "/users/{userIdentifier}/statistics",
+                "HandlerName": "StatisticsHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userIdentifier",
@@ -763,10 +828,13 @@
             ]
         },
         {
-            "handlerName": "GetAllUsersHandler",
             "deltaIdentifier": "getAllUsers",
-            "operation": "read",
-            "path": "/qonectiq2/users",
+            "identifiers": {
+                "EndpointPath": "/users",
+                "HandlerName": "GetAllUsersHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [],
             "response": {
                 "repeated": {
@@ -793,10 +861,13 @@
             ]
         },
         {
-            "handlerName": "UserLoginHandler",
             "deltaIdentifier": "login",
-            "operation": "read",
-            "path": "/qonectiq2/login",
+            "identifiers": {
+                "EndpointPath": "/login",
+                "HandlerName": "UserLoginHandler",
+                "Operation": "read"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "login",
@@ -830,10 +901,13 @@
             ]
         },
         {
-            "handlerName": "UserRegisterFormHandler",
             "deltaIdentifier": "register",
-            "operation": "create",
-            "path": "/qonectiq2/register",
+            "identifiers": {
+                "EndpointPath": "/register",
+                "HandlerName": "UserRegisterFormHandler",
+                "Operation": "create"
+            },
+            "communicationalPattern": "requestResponse",
             "parameters": [
                 {
                     "name": "userForm",
@@ -867,12 +941,130 @@
             ]
         }
     ],
-    "components": {
+    "types": {
+        "Rating": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Rating"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "outstanding",
+                        "rawValue": "outstanding"
+                    },
+                    {
+                        "name": "exceedsExpectation",
+                        "rawValue": "exceedsExpectation"
+                    },
+                    {
+                        "name": "meetsExpectation",
+                        "rawValue": "meetsExpectation"
+                    },
+                    {
+                        "name": "needsImprovement",
+                        "rawValue": "needsImprovement"
+                    },
+                    {
+                        "name": "terrible",
+                        "rawValue": "terrible"
+                    }
+                ]
+            }
+        },
+        "UserRegisterForm": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserRegisterForm"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "birthday",
+                        "type": {
+                            "scalar": "Date"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "subscribedToNewsLetter",
+                        "type": {
+                            "scalar": "Bool"
+                        }
+                    },
+                    {
+                        "name": "preferredTheme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        }
+                    }
+                ]
+            }
+        },
+        "Experience": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Experience"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "beginner",
+                        "rawValue": "beginner"
+                    },
+                    {
+                        "name": "expert",
+                        "rawValue": "expert"
+                    },
+                    {
+                        "name": "unclassified",
+                        "rawValue": "unclassified"
+                    }
+                ]
+            }
+        },
         "Event": {
             "object": {
                 "typeName": {
-                    "name": "Event",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Event"
+                    }
                 },
                 "properties": [
                     {
@@ -954,33 +1146,31 @@
                 ]
             }
         },
-        "EventMediator": {
+        "EventCategory": {
             "object": {
                 "typeName": {
-                    "name": "EventMediator",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "EventCategory"
+                    }
                 },
                 "properties": [
                     {
-                        "name": "date",
+                        "name": "id",
                         "type": {
-                            "optional": {
-                                "scalar": "Date"
-                            }
+                            "scalar": "UUID"
                         }
                     },
                     {
-                        "name": "duration",
+                        "name": "title",
                         "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
+                            "scalar": "String"
                         }
                     },
                     {
-                        "name": "maxParticipants",
+                        "name": "group",
                         "type": {
-                            "scalar": "UInt"
+                            "reference": "EventCategoryGroup"
                         }
                     }
                 ]
@@ -989,8 +1179,10 @@
         "EventCategoryGroup": {
             "enum": {
                 "typeName": {
-                    "name": "EventCategoryGroup",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "EventCategoryGroup"
+                    }
                 },
                 "rawValueType": {
                     "scalar": "String"
@@ -1034,8 +1226,10 @@
         "HomeFeedEvent": {
             "object": {
                 "typeName": {
-                    "name": "HomeFeedEvent",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedEvent"
+                    }
                 },
                 "properties": [
                     {
@@ -1071,11 +1265,252 @@
                 ]
             }
         },
+        "EventCategoryMediator": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "EventCategoryMediator"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "categoryGroup",
+                        "type": {
+                            "reference": "EventCategoryGroup"
+                        }
+                    }
+                ]
+            }
+        },
+        "ReviewForm": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "ReviewForm"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "summary",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "rating",
+                        "type": {
+                            "reference": "Rating"
+                        }
+                    }
+                ]
+            }
+        },
+        "EventMediator": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "EventMediator"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "date",
+                        "type": {
+                            "optional": {
+                                "scalar": "Date"
+                            }
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    }
+                ]
+            }
+        },
+        "User": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "User"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "surname",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "birthday",
+                        "type": {
+                            "scalar": "Date"
+                        }
+                    },
+                    {
+                        "name": "subscribedToNewsLetter",
+                        "type": {
+                            "scalar": "Bool"
+                        }
+                    },
+                    {
+                        "name": "experience",
+                        "type": {
+                            "reference": "Experience"
+                        }
+                    },
+                    {
+                        "name": "reviews",
+                        "type": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        }
+                    },
+                    {
+                        "name": "myEvents",
+                        "type": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        }
+                    },
+                    {
+                        "name": "participatingEvents",
+                        "type": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interestedIn",
+                        "type": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        }
+                    },
+                    {
+                        "name": "homeFeed",
+                        "type": {
+                            "optional": {
+                                "reference": "HomeFeed"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "Empty": {
+            "object": {
+                "typeName": {
+                    "defined-in": "Apodini",
+                    "rootComponent": {
+                        "name": "Empty"
+                    }
+                }
+            }
+        },
+        "HomeFeedTheme": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedTheme"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "basic",
+                        "rawValue": "basic"
+                    },
+                    {
+                        "name": "classic",
+                        "rawValue": "classic"
+                    },
+                    {
+                        "name": "dark",
+                        "rawValue": "dark"
+                    },
+                    {
+                        "name": "midnight",
+                        "rawValue": "midnight"
+                    },
+                    {
+                        "name": "sunset",
+                        "rawValue": "sunset"
+                    }
+                ]
+            }
+        },
         "HomeFeed": {
             "object": {
                 "typeName": {
-                    "name": "HomeFeed",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeed"
+                    }
                 },
                 "properties": [
                     {
@@ -1133,11 +1568,116 @@
                 ]
             }
         },
+        "UserBadge": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserBadge"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "newbie",
+                        "rawValue": "newbie"
+                    },
+                    {
+                        "name": "explorer",
+                        "rawValue": "explorer"
+                    },
+                    {
+                        "name": "achiever",
+                        "rawValue": "achiever"
+                    },
+                    {
+                        "name": "worldSaver",
+                        "rawValue": "worldSaver"
+                    }
+                ]
+            }
+        },
+        "UserLogin": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserLogin"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "username",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "type": {
+                            "scalar": "String"
+                        }
+                    }
+                ]
+            }
+        },
+        "UserStatistic": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserStatistic"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "userID",
+                        "type": {
+                            "scalar": "UUID"
+                        }
+                    },
+                    {
+                        "name": "participatingEventsCount",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    },
+                    {
+                        "name": "createdEventsCount",
+                        "type": {
+                            "scalar": "UInt"
+                        }
+                    },
+                    {
+                        "name": "topCategory",
+                        "type": {
+                            "reference": "EventCategory"
+                        }
+                    },
+                    {
+                        "name": "registeredSince",
+                        "type": {
+                            "scalar": "Date"
+                        }
+                    },
+                    {
+                        "name": "badge",
+                        "type": {
+                            "reference": "UserBadge"
+                        }
+                    }
+                ]
+            }
+        },
         "Review": {
             "object": {
                 "typeName": {
-                    "name": "Review",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Review"
+                    }
                 },
                 "properties": [
                     {
@@ -1191,61 +1731,13 @@
                 ]
             }
         },
-        "EventCategoryMediator": {
-            "object": {
-                "typeName": {
-                    "name": "EventCategoryMediator",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "categoryGroup",
-                        "type": {
-                            "reference": "EventCategoryGroup"
-                        }
-                    }
-                ]
-            }
-        },
-        "EventCategory": {
-            "object": {
-                "typeName": {
-                    "name": "EventCategory",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "group",
-                        "type": {
-                            "reference": "EventCategoryGroup"
-                        }
-                    }
-                ]
-            }
-        },
         "HomeFeedCategory": {
             "object": {
                 "typeName": {
-                    "name": "HomeFeedCategory",
-                    "defined-in": "QONECTIQV2"
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedCategory"
+                    }
                 },
                 "properties": [
                     {
@@ -1271,386 +1763,6 @@
                         "type": {
                             "scalar": "UInt"
                         }
-                    }
-                ]
-            }
-        },
-        "ReviewForm": {
-            "object": {
-                "typeName": {
-                    "name": "ReviewForm",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "content",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "rating",
-                        "type": {
-                            "reference": "Rating"
-                        }
-                    }
-                ]
-            }
-        },
-        "UserStatistic": {
-            "object": {
-                "typeName": {
-                    "name": "UserStatistic",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "userID",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "participatingEventsCount",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    },
-                    {
-                        "name": "createdEventsCount",
-                        "type": {
-                            "scalar": "UInt"
-                        }
-                    },
-                    {
-                        "name": "topCategory",
-                        "type": {
-                            "reference": "EventCategory"
-                        }
-                    },
-                    {
-                        "name": "registeredSince",
-                        "type": {
-                            "scalar": "Date"
-                        }
-                    },
-                    {
-                        "name": "badge",
-                        "type": {
-                            "reference": "UserBadge"
-                        }
-                    }
-                ]
-            }
-        },
-        "UserRegisterForm": {
-            "object": {
-                "typeName": {
-                    "name": "UserRegisterForm",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "name",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "lastname",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "birthday",
-                        "type": {
-                            "scalar": "Date"
-                        }
-                    },
-                    {
-                        "name": "email",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "subscribedToNewsLetter",
-                        "type": {
-                            "scalar": "Bool"
-                        }
-                    },
-                    {
-                        "name": "preferredTheme",
-                        "type": {
-                            "reference": "HomeFeedTheme"
-                        }
-                    }
-                ]
-            }
-        },
-        "Empty": {
-            "object": {
-                "typeName": {
-                    "name": "Empty",
-                    "defined-in": "Apodini"
-                }
-            }
-        },
-        "User": {
-            "object": {
-                "typeName": {
-                    "name": "User",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        }
-                    },
-                    {
-                        "name": "name",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "surname",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "email",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "birthday",
-                        "type": {
-                            "scalar": "Date"
-                        }
-                    },
-                    {
-                        "name": "subscribedToNewsLetter",
-                        "type": {
-                            "scalar": "Bool"
-                        }
-                    },
-                    {
-                        "name": "gender",
-                        "type": {
-                            "reference": "Gender"
-                        }
-                    },
-                    {
-                        "name": "reviews",
-                        "type": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        }
-                    },
-                    {
-                        "name": "myEvents",
-                        "type": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        }
-                    },
-                    {
-                        "name": "participatingEvents",
-                        "type": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        }
-                    },
-                    {
-                        "name": "interestedIn",
-                        "type": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        }
-                    },
-                    {
-                        "name": "homeFeed",
-                        "type": {
-                            "optional": {
-                                "reference": "HomeFeed"
-                            }
-                        }
-                    }
-                ]
-            }
-        },
-        "Gender": {
-            "enum": {
-                "typeName": {
-                    "name": "Gender",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "male",
-                        "rawValue": "male"
-                    },
-                    {
-                        "name": "female",
-                        "rawValue": "female"
-                    },
-                    {
-                        "name": "undefined",
-                        "rawValue": "undefined"
-                    }
-                ]
-            }
-        },
-        "UserLogin": {
-            "object": {
-                "typeName": {
-                    "name": "UserLogin",
-                    "defined-in": "QONECTIQV2"
-                },
-                "properties": [
-                    {
-                        "name": "username",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        }
-                    }
-                ]
-            }
-        },
-        "Rating": {
-            "enum": {
-                "typeName": {
-                    "name": "Rating",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "outstanding",
-                        "rawValue": "outstanding"
-                    },
-                    {
-                        "name": "exceedsExpectation",
-                        "rawValue": "exceedsExpectation"
-                    },
-                    {
-                        "name": "meetsExpectation",
-                        "rawValue": "meetsExpectation"
-                    },
-                    {
-                        "name": "needsImprovement",
-                        "rawValue": "needsImprovement"
-                    },
-                    {
-                        "name": "terrible",
-                        "rawValue": "terrible"
-                    }
-                ]
-            }
-        },
-        "UserBadge": {
-            "enum": {
-                "typeName": {
-                    "name": "UserBadge",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "newbie",
-                        "rawValue": "newbie"
-                    },
-                    {
-                        "name": "explorer",
-                        "rawValue": "explorer"
-                    },
-                    {
-                        "name": "achiever",
-                        "rawValue": "achiever"
-                    },
-                    {
-                        "name": "worldSaver",
-                        "rawValue": "worldSaver"
-                    }
-                ]
-            }
-        },
-        "HomeFeedTheme": {
-            "enum": {
-                "typeName": {
-                    "name": "HomeFeedTheme",
-                    "defined-in": "QONECTIQV2"
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "basic",
-                        "rawValue": "basic"
-                    },
-                    {
-                        "name": "classic",
-                        "rawValue": "classic"
-                    },
-                    {
-                        "name": "dark",
-                        "rawValue": "dark"
-                    },
-                    {
-                        "name": "midnight",
-                        "rawValue": "midnight"
-                    },
-                    {
-                        "name": "sunset",
-                        "rawValue": "sunset"
                     }
                 ]
             }

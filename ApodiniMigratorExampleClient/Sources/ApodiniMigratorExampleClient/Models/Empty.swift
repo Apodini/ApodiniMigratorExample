@@ -8,15 +8,8 @@
 
 import Foundation
 
-enum Gender: String, ApodiniContent, CustomStringConvertible, LosslessStringConvertible {
-    case male
-    case female
-    
-    var description: String {
-        rawValue
-    }
-    
-    init?(_ description: String) {
-        self.init(rawValue: description)
-    }
+// MARK: - Model
+public struct Empty: Codable {
+    // MARK: - Initializer
+    public init() {}
 }

@@ -10,6 +10,7 @@
 
 import PackageDescription
 
+
 private let dependencies: [Target.Dependency] = [
     .product(name: "Apodini", package: "Apodini"),
     .product(name: "ApodiniREST", package: "Apodini"),
@@ -20,10 +21,10 @@ private let dependencies: [Target.Dependency] = [
 let package = Package(
     name: "ApodiniMigratorExample",
     platforms: [
-        .macOS(.v12)
+        .macOS(.v11)
     ],
     dependencies: [
-        .package(url: "https://github.com/Apodini/Apodini.git", .revision("5fd144820e7f5c96167e7dccd82164a387634586"))
+        .package(url: "https://github.com/Apodini/Apodini.git", .upToNextMinor(from: "0.7.1"))
     ],
     targets: [
         .executableTarget(
