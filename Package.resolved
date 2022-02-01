@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
           "branch": "feature/apodini-migration-0.3.0",
-          "revision": "7889ec18ad6b405d155fea45a7de998ee11724a4",
+          "revision": "f21e5c670945e8d761fab0bce54a6c229df604a1",
           "version": null
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
           "branch": "feature/grpc-migrator",
-          "revision": "980e82809b61409926e5e71b3e6ca4cfdae70267",
+          "revision": "63062cb7e19ae37aa778675cf9fefb97d507b9f5",
           "version": null
         }
       },
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniTypeInformation.git",
         "state": {
           "branch": null,
-          "revision": "ba1d5e86f1d8fd89637d16a4b24740b6ad8cef81",
-          "version": "0.3.1"
+          "revision": "7f089211eb7a7f060b3f570bae9ea03fd05da073",
+          "version": "0.3.2"
         }
       },
       {
@@ -132,8 +132,8 @@
         "repositoryURL": "https://github.com/Apodini/MetadataSystem.git",
         "state": {
           "branch": null,
-          "revision": "7f0df17075a455dcf8b88b234dfaa295b0df7f27",
-          "version": "0.1.2"
+          "revision": "30b8886934e49d64130868ac0b89219c35fc5447",
+          "version": "0.1.3"
         }
       },
       {
