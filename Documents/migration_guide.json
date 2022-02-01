@@ -1,6 +1,6 @@
 {
     "summary": "A summary of what changed between versions",
-    "document-id": "5CC3A85A-2083-4E33-8D49-E38DC1EDF76D",
+    "document-id": "81ACD483-5D01-4BD9-B6D2-E64969488445",
     "version": "2.0.0",
     "from": "v_1.0.0",
     "to": "v_2.0.0",
@@ -42,8 +42,9 @@
                             },
                             "decoderConfiguration": {
                                 "dateDecodingStrategy": "deferredToDate",
-                                "dataDecodingStrategy": "base64"
-                            }
+                                "dataDecodingStrategy": "deferredToData"
+                            },
+                            "caseInsensitiveRouting": false
                         },
                         "to": {
                             "type": "rest",
@@ -53,8 +54,40 @@
                             },
                             "decoderConfiguration": {
                                 "dateDecodingStrategy": "deferredToDate",
-                                "dataDecodingStrategy": "base64"
-                            }
+                                "dataDecodingStrategy": "deferredToData"
+                            },
+                            "caseInsensitiveRouting": false
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "SERVICE_INFO_ID",
+            "updated": {
+                "type": "exporter",
+                "exporter": {
+                    "type": "update",
+                    "id": "grpc",
+                    "updated": {
+                        "from": {
+                            "type": "grpc",
+                            "packageName": "QONECTIQ",
+                            "serviceName": "QONECTIQ",
+                            "pathPrefix": "__grpc",
+                            "reflectionEnabled": true
+                        },
+                        "to": {
+                            "type": "grpc",
+                            "packageName": "QONECTIQ2",
+                            "serviceName": "QONECTIQ",
+                            "pathPrefix": "__grpc",
+                            "reflectionEnabled": true
                         }
                     },
                     "breaking": true,
@@ -74,38 +107,51 @@
         },
         {
             "type": "addition",
-            "id": "HomeFeedTheme",
+            "id": "UserStatistic",
             "added": {
-                "enum": {
+                "object": {
                     "typeName": {
                         "defined-in": "QONECTIQV2",
                         "rootComponent": {
-                            "name": "HomeFeedTheme"
+                            "name": "UserStatistic"
                         }
                     },
-                    "rawValueType": {
-                        "scalar": "String"
-                    },
-                    "cases": [
+                    "properties": [
                         {
-                            "name": "basic",
-                            "rawValue": "basic"
+                            "name": "userID",
+                            "type": {
+                                "scalar": "UUID"
+                            }
                         },
                         {
-                            "name": "classic",
-                            "rawValue": "classic"
+                            "name": "participatingEventsCount",
+                            "type": {
+                                "scalar": "UInt"
+                            }
                         },
                         {
-                            "name": "dark",
-                            "rawValue": "dark"
+                            "name": "createdEventsCount",
+                            "type": {
+                                "scalar": "UInt"
+                            }
                         },
                         {
-                            "name": "midnight",
-                            "rawValue": "midnight"
+                            "name": "topCategory",
+                            "type": {
+                                "reference": "EventCategory"
+                            }
                         },
                         {
-                            "name": "sunset",
-                            "rawValue": "sunset"
+                            "name": "registeredSince",
+                            "type": {
+                                "scalar": "Date"
+                            }
+                        },
+                        {
+                            "name": "badge",
+                            "type": {
+                                "reference": "UserBadge"
+                            }
                         }
                     ]
                 }
@@ -182,137 +228,44 @@
         },
         {
             "type": "addition",
-            "id": "UserStatistic",
+            "id": "HomeFeedTheme",
             "added": {
-                "object": {
+                "enum": {
                     "typeName": {
                         "defined-in": "QONECTIQV2",
                         "rootComponent": {
-                            "name": "UserStatistic"
+                            "name": "HomeFeedTheme"
                         }
                     },
-                    "properties": [
+                    "rawValueType": {
+                        "scalar": "String"
+                    },
+                    "cases": [
                         {
-                            "name": "userID",
-                            "type": {
-                                "scalar": "UUID"
-                            }
+                            "name": "basic",
+                            "rawValue": "basic"
                         },
                         {
-                            "name": "participatingEventsCount",
-                            "type": {
-                                "scalar": "UInt"
-                            }
+                            "name": "classic",
+                            "rawValue": "classic"
                         },
                         {
-                            "name": "createdEventsCount",
-                            "type": {
-                                "scalar": "UInt"
-                            }
+                            "name": "dark",
+                            "rawValue": "dark"
                         },
                         {
-                            "name": "topCategory",
-                            "type": {
-                                "reference": "EventCategory"
-                            }
+                            "name": "midnight",
+                            "rawValue": "midnight"
                         },
                         {
-                            "name": "registeredSince",
-                            "type": {
-                                "scalar": "Date"
-                            }
-                        },
-                        {
-                            "name": "badge",
-                            "type": {
-                                "reference": "UserBadge"
-                            }
+                            "name": "sunset",
+                            "rawValue": "sunset"
                         }
                     ]
                 }
             },
             "breaking": false,
             "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "HomeFeedCategory",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "eventsCount",
-                    "to": "eventsAmount",
-                    "similarity": 0.908485,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventMediator",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "maxParticipants",
-                    "updated": {
-                        "type": "necessity",
-                        "from": "optional",
-                        "to": "required",
-                        "necessityMigration": 0
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "idChange",
-                    "from": "unacceptable",
-                    "to": "terrible",
-                    "similarity": 0.527778,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "update",
-                    "id": "unacceptable",
-                    "updated": {
-                        "type": "rawValue",
-                        "from": "unacceptable",
-                        "to": "terrible"
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "removal",
-                    "id": "undefined",
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
         },
         {
             "type": "update",
@@ -341,69 +294,6 @@
         },
         {
             "type": "update",
-            "id": "EventCategoryGroup",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "idChange",
-                    "from": "travellinng",
-                    "to": "travel",
-                    "similarity": 0.909091,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventCategoryGroup",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "update",
-                    "id": "travellinng",
-                    "updated": {
-                        "type": "rawValue",
-                        "from": "travellinng",
-                        "to": "travel"
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventCategoryGroup",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "removal",
-                    "id": "studying",
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventCategoryGroup",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "addition",
-                    "id": "entertainment",
-                    "added": {
-                        "name": "entertainment",
-                        "rawValue": "entertainment"
-                    },
-                    "breaking": false,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
             "id": "HomeFeed",
             "updated": {
                 "type": "property",
@@ -416,7 +306,7 @@
                             "reference": "HomeFeedTheme"
                         }
                     },
-                    "defaultValue": 1,
+                    "defaultValue": 0,
                     "breaking": true,
                     "solvable": true
                 }
@@ -482,73 +372,14 @@
         },
         {
             "type": "update",
-            "id": "EventCategory",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "removal",
-                    "id": "status",
-                    "fallbackValue": 2,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventCategory",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "group",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "EventCategoryGroup"
-                        },
-                        "to": {
-                            "reference": "EventCategoryGroup"
-                        },
-                        "forwardMigration": 6,
-                        "backwardMigration": 7,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "UserRegisterForm",
+            "id": "UserLogin",
             "updated": {
                 "type": "property",
                 "property": {
                     "type": "idChange",
-                    "from": "surname",
-                    "to": "lastname",
-                    "similarity": 0.713095,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "UserRegisterForm",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "addition",
-                    "id": "preferredTheme",
-                    "added": {
-                        "name": "preferredTheme",
-                        "type": {
-                            "reference": "HomeFeedTheme"
-                        }
-                    },
-                    "defaultValue": 3,
+                    "from": "userName",
+                    "to": "username",
+                    "similarity": 0.950000,
                     "breaking": true,
                     "solvable": true
                 }
@@ -568,7 +399,50 @@
                             "scalar": "String"
                         }
                     },
-                    "defaultValue": 4,
+                    "defaultValue": 1,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "maxParticipants",
+                    "updated": {
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 2
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "category",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategory"
+                        },
+                        "to": {
+                            "reference": "EventCategory"
+                        },
+                        "forwardMigration": 6,
+                        "backwardMigration": 7
+                    },
                     "breaking": true,
                     "solvable": true
                 }
@@ -605,66 +479,6 @@
         },
         {
             "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "maxParticipants",
-                    "updated": {
-                        "type": "necessity",
-                        "from": "optional",
-                        "to": "required",
-                        "necessityMigration": 5
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "category",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "EventCategory"
-                        },
-                        "to": {
-                            "reference": "EventCategory"
-                        },
-                        "forwardMigration": 10,
-                        "backwardMigration": 11
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Experience",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "addition",
-                    "id": "unclassified",
-                    "added": {
-                        "name": "unclassified",
-                        "rawValue": "unclassified"
-                    },
-                    "breaking": false,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
             "id": "HomeFeedEvent",
             "updated": {
                 "type": "property",
@@ -694,9 +508,161 @@
                         "to": {
                             "scalar": "String"
                         },
-                        "forwardMigration": 12,
-                        "backwardMigration": 13
+                        "forwardMigration": 10,
+                        "backwardMigration": 11
                     },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Experience",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "addition",
+                    "id": "unclassified",
+                    "added": {
+                        "name": "unclassified",
+                        "rawValue": "unclassified"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "eventsCount",
+                    "to": "eventsAmount",
+                    "similarity": 0.908485,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "removal",
+                    "id": "status",
+                    "fallbackValue": 3,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "group",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "to": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "forwardMigration": 12,
+                        "backwardMigration": 13,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "idChange",
+                    "from": "unacceptable",
+                    "to": "terrible",
+                    "similarity": 0.527778,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "update",
+                    "id": "unacceptable",
+                    "updated": {
+                        "type": "rawValue",
+                        "from": "unacceptable",
+                        "to": "terrible"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "removal",
+                    "id": "undefined",
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "surname",
+                    "to": "lastname",
+                    "similarity": 0.713095,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "preferredTheme",
+                    "added": {
+                        "name": "preferredTheme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        }
+                    },
+                    "defaultValue": 4,
                     "breaking": true,
                     "solvable": true
                 }
@@ -797,17 +763,17 @@
                 "type": "property",
                 "property": {
                     "type": "update",
-                    "id": "homeFeed",
+                    "id": "reviews",
                     "updated": {
                         "type": "type",
                         "from": {
-                            "optional": {
-                                "reference": "HomeFeed"
+                            "repeated": {
+                                "reference": "Review"
                             }
                         },
                         "to": {
-                            "optional": {
-                                "reference": "HomeFeed"
+                            "repeated": {
+                                "reference": "Review"
                             }
                         },
                         "forwardMigration": 18,
@@ -826,21 +792,46 @@
                 "type": "property",
                 "property": {
                     "type": "update",
-                    "id": "reviews",
+                    "id": "homeFeed",
                     "updated": {
                         "type": "type",
                         "from": {
-                            "repeated": {
-                                "reference": "Review"
+                            "optional": {
+                                "reference": "HomeFeed"
                             }
                         },
                         "to": {
-                            "repeated": {
-                                "reference": "Review"
+                            "optional": {
+                                "reference": "HomeFeed"
                             }
                         },
                         "forwardMigration": 20,
                         "backwardMigration": 21,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "experience",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Experience"
+                        },
+                        "to": {
+                            "reference": "Experience"
+                        },
+                        "forwardMigration": 22,
+                        "backwardMigration": 23,
                         "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
                     },
                     "breaking": true,
@@ -868,8 +859,8 @@
                                 "reference": "Event"
                             }
                         },
-                        "forwardMigration": 22,
-                        "backwardMigration": 23,
+                        "forwardMigration": 24,
+                        "backwardMigration": 25,
                         "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
                     },
                     "breaking": true,
@@ -879,23 +870,80 @@
         },
         {
             "type": "update",
-            "id": "User",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "idChange",
+                    "from": "travellinng",
+                    "to": "travel",
+                    "similarity": 0.909091,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "update",
+                    "id": "travellinng",
+                    "updated": {
+                        "type": "rawValue",
+                        "from": "travellinng",
+                        "to": "travel"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "removal",
+                    "id": "studying",
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventCategoryGroup",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "addition",
+                    "id": "entertainment",
+                    "added": {
+                        "name": "entertainment",
+                        "rawValue": "entertainment"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventMediator",
             "updated": {
                 "type": "property",
                 "property": {
                     "type": "update",
-                    "id": "experience",
+                    "id": "maxParticipants",
                     "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "Experience"
-                        },
-                        "to": {
-                            "reference": "Experience"
-                        },
-                        "forwardMigration": 24,
-                        "backwardMigration": 25,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 5
                     },
                     "breaking": true,
                     "solvable": true
@@ -946,21 +994,6 @@
                     "solvable": true
                 }
             }
-        },
-        {
-            "type": "update",
-            "id": "UserLogin",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "userName",
-                    "to": "username",
-                    "similarity": 0.950000,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
         }
     ],
     "endpointChanges": [
@@ -977,6 +1010,8 @@
                 "deltaIdentifier": "searchEventsWithQuery",
                 "identifiers": {
                     "EndpointPath": "/events/search",
+                    "GRPCMethodName": "GetSearchEventsHandler",
+                    "GRPCServiceName": "QONECTIQ",
                     "HandlerName": "SearchEventsHandler",
                     "Operation": "read"
                 },
@@ -1025,6 +1060,8 @@
                 "deltaIdentifier": "reviewsOfUserWithID",
                 "identifiers": {
                     "EndpointPath": "/reviews/posted-from",
+                    "GRPCMethodName": "GetReviewsOfUserHandler",
+                    "GRPCServiceName": "QONECTIQ",
                     "HandlerName": "ReviewsOfUserHandler",
                     "Operation": "read"
                 },
@@ -1073,6 +1110,8 @@
                 "deltaIdentifier": "statisticsOfUser",
                 "identifiers": {
                     "EndpointPath": "/users/{userIdentifier}/statistics",
+                    "GRPCMethodName": "GetStatisticsHandler",
+                    "GRPCServiceName": "QONECTIQ",
                     "HandlerName": "StatisticsHandler",
                     "Operation": "read"
                 },
@@ -1137,6 +1176,43 @@
         },
         {
             "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "displayName",
+                    "added": {
+                        "name": "displayName",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "optional"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "response",
+                "from": {
+                    "reference": "Review"
+                },
+                "to": {
+                    "reference": "ReviewForm"
+                },
+                "backwardsMigration": 29
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
             "id": "getParticipantsOfEventWithID",
             "updated": {
                 "type": "identifier",
@@ -1177,28 +1253,7 @@
         },
         {
             "type": "update",
-            "id": "getReviewsOfEventWithID",
-            "updated": {
-                "type": "parameter",
-                "parameter": {
-                    "type": "addition",
-                    "id": "ratingBetterThan",
-                    "added": {
-                        "name": "ratingBetterThan",
-                        "type": {
-                            "reference": "Rating"
-                        },
-                        "kind": "lightweight",
-                        "necessity": "optional"
-                    },
-                    "breaking": false,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "getHomeFeedForUserWithID",
+            "id": "deleteEventWithID",
             "updated": {
                 "type": "identifier",
                 "identifier": {
@@ -1207,11 +1262,11 @@
                     "updated": {
                         "from": {
                             "id": "EndpointPath",
-                            "value": "/home-feed/{userID}"
+                            "value": "/events/{id}"
                         },
                         "to": {
                             "id": "EndpointPath",
-                            "value": "/home/{userID}"
+                            "value": "/events/{identifier}"
                         }
                     },
                     "breaking": true,
@@ -1223,62 +1278,18 @@
         },
         {
             "type": "update",
-            "id": "getHomeFeedForUserWithID",
+            "id": "deleteEventWithID",
             "updated": {
                 "type": "parameter",
                 "parameter": {
-                    "type": "addition",
-                    "id": "showPreviousEvents",
-                    "added": {
-                        "name": "showPreviousEvents",
-                        "type": {
-                            "scalar": "Bool"
-                        },
-                        "kind": "lightweight",
-                        "necessity": "required"
-                    },
-                    "defaultValue": 7,
+                    "type": "idChange",
+                    "from": "id",
+                    "to": "identifier",
+                    "similarity": 0.786667,
                     "breaking": true,
                     "solvable": true
                 }
             }
-        },
-        {
-            "type": "update",
-            "id": "addReviewToEvent",
-            "updated": {
-                "type": "parameter",
-                "parameter": {
-                    "type": "addition",
-                    "id": "displayName",
-                    "added": {
-                        "name": "displayName",
-                        "type": {
-                            "scalar": "Bool"
-                        },
-                        "kind": "lightweight",
-                        "necessity": "optional"
-                    },
-                    "breaking": false,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "addReviewToEvent",
-            "updated": {
-                "type": "response",
-                "from": {
-                    "reference": "Review"
-                },
-                "to": {
-                    "reference": "ReviewForm"
-                },
-                "backwardsMigration": 29
-            },
-            "breaking": true,
-            "solvable": true
         },
         {
             "type": "update",
@@ -1383,6 +1394,52 @@
         },
         {
             "type": "update",
+            "id": "getReviewsOfEventWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "ratingBetterThan",
+                    "added": {
+                        "name": "ratingBetterThan",
+                        "type": {
+                            "reference": "Rating"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "optional"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "getEventsOfCategory",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCMethodName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCMethodName",
+                            "value": "GetCategoryEventsHandler"
+                        },
+                        "to": {
+                            "id": "GRPCMethodName",
+                            "value": "CreateCategoryEventsHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
             "id": "getEventsOfCategory",
             "updated": {
                 "type": "identifier",
@@ -1426,7 +1483,7 @@
         },
         {
             "type": "update",
-            "id": "deleteEventWithID",
+            "id": "getHomeFeedForUserWithID",
             "updated": {
                 "type": "identifier",
                 "identifier": {
@@ -1435,11 +1492,11 @@
                     "updated": {
                         "from": {
                             "id": "EndpointPath",
-                            "value": "/events/{id}"
+                            "value": "/home-feed/{userID}"
                         },
                         "to": {
                             "id": "EndpointPath",
-                            "value": "/events/{identifier}"
+                            "value": "/home/{userID}"
                         }
                     },
                     "breaking": true,
@@ -1451,14 +1508,21 @@
         },
         {
             "type": "update",
-            "id": "deleteEventWithID",
+            "id": "getHomeFeedForUserWithID",
             "updated": {
                 "type": "parameter",
                 "parameter": {
-                    "type": "idChange",
-                    "from": "id",
-                    "to": "identifier",
-                    "similarity": 0.786667,
+                    "type": "addition",
+                    "id": "showPreviousEvents",
+                    "added": {
+                        "name": "showPreviousEvents",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "required"
+                    },
+                    "defaultValue": 7,
                     "breaking": true,
                     "solvable": true
                 }
@@ -1466,58 +1530,58 @@
         }
     ],
     "scripts": {
-        "18": "function convert(ignoredFrom) {\n    return JSON.stringify(null)\n}",
-        "12": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "16": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "28": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
-        "1": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "6": "function convert(ignoredFrom) {\n    return JSON.stringify(\"marketing\")\n}",
-        "13": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "20": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "4": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "15": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "10": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'id': parsedFrom.id, 'title': parsedFrom.title, 'group': parsedFrom.group})\n}",
-        "5": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "0": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "2": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "21": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "8": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "29": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"B1D37927-0CED-46AA-81EF-88FEDBFAF564\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"6E16497F-3F30-49AA-8215-4C3A691165EF\", 'reviewerID': \"A6DCCAC2-3B6C-4DB2-B0DB-199309286957\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
+        "29": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"3094A055-CD80-4B23-B49B-9EA69864DC2B\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"E987F238-AB6A-466C-B493-A83EF6DCCFB0\", 'reviewerID': \"950CAACE-00EB-4C4D-98C3-C600FAB31703\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
+        "12": "function convert(ignoredFrom) {\n    return JSON.stringify(\"marketing\")\n}",
+        "7": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': parsedTo.id, 'title': parsedTo.title, 'group': parsedTo.group})\n}",
+        "10": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "18": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "21": "function convert(ignoredTo) {\n    return JSON.stringify(null)\n}",
+        "23": "function convert(ignoredTo) {\n    return JSON.stringify(\"beginner\")\n}",
+        "24": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
         "27": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "17": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "14": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
         "9": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "26": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "22": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "25": "function convert(ignoredTo) {\n    return JSON.stringify(\"beginner\")\n}",
-        "23": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "24": "function convert(ignoredFrom) {\n    return JSON.stringify(\"beginner\")\n}",
-        "11": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': parsedTo.id, 'title': parsedTo.title, 'group': parsedTo.group})\n}",
-        "7": "function convert(ignoredTo) {\n    return JSON.stringify(\"marketing\")\n}",
+        "0": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "14": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "13": "function convert(ignoredTo) {\n    return JSON.stringify(\"marketing\")\n}",
+        "15": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "25": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "28": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
+        "2": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "16": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
         "3": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "19": "function convert(ignoredTo) {\n    return JSON.stringify(null)\n}"
+        "17": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "20": "function convert(ignoredFrom) {\n    return JSON.stringify(null)\n}",
+        "8": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "6": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'id': parsedFrom.id, 'title': parsedFrom.title, 'group': parsedFrom.group})\n}",
+        "11": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "26": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "19": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "22": "function convert(ignoredFrom) {\n    return JSON.stringify(\"beginner\")\n}",
+        "5": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "4": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "1": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}"
     },
     "json-values": {
-        "1": "\"basic\"",
-        "2": "\"available\"",
-        "4": "\"\"",
-        "0": "0",
-        "5": "0",
-        "3": "\"basic\"",
+        "0": "\"basic\"",
         "6": "false",
-        "7": "false"
+        "3": "\"available\"",
+        "5": "0",
+        "7": "false",
+        "4": "\"basic\"",
+        "2": "0",
+        "1": "\"\""
     },
     "updated-json-representations": {
-        "QONECTIQV2.UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}",
-        "QONECTIQV2.HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"0DA5BF42-190D-49A1-95D1-7B5D38C0653B\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"EA84974B-BC9A-4793-8088-522A2034A395\"\n}",
-        "QONECTIQV2.EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"AC847075-5093-4AEB-B733-9F2F144BDA64\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.HomeFeedEvent": "{\n\"eventID\" : \"0ED8ADD0-5E1B-46E1-842B-40F860F6AD02\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}",
+        "QONECTIQV2.HomeFeedCategory": "{\n\"categoryID\" : \"79166FDE-6BF4-4684-BF86-9382F3592EFE\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.User": "{\n\"birthday\" : 664801200,\n\"email\" : \"\",\n\"experience\" : \"beginner\",\n\"homeFeed\" : null,\n\"id\" : \"EAB99AA0-9F25-47FA-A5CE-2173DA9DF428\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
         "QONECTIQV2.ReviewForm": "{\n\"content\" : \"\",\n\"rating\" : \"outstanding\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.UserRegisterForm": "{\n\"birthday\" : 663678000,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
-        "QONECTIQV2.Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"F7BE6269-07E4-4AC4-BF60-CFDF6CC1EF9C\",\n\"id\" : \"2E5FD49D-98DF-4189-B7FC-2FD1B10F7171\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"3E867E4F-88AE-4E2B-865E-D7FE00096509\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"843EDF11-EE50-44E1-8D9B-F715CBFA7CB7\",\n\"title\" : \"\"\n},\n\"date\" : 663678000,\n\"duration\" : 0,\n\"id\" : \"7CDC6F2D-9256-40D6-AE13-E09A5DEA6384\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"DB0450A4-F55A-4BC3-8402-C27772E3B6BD\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
-        "QONECTIQV2.User": "{\n\"birthday\" : 663678000,\n\"email\" : \"\",\n\"experience\" : \"beginner\",\n\"homeFeed\" : null,\n\"id\" : \"05ECA235-B013-4840-A939-3F7FDBFCC2D9\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
-        "QONECTIQV2.HomeFeedCategory": "{\n\"categoryID\" : \"2CA1EA44-9768-4B4D-8516-BA7F1638AE43\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}"
+        "QONECTIQV2.Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"3E3CADE5-DC19-4E07-A249-69FE315B74A2\",\n\"title\" : \"\"\n},\n\"date\" : 664801200,\n\"duration\" : 0,\n\"id\" : \"DF61961F-FADA-425D-90E0-0DF4D917661B\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"57B6DC2A-6F0C-45B7-B35D-605B4E59A5A5\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
+        "QONECTIQV2.EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"5A351DEB-6BA5-4210-A153-4F6E73ED3EBF\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"CFC2C2E4-95C4-43FE-BB6C-35C7D373D672\",\n\"id\" : \"1664A5E0-0875-42D7-BBA0-F401B4C60CB6\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"8A4947A9-0517-4211-965C-795D0D250734\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}",
+        "QONECTIQV2.HomeFeedEvent": "{\n\"eventID\" : \"33EFADC7-9DF5-4F6C-B00D-6440B23491DC\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"60A57740-6C6D-4518-BD4C-FDF92EDAE6F6\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"B3F87B77-CB0D-47C6-8A0A-2658B87F2FD8\"\n}",
+        "QONECTIQV2.UserRegisterForm": "{\n\"birthday\" : 664801200,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
+        "QONECTIQV2.UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}"
     }
 }

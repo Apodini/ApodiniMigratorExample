@@ -14,18 +14,18 @@
         "package": "Apodini",
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
-          "branch": null,
-          "revision": "9fba450e31d4f173f430e9e90994a366e8a3d974",
-          "version": "0.7.1"
+          "branch": "feature/apodini-migration-0.3.0",
+          "revision": "7889ec18ad6b405d155fea45a7de998ee11724a4",
+          "version": null
         }
       },
       {
         "package": "ApodiniMigrator",
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
-          "branch": null,
-          "revision": "9863ba8296576753afbb453de091c7b0e40e3dc3",
-          "version": "0.2.1"
+          "branch": "feature/grpc-migrator",
+          "revision": "980e82809b61409926e5e71b3e6ca4cfdae70267",
+          "version": null
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniTypeInformation.git",
         "state": {
           "branch": null,
-          "revision": "b4e73a6f92bd0930c9f1f8a857504b85b943dd88",
-          "version": "0.3.0"
+          "revision": "ba1d5e86f1d8fd89637d16a4b24740b6ad8cef81",
+          "version": "0.3.1"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/swift-server/async-http-client.git",
         "state": {
           "branch": null,
-          "revision": "70826d038d5bdc3142a386b735792d87ef7a5dfc",
-          "version": "1.8.1"
+          "revision": "cbf533073d9a5edfb16c266d14151f69137ba7c9",
+          "version": "1.8.2"
         }
       },
       {
@@ -92,6 +92,15 @@
         }
       },
       {
+        "package": "GraphQL",
+        "repositoryURL": "https://github.com/GraphQLSwift/GraphQL",
+        "state": {
+          "branch": null,
+          "revision": "588b7b4dc9dcb352ad185012003f84823108540d",
+          "version": "2.1.2"
+        }
+      },
+      {
         "package": "grpc-swift",
         "repositoryURL": "https://github.com/grpc/grpc-swift.git",
         "state": {
@@ -123,8 +132,8 @@
         "repositoryURL": "https://github.com/Apodini/MetadataSystem.git",
         "state": {
           "branch": null,
-          "revision": "06cac46a958fdf700054f12f682b5c8f27577c9f",
-          "version": "0.1.1"
+          "revision": "7f0df17075a455dcf8b88b234dfaa295b0df7f27",
+          "version": "0.1.2"
         }
       },
       {
@@ -177,8 +186,8 @@
         "repositoryURL": "https://github.com/soto-project/soto.git",
         "state": {
           "branch": null,
-          "revision": "48a92c71332480cdd493cfeae4e184a80f418595",
-          "version": "5.12.0"
+          "revision": "b98994beabdced18cbedbe50e947e6f2c8e0d602",
+          "version": "5.12.1"
         }
       },
       {
@@ -186,8 +195,8 @@
         "repositoryURL": "https://github.com/soto-project/soto-core.git",
         "state": {
           "branch": null,
-          "revision": "6ba2fddd0260da0621438bb1523e9aaea4eb9464",
-          "version": "5.9.1"
+          "revision": "a216ea49b9ff2480ccbc5880b1aa648032433798",
+          "version": "5.9.2"
         }
       },
       {
@@ -245,12 +254,39 @@
         }
       },
       {
+        "package": "swift-algorithms",
+        "repositoryURL": "https://github.com/apple/swift-algorithms",
+        "state": {
+          "branch": null,
+          "revision": "b14b7f4c528c942f121c8b860b9410b2bf57825e",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "swift-argument-parser",
         "repositoryURL": "https://github.com/apple/swift-argument-parser",
         "state": {
           "branch": null,
           "revision": "83b23d940471b313427da226196661856f6ba3e0",
           "version": "0.4.4"
+        }
+      },
+      {
+        "package": "swift-aws-lambda-runtime",
+        "repositoryURL": "https://github.com/swift-server/swift-aws-lambda-runtime.git",
+        "state": {
+          "branch": null,
+          "revision": "699ada1724459582303c15aae64fa12ca4d33809",
+          "version": "0.5.2"
+        }
+      },
+      {
+        "package": "swift-backtrace",
+        "repositoryURL": "https://github.com/swift-server/swift-backtrace.git",
+        "state": {
+          "branch": null,
+          "revision": "d3e04a9d4b3833363fb6192065b763310b156d54",
+          "version": "1.3.1"
         }
       },
       {
@@ -368,6 +404,15 @@
           "branch": null,
           "revision": "8ab824b140d0ebcd87e9149266ddc353e3705a3e",
           "version": "1.11.4"
+        }
+      },
+      {
+        "package": "swift-numerics",
+        "repositoryURL": "https://github.com/apple/swift-numerics",
+        "state": {
+          "branch": null,
+          "revision": "0a5bc04095a675662cf24757cc0640aa2204253b",
+          "version": "1.0.2"
         }
       },
       {

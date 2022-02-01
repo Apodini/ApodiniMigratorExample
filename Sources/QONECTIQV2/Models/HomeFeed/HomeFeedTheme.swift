@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum HomeFeedTheme: String, Codable {
+enum HomeFeedTheme: String, Codable, CaseIterable, Equatable, AnyProtobufEnum {
     case basic
     case classic
     case dark

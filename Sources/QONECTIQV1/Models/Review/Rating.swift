@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum Rating: String, ApodiniContent {
+enum Rating: String, CaseIterable, ApodiniContent {
     case outstanding
     case exceedsExpectation
     case meetsExpectation
@@ -16,3 +17,5 @@ enum Rating: String, ApodiniContent {
     case unacceptable
     case undefined
 }
+
+extension Rating: AnyProtobufEnum {}

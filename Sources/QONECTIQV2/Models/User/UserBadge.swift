@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum UserBadge: String, ApodiniContent {
+enum UserBadge: String, ApodiniContent, CaseIterable, AnyProtobufEnum {
     case newbie
     case explorer
     case achiever

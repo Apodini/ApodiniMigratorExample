@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum Rating: String, ApodiniContent, LosslessStringConvertible {
+enum Rating: String, ApodiniContent, LosslessStringConvertible, CaseIterable, AnyProtobufEnum {
     case outstanding
     case exceedsExpectation
     case meetsExpectation
