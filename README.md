@@ -78,18 +78,18 @@ OPTIONS:
   -h, --help              Show help information.
 
 SUBCOMMANDS:
-  document (default)      A parsable command for generating the API document of
-                          the initial web service version
-  read                    A parsable command to export a local migration guide
-                          and the API document of the current version
+  document (default)      A parsable command for generating the API document of the initial web service version
+  read                    A parsable command to export a local migration guide and the API document of the current version
   compare                 A parsable command for generating the migration guide
+
+  See 'qonectiqv1 help migrator <subcommand>' for detailed help.
 ```
 
 For the initial version of the Web Service `document` subsubcommand can be used as follows to expose the document of the current version at `./data` directory as `yaml`:
 
 ```console
 $ swift run QONECTIQV1 migrator document --doc-directory=./Documents --doc-format=json
-info org.apodini.migrator : API Document exported at ./Documents/api_qonectiq1.0.0.json in json format
+info org.apodini.migrator : API Document exported at ./Documents/api_qonectiq1.0.0.json
 ```
 
 By default, `migrator` subsubcommands simply start the web service to execute migration related tasks and exit afterwards. If you want to additionally run 
@@ -97,7 +97,7 @@ the web service via a `migrator` subsubcommand, include `--run-web-service` flag
 
 ```console
 $ swift run QONECTIQV1 migrator document --doc-endpoint=api-document --doc-format=yaml --run-web-service
-info org.apodini.migrator : API Document served at /api-document in yaml format
+info org.apodini.migrator : API Document served at /api-document in the yaml format
 info org.apodini.application : Server starting on 0.0.0.0:80
 ```
 
@@ -106,8 +106,8 @@ For the future versions of the Web Service, one can make use of either `read` or
 
 ```console
 $ swift run QONECTIQV2 migrator compare --old-document-path ./Documents/api_v1.0.0.json --doc-endpoint api-document --guide-endpoint migration-guide --run-web-service
-info org.apodini.migrator : API Document served at /api-document in json format
-info org.apodini.migrator : Migration Guide served at /migration-guide in json format
+info org.apodini.migrator : API Document served at /api-document in the json format
+info org.apodini.migrator : Migration Guide served at /migration-guide in the json format
 info org.apodini.application : Server starting on 0.0.0.0:80
 ```
 
