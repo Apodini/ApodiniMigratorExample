@@ -1,7 +1,7 @@
 {
     "summary": "A summary of what changed between versions",
-    "document-id": "943AE9E9-428D-4728-A5DD-1BDD21ECFB5D",
-    "version": "2.0.0",
+    "document-id": "376920E1-AEF4-4BA6-B86F-C941945CDD5D",
+    "version": "2.1.0",
     "from": "v_1.0.0",
     "to": "v_2.0.0",
     "compare-config": {
@@ -23,6 +23,640 @@
                 "to": "v_2.0.0"
             },
             "breaking": false,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "SERVICE_INFO_ID",
+            "updated": {
+                "type": "exporter",
+                "exporter": {
+                    "type": "update",
+                    "id": "grpc",
+                    "updated": {
+                        "from": {
+                            "type": "grpc",
+                            "packageName": "QONECTIQ",
+                            "serviceName": "QONECTIQ",
+                            "pathPrefix": "__grpc",
+                            "reflectionEnabled": true,
+                            "identifiersOfSynthesizedTypes": {
+                                "QONECTIQV1.ReviewsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].ReviewsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].ReviewsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.DeleteEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].DeleteEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "id": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetEventsHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetEventsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.UpdateEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].UpdateEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "2"
+                                            },
+                                            "eventMediator": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.AddReviewHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].AddReviewHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "3"
+                                            },
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "2"
+                                            },
+                                            "review": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "id": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetUserHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetUserHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GroupCategoriesHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GroupCategoriesHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "groupCategory": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GroupCategoriesHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetAllUsersHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetAllUsersHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.HomeFeedHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].HomeFeedHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetCategoriesHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetCategoriesHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetCategoryHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetCategoryHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "id": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.ExperienceUsersHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].ExperienceUsersHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "experience": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].ExperienceUsersHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.GetParticipantsOfEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetParticipantsOfEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].GetParticipantsOfEventHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.CategoryEventsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].CategoryEventsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "group": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].CategoryEventsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV1.DeleteUserHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ].DeleteUserHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "to": {
+                            "type": "grpc",
+                            "packageName": "QONECTIQ2",
+                            "serviceName": "QONECTIQ",
+                            "pathPrefix": "__grpc",
+                            "reflectionEnabled": true,
+                            "identifiersOfSynthesizedTypes": {
+                                "QONECTIQV2.ReviewsOfUserHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userId": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.DeleteEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].DeleteEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "identifier": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.HomeFeedHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].HomeFeedHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "showPreviousEvents": {
+                                                "GRPCFieldType": "8",
+                                                "GRPCNumber": "2"
+                                            },
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GroupCategoriesHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GroupCategoriesHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "group": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GroupCategoriesHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetEventsHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetEventsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetCategoryHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetCategoryHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "id": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.AddReviewHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].AddReviewHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "review": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            },
+                                            "displayName": {
+                                                "GRPCFieldType": "8",
+                                                "GRPCNumber": "4"
+                                            },
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "2"
+                                            },
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "3"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.ReviewsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].ReviewsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            },
+                                            "ratingBetterThan": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "2"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].ReviewsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetCategoriesHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetCategoriesHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "id": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.SearchEventsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].SearchEventsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "searchQuery": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].SearchEventsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetUserHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetUserHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.UpdateEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].UpdateEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "2"
+                                            },
+                                            "eventMediator": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.DeleteUserHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].DeleteUserHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userID": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetParticipantsOfEventHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetParticipantsOfEventHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "eventIdentifier": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetParticipantsOfEventHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.StatisticsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].StatisticsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "userIdentifier": {
+                                                "GRPCFieldType": "9",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.GetAllUsersHandler": {
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].GetAllUsersHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                },
+                                "QONECTIQV2.CategoryEventsHandler": {
+                                    "inputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].CategoryEventsHandlerInput"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "group": {
+                                                "GRPCFieldType": "14",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    },
+                                    "outputIdentifiers": {
+                                        "identifiers": {
+                                            "GRPCName": "[QONECTIQ2].CategoryEventsHandlerResponse"
+                                        },
+                                        "childrenIdentifiers": {
+                                            "value": {
+                                                "GRPCFieldType": "11",
+                                                "GRPCNumber": "1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
             "solvable": true
         },
         {
@@ -65,37 +699,6 @@
             },
             "breaking": true,
             "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "SERVICE_INFO_ID",
-            "updated": {
-                "type": "exporter",
-                "exporter": {
-                    "type": "update",
-                    "id": "grpc",
-                    "updated": {
-                        "from": {
-                            "type": "grpc",
-                            "packageName": "QONECTIQ",
-                            "serviceName": "QONECTIQ",
-                            "pathPrefix": "__grpc",
-                            "reflectionEnabled": true
-                        },
-                        "to": {
-                            "type": "grpc",
-                            "packageName": "QONECTIQ2",
-                            "serviceName": "QONECTIQ",
-                            "pathPrefix": "__grpc",
-                            "reflectionEnabled": true
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
         }
     ],
     "modelChanges": [
@@ -107,48 +710,13 @@
         },
         {
             "type": "addition",
-            "id": "EventCategoryMediator",
-            "added": {
-                "object": {
-                    "typeName": {
-                        "defined-in": "QONECTIQV2",
-                        "rootComponent": {
-                            "name": "EventCategoryMediator"
-                        }
-                    },
-                    "properties": [
-                        {
-                            "name": "title",
-                            "type": {
-                                "scalar": "String"
-                            },
-                            "context": {}
-                        },
-                        {
-                            "name": "categoryGroup",
-                            "type": {
-                                "reference": "EventCategoryGroup"
-                            },
-                            "context": {}
-                        }
-                    ],
-                    "context": {
-                        "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ05hbWUiOiJbUU9ORUNUSVEyXS5FdmVudENhdGVnb3J5TWVkaWF0b3IifX0="
-                    }
-                }
-            },
-            "breaking": false,
-            "solvable": true
-        },
-        {
-            "type": "addition",
-            "id": "HomeFeedTheme",
+            "id": "UserBadge",
             "added": {
                 "enum": {
                     "typeName": {
                         "defined-in": "QONECTIQV2",
                         "rootComponent": {
-                            "name": "HomeFeedTheme"
+                            "name": "UserBadge"
                         }
                     },
                     "rawValueType": {
@@ -156,43 +724,36 @@
                     },
                     "cases": [
                         {
-                            "name": "basic",
-                            "rawValue": "basic",
+                            "name": "newbie",
+                            "rawValue": "newbie",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjAifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
                             }
                         },
                         {
-                            "name": "classic",
-                            "rawValue": "classic",
+                            "name": "explorer",
+                            "rawValue": "explorer",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjEifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
                             }
                         },
                         {
-                            "name": "dark",
-                            "rawValue": "dark",
+                            "name": "achiever",
+                            "rawValue": "achiever",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjIifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
                             }
                         },
                         {
-                            "name": "midnight",
-                            "rawValue": "midnight",
+                            "name": "worldSaver",
+                            "rawValue": "worldSaver",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjMifX0="
-                            }
-                        },
-                        {
-                            "name": "sunset",
-                            "rawValue": "sunset",
-                            "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjQifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
                             }
                         }
                     ],
                     "context": {
-                        "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ05hbWUiOiJbUU9ORUNUSVEyXS5Ib21lRmVlZFRoZW1lIn19"
+                        "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJCYWRnZSJ9"
                     }
                 }
             },
@@ -255,7 +816,7 @@
                         }
                     ],
                     "context": {
-                        "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ05hbWUiOiJbUU9ORUNUSVEyXS5Vc2VyU3RhdGlzdGljIn19"
+                        "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJTdGF0aXN0aWMifQ=="
                     }
                 }
             },
@@ -264,13 +825,13 @@
         },
         {
             "type": "addition",
-            "id": "UserBadge",
+            "id": "HomeFeedTheme",
             "added": {
                 "enum": {
                     "typeName": {
                         "defined-in": "QONECTIQV2",
                         "rootComponent": {
-                            "name": "UserBadge"
+                            "name": "HomeFeedTheme"
                         }
                     },
                     "rawValueType": {
@@ -278,36 +839,43 @@
                     },
                     "cases": [
                         {
-                            "name": "newbie",
-                            "rawValue": "newbie",
+                            "name": "basic",
+                            "rawValue": "basic",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjAifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
                             }
                         },
                         {
-                            "name": "explorer",
-                            "rawValue": "explorer",
+                            "name": "classic",
+                            "rawValue": "classic",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjEifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
                             }
                         },
                         {
-                            "name": "achiever",
-                            "rawValue": "achiever",
+                            "name": "dark",
+                            "rawValue": "dark",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjIifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
                             }
                         },
                         {
-                            "name": "worldSaver",
-                            "rawValue": "worldSaver",
+                            "name": "midnight",
+                            "rawValue": "midnight",
                             "context": {
-                                "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjMifX0="
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
+                            }
+                        },
+                        {
+                            "name": "sunset",
+                            "rawValue": "sunset",
+                            "context": {
+                                "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
                             }
                         }
                     ],
                     "context": {
-                        "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ05hbWUiOiJbUU9ORUNUSVEyXS5Vc2VyQmFkZ2UifX0="
+                        "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkVGhlbWUifQ=="
                     }
                 }
             },
@@ -315,343 +883,38 @@
             "solvable": true
         },
         {
-            "type": "update",
-            "id": "HomeFeedEvent",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "subtitle",
-                    "to": "secondaryTitle",
-                    "similarity": 0.634643,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "HomeFeedEvent",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "imageURL",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "scalar": "URL"
-                        },
-                        "to": {
-                            "scalar": "String"
-                        },
-                        "forwardMigration": 0,
-                        "backwardMigration": 1
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "HomeFeedEvent",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].HomeFeedEvent"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].HomeFeedEvent"
+            "type": "addition",
+            "id": "EventCategoryMediator",
+            "added": {
+                "object": {
+                    "typeName": {
+                        "defined-in": "QONECTIQV2",
+                        "rootComponent": {
+                            "name": "EventCategoryMediator"
                         }
                     },
-                    "breaking": true,
-                    "solvable": true
+                    "properties": [
+                        {
+                            "name": "title",
+                            "type": {
+                                "scalar": "String"
+                            },
+                            "context": {}
+                        },
+                        {
+                            "name": "categoryGroup",
+                            "type": {
+                                "reference": "EventCategoryGroup"
+                            },
+                            "context": {}
+                        }
+                    ],
+                    "context": {
+                        "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnlNZWRpYXRvciJ9"
+                    }
                 }
             },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "ownEvents",
-                    "to": "myEvents",
-                    "similarity": 0.750000,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "ownEvents",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "to": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "forwardMigration": 2,
-                        "backwardMigration": 3,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "eventsOfInterest",
-                    "to": "interestedIn",
-                    "similarity": 0.622685,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "eventsOfInterest",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "to": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "forwardMigration": 4,
-                        "backwardMigration": 5,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "experience",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "Experience"
-                        },
-                        "to": {
-                            "reference": "Experience"
-                        },
-                        "forwardMigration": 6,
-                        "backwardMigration": 7,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "reviews",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        },
-                        "to": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        },
-                        "forwardMigration": 8,
-                        "backwardMigration": 9,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "homeFeed",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "optional": {
-                                "reference": "HomeFeed"
-                            }
-                        },
-                        "to": {
-                            "optional": {
-                                "reference": "HomeFeed"
-                            }
-                        },
-                        "forwardMigration": 10,
-                        "backwardMigration": 11,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "participatingEvents",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "to": {
-                            "repeated": {
-                                "reference": "Event"
-                            }
-                        },
-                        "forwardMigration": 12,
-                        "backwardMigration": 13,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "User",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].User"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].User"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "Experience",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "addition",
-                    "id": "unclassified",
-                    "added": {
-                        "name": "unclassified",
-                        "rawValue": "unclassified",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjIifX0="
-                        }
-                    },
-                    "breaking": false,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Experience",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].Experience"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].Experience"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
+            "breaking": false,
             "solvable": true
         },
         {
@@ -684,8 +947,8 @@
                         "to": {
                             "reference": "EventCategoryGroup"
                         },
-                        "forwardMigration": 14,
-                        "backwardMigration": 15,
+                        "forwardMigration": 0,
+                        "backwardMigration": 1,
                         "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
                     },
                     "breaking": true,
@@ -703,475 +966,12 @@
                     "id": "GRPCName",
                     "updated": {
                         "from": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ].EventCategory"
                         },
                         "to": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ2].EventCategory"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "ReviewForm",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "rating",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "Rating"
-                        },
-                        "to": {
-                            "reference": "Rating"
-                        },
-                        "forwardMigration": 16,
-                        "backwardMigration": 17,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "ReviewForm",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].ReviewForm"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].ReviewForm"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "EventMediator",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "maxParticipants",
-                    "updated": {
-                        "type": "necessity",
-                        "from": "optional",
-                        "to": "required",
-                        "necessityMigration": 1
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "EventMediator",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].EventMediator"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].EventMediator"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "addition",
-                    "id": "location",
-                    "added": {
-                        "name": "location",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {}
-                    },
-                    "defaultValue": 2,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "reviews",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        },
-                        "to": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        },
-                        "forwardMigration": 18,
-                        "backwardMigration": 19,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "maxParticipants",
-                    "updated": {
-                        "type": "necessity",
-                        "from": "optional",
-                        "to": "required",
-                        "necessityMigration": 3
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "category",
-                    "updated": {
-                        "type": "identifier",
-                        "identifier": {
-                            "type": "update",
-                            "id": "GRPCNumber",
-                            "updated": {
-                                "from": {
-                                    "type": "typeInformation",
-                                    "id": "GRPCNumber",
-                                    "value": "11"
-                                },
-                                "to": {
-                                    "type": "typeInformation",
-                                    "id": "GRPCNumber",
-                                    "value": "12"
-                                }
-                            },
-                            "breaking": true,
-                            "solvable": true
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "category",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "EventCategory"
-                        },
-                        "to": {
-                            "reference": "EventCategory"
-                        },
-                        "forwardMigration": 20,
-                        "backwardMigration": 21
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Event",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].Event"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].Event"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "UserRegisterForm",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "surname",
-                    "to": "lastname",
-                    "similarity": 0.713095,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "UserRegisterForm",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "addition",
-                    "id": "preferredTheme",
-                    "added": {
-                        "name": "preferredTheme",
-                        "type": {
-                            "reference": "HomeFeedTheme"
-                        },
-                        "context": {}
-                    },
-                    "defaultValue": 4,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "UserRegisterForm",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].UserRegisterForm"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].UserRegisterForm"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "Review",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "addition",
-                    "id": "displayReviewerName",
-                    "added": {
-                        "name": "displayReviewerName",
-                        "type": {
-                            "scalar": "Bool"
-                        },
-                        "context": {}
-                    },
-                    "defaultValue": 5,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Review",
-            "updated": {
-                "type": "property",
-                "property": {
-                    "type": "update",
-                    "id": "rating",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "Rating"
-                        },
-                        "to": {
-                            "reference": "Rating"
-                        },
-                        "forwardMigration": 22,
-                        "backwardMigration": 23,
-                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Review",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].Review"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].Review"
-                        }
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            },
-            "breaking": true,
-            "solvable": true
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "idChange",
-                    "from": "unacceptable",
-                    "to": "terrible",
-                    "similarity": 0.527778,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "update",
-                    "id": "unacceptable",
-                    "updated": {
-                        "type": "rawValue",
-                        "from": "unacceptable",
-                        "to": "terrible"
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "case",
-                "case": {
-                    "type": "removal",
-                    "id": "undefined",
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "Rating",
-            "updated": {
-                "type": "identifier",
-                "identifier": {
-                    "type": "update",
-                    "id": "GRPCName",
-                    "updated": {
-                        "from": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ].Rating"
-                        },
-                        "to": {
-                            "type": "typeInformation",
-                            "id": "GRPCName",
-                            "value": "[QONECTIQ2].Rating"
                         }
                     },
                     "breaking": true,
@@ -1206,14 +1006,123 @@
                     "id": "GRPCName",
                     "updated": {
                         "from": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ].UserLogin"
                         },
                         "to": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ2].UserLogin"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedCategory",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "eventsCount",
+                    "to": "eventsAmount",
+                    "similarity": 0.908485,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedCategory",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].HomeFeedCategory"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].HomeFeedCategory"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "Review",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "displayReviewerName",
+                    "added": {
+                        "name": "displayReviewerName",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "context": {}
+                    },
+                    "defaultValue": 1,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Review",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "rating",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Rating"
+                        },
+                        "to": {
+                            "reference": "Rating"
+                        },
+                        "forwardMigration": 2,
+                        "backwardMigration": 3,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Review",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].Review"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].Review"
                         }
                     },
                     "breaking": true,
@@ -1281,7 +1190,7 @@
                         "name": "entertainment",
                         "rawValue": "entertainment",
                         "context": {
-                            "TypeInformationIdentifierContextKey": "eyJ0eXBlIjoidHlwZUluZm9ybWF0aW9uIiwiZWxlbWVudHMiOnsiR1JQQ051bWJlciI6IjcifX0="
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyJ9"
                         }
                     },
                     "breaking": false,
@@ -1304,12 +1213,10 @@
                             "id": "GRPCNumber",
                             "updated": {
                                 "from": {
-                                    "type": "typeInformation",
                                     "id": "GRPCNumber",
                                     "value": "7"
                                 },
                                 "to": {
-                                    "type": "typeInformation",
                                     "id": "GRPCNumber",
                                     "value": "6"
                                 }
@@ -1333,14 +1240,117 @@
                     "id": "GRPCName",
                     "updated": {
                         "from": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ].EventCategoryGroup"
                         },
                         "to": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ2].EventCategoryGroup"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "surname",
+                    "to": "lastname",
+                    "similarity": 0.713095,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "preferredTheme",
+                    "added": {
+                        "name": "preferredTheme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        },
+                        "context": {}
+                    },
+                    "defaultValue": 2,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "UserRegisterForm",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].UserRegisterForm"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].UserRegisterForm"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "EventMediator",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "maxParticipants",
+                    "updated": {
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 3
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "EventMediator",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].EventMediator"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].EventMediator"
                         }
                     },
                     "breaking": true,
@@ -1365,7 +1375,7 @@
                         },
                         "context": {}
                     },
-                    "defaultValue": 6,
+                    "defaultValue": 4,
                     "breaking": true,
                     "solvable": true
                 }
@@ -1391,8 +1401,8 @@
                                 "reference": "HomeFeedCategory"
                             }
                         },
-                        "forwardMigration": 24,
-                        "backwardMigration": 25,
+                        "forwardMigration": 4,
+                        "backwardMigration": 5,
                         "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
                     },
                     "breaking": true,
@@ -1420,8 +1430,8 @@
                                 "reference": "HomeFeedEvent"
                             }
                         },
-                        "forwardMigration": 26,
-                        "backwardMigration": 27,
+                        "forwardMigration": 6,
+                        "backwardMigration": 7,
                         "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
                     },
                     "breaking": true,
@@ -1439,12 +1449,10 @@
                     "id": "GRPCName",
                     "updated": {
                         "from": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ].HomeFeed"
                         },
                         "to": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
                             "value": "[QONECTIQ2].HomeFeed"
                         }
@@ -1458,22 +1466,27 @@
         },
         {
             "type": "update",
-            "id": "HomeFeedCategory",
+            "id": "Experience",
             "updated": {
-                "type": "property",
-                "property": {
-                    "type": "idChange",
-                    "from": "eventsCount",
-                    "to": "eventsAmount",
-                    "similarity": 0.908485,
-                    "breaking": true,
+                "type": "case",
+                "case": {
+                    "type": "addition",
+                    "id": "unclassified",
+                    "added": {
+                        "name": "unclassified",
+                        "rawValue": "unclassified",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    },
+                    "breaking": false,
                     "solvable": true
                 }
             }
         },
         {
             "type": "update",
-            "id": "HomeFeedCategory",
+            "id": "Experience",
             "updated": {
                 "type": "identifier",
                 "identifier": {
@@ -1481,14 +1494,572 @@
                     "id": "GRPCName",
                     "updated": {
                         "from": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
-                            "value": "[QONECTIQ].HomeFeedCategory"
+                            "value": "[QONECTIQ].Experience"
                         },
                         "to": {
-                            "type": "typeInformation",
                             "id": "GRPCName",
-                            "value": "[QONECTIQ2].HomeFeedCategory"
+                            "value": "[QONECTIQ2].Experience"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "idChange",
+                    "from": "unacceptable",
+                    "to": "terrible",
+                    "similarity": 0.527778,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "update",
+                    "id": "unacceptable",
+                    "updated": {
+                        "type": "rawValue",
+                        "from": "unacceptable",
+                        "to": "terrible"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "case",
+                "case": {
+                    "type": "removal",
+                    "id": "undefined",
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Rating",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].Rating"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].Rating"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "ReviewForm",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "rating",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Rating"
+                        },
+                        "to": {
+                            "reference": "Rating"
+                        },
+                        "forwardMigration": 8,
+                        "backwardMigration": 9,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "ReviewForm",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].ReviewForm"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].ReviewForm"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "addition",
+                    "id": "location",
+                    "added": {
+                        "name": "location",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {}
+                    },
+                    "defaultValue": 5,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "category",
+                    "updated": {
+                        "type": "identifier",
+                        "identifier": {
+                            "type": "update",
+                            "id": "GRPCNumber",
+                            "updated": {
+                                "from": {
+                                    "id": "GRPCNumber",
+                                    "value": "11"
+                                },
+                                "to": {
+                                    "id": "GRPCNumber",
+                                    "value": "12"
+                                }
+                            },
+                            "breaking": true,
+                            "solvable": true
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "category",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategory"
+                        },
+                        "to": {
+                            "reference": "EventCategory"
+                        },
+                        "forwardMigration": 10,
+                        "backwardMigration": 11
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "reviews",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "forwardMigration": 12,
+                        "backwardMigration": 13,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "maxParticipants",
+                    "updated": {
+                        "type": "necessity",
+                        "from": "optional",
+                        "to": "required",
+                        "necessityMigration": 6
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "Event",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].Event"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].Event"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedEvent",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "subtitle",
+                    "to": "secondaryTitle",
+                    "similarity": 0.634643,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedEvent",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "imageURL",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "scalar": "URL"
+                        },
+                        "to": {
+                            "scalar": "String"
+                        },
+                        "forwardMigration": 14,
+                        "backwardMigration": 15
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "HomeFeedEvent",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].HomeFeedEvent"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].HomeFeedEvent"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "ownEvents",
+                    "to": "myEvents",
+                    "similarity": 0.750000,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "ownEvents",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 16,
+                        "backwardMigration": 17,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "idChange",
+                    "from": "eventsOfInterest",
+                    "to": "interestedIn",
+                    "similarity": 0.622685,
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "eventsOfInterest",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 18,
+                        "backwardMigration": 19,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "reviews",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "forwardMigration": 20,
+                        "backwardMigration": 21,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "participatingEvents",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "to": {
+                            "repeated": {
+                                "reference": "Event"
+                            }
+                        },
+                        "forwardMigration": 22,
+                        "backwardMigration": 23,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "homeFeed",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "optional": {
+                                "reference": "HomeFeed"
+                            }
+                        },
+                        "to": {
+                            "optional": {
+                                "reference": "HomeFeed"
+                            }
+                        },
+                        "forwardMigration": 24,
+                        "backwardMigration": 25,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "property",
+                "property": {
+                    "type": "update",
+                    "id": "experience",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "Experience"
+                        },
+                        "to": {
+                            "reference": "Experience"
+                        },
+                        "forwardMigration": 26,
+                        "backwardMigration": 27,
+                        "conversionWarning": "'ApodiniMigrator' is not able to automatically generate convert scripts between two types with different cardinalities or root types. Convert methods must be provided by the developer of the web service. Otherwise, the respective types in the client applications that will consume this Migration Guide, will be initialized with these default scripts."
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "User",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "GRPCName",
+                    "updated": {
+                        "from": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ].User"
+                        },
+                        "to": {
+                            "id": "GRPCName",
+                            "value": "[QONECTIQ2].User"
                         }
                     },
                     "breaking": true,
@@ -1512,16 +2083,13 @@
             "added": {
                 "deltaIdentifier": "searchEventsWithQuery",
                 "identifiers": {
-                    "type": "endpoint",
-                    "elements": {
-                        "EndpointPath": "/events/search",
-                        "GRPCMethodName": "GetSearchEventsHandler",
-                        "GRPCServiceName": "QONECTIQ",
-                        "HandlerName": "SearchEventsHandler",
-                        "Operation": "read"
-                    }
+                    "EndpointPath": "/events/search",
+                    "GRPCMethodName": "GetSearchEventsHandler",
+                    "GRPCServiceName": "QONECTIQ",
+                    "HandlerName": "QONECTIQV2.SearchEventsHandler",
+                    "Operation": "read"
                 },
-                "communicationalPattern": "requestResponse",
+                "communicationPattern": "requestResponse",
                 "parameters": [
                     {
                         "name": "searchQuery",
@@ -1565,16 +2133,13 @@
             "added": {
                 "deltaIdentifier": "reviewsOfUserWithID",
                 "identifiers": {
-                    "type": "endpoint",
-                    "elements": {
-                        "EndpointPath": "/reviews/posted-from",
-                        "GRPCMethodName": "GetReviewsOfUserHandler",
-                        "GRPCServiceName": "QONECTIQ",
-                        "HandlerName": "ReviewsOfUserHandler",
-                        "Operation": "read"
-                    }
+                    "EndpointPath": "/reviews/posted-from",
+                    "GRPCMethodName": "GetReviewsOfUserHandler",
+                    "GRPCServiceName": "QONECTIQ",
+                    "HandlerName": "QONECTIQV2.ReviewsOfUserHandler",
+                    "Operation": "read"
                 },
-                "communicationalPattern": "requestResponse",
+                "communicationPattern": "requestResponse",
                 "parameters": [
                     {
                         "name": "userId",
@@ -1618,16 +2183,13 @@
             "added": {
                 "deltaIdentifier": "statisticsOfUser",
                 "identifiers": {
-                    "type": "endpoint",
-                    "elements": {
-                        "EndpointPath": "/users/{userIdentifier}/statistics",
-                        "GRPCMethodName": "GetStatisticsHandler",
-                        "GRPCServiceName": "QONECTIQ",
-                        "HandlerName": "StatisticsHandler",
-                        "Operation": "read"
-                    }
+                    "EndpointPath": "/users/{userIdentifier}/statistics",
+                    "GRPCMethodName": "GetStatisticsHandler",
+                    "GRPCServiceName": "QONECTIQ",
+                    "HandlerName": "QONECTIQV2.StatisticsHandler",
+                    "Operation": "read"
                 },
-                "communicationalPattern": "requestResponse",
+                "communicationPattern": "requestResponse",
                 "parameters": [
                     {
                         "name": "userIdentifier",
@@ -1665,45 +2227,20 @@
         },
         {
             "type": "update",
-            "id": "createCategory",
-            "updated": {
-                "type": "parameter",
-                "parameter": {
-                    "type": "update",
-                    "id": "event",
-                    "updated": {
-                        "type": "type",
-                        "from": {
-                            "reference": "EventCategory"
-                        },
-                        "to": {
-                            "reference": "EventCategoryMediator"
-                        },
-                        "forwardMigration": 28
-                    },
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "getParticipantsOfEventWithID",
+            "id": "getEventWithID",
             "updated": {
                 "type": "identifier",
                 "identifier": {
                     "type": "update",
-                    "id": "EndpointPath",
+                    "id": "HandlerName",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
-                            "id": "EndpointPath",
-                            "value": "/events/{eventID}/participants"
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetEventHandler"
                         },
                         "to": {
-                            "type": "endpoint",
-                            "id": "EndpointPath",
-                            "value": "/events/{eventIdentifier}/participants"
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetEventHandler"
                         }
                     },
                     "breaking": true,
@@ -1715,37 +2252,20 @@
         },
         {
             "type": "update",
-            "id": "getParticipantsOfEventWithID",
-            "updated": {
-                "type": "parameter",
-                "parameter": {
-                    "type": "idChange",
-                    "from": "eventID",
-                    "to": "eventIdentifier",
-                    "similarity": 0.818095,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "deleteEventWithID",
+            "id": "getReviewsOfEventWithID",
             "updated": {
                 "type": "identifier",
                 "identifier": {
                     "type": "update",
-                    "id": "EndpointPath",
+                    "id": "HandlerName",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
-                            "id": "EndpointPath",
-                            "value": "/events/{id}"
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.ReviewsHandler"
                         },
                         "to": {
-                            "type": "endpoint",
-                            "id": "EndpointPath",
-                            "value": "/events/{identifier}"
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.ReviewsHandler"
                         }
                     },
                     "breaking": true,
@@ -1757,31 +2277,16 @@
         },
         {
             "type": "update",
-            "id": "deleteEventWithID",
-            "updated": {
-                "type": "parameter",
-                "parameter": {
-                    "type": "idChange",
-                    "from": "id",
-                    "to": "identifier",
-                    "similarity": 0.786667,
-                    "breaking": true,
-                    "solvable": true
-                }
-            }
-        },
-        {
-            "type": "update",
-            "id": "addReviewToEvent",
+            "id": "getReviewsOfEventWithID",
             "updated": {
                 "type": "parameter",
                 "parameter": {
                     "type": "addition",
-                    "id": "displayName",
+                    "id": "ratingBetterThan",
                     "added": {
-                        "name": "displayName",
+                        "name": "ratingBetterThan",
                         "type": {
-                            "scalar": "Bool"
+                            "reference": "Rating"
                         },
                         "kind": "lightweight",
                         "necessity": "optional"
@@ -1793,16 +2298,50 @@
         },
         {
             "type": "update",
-            "id": "addReviewToEvent",
+            "id": "getAllEvents",
             "updated": {
-                "type": "response",
-                "from": {
-                    "reference": "Review"
-                },
-                "to": {
-                    "reference": "ReviewForm"
-                },
-                "backwardsMigration": 29
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetEventsHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetEventsHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "updateEventWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.UpdateEventHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.UpdateEventHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
             },
             "breaking": true,
             "solvable": true
@@ -1817,12 +2356,10 @@
                     "id": "GRPCMethodName",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
                             "id": "GRPCMethodName",
                             "value": "GetCategoryEventsHandler"
                         },
                         "to": {
-                            "type": "endpoint",
                             "id": "GRPCMethodName",
                             "value": "CreateCategoryEventsHandler"
                         }
@@ -1844,14 +2381,37 @@
                     "id": "Operation",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
                             "id": "Operation",
                             "value": "read"
                         },
                         "to": {
-                            "type": "endpoint",
                             "id": "Operation",
                             "value": "create"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getEventsOfCategory",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.CategoryEventsHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.CategoryEventsHandler"
                         }
                     },
                     "breaking": true,
@@ -1881,21 +2441,65 @@
         },
         {
             "type": "update",
-            "id": "getReviewsOfEventWithID",
+            "id": "deleteEventWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/events/{id}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/events/{identifier}"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "deleteEventWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.DeleteEventHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.DeleteEventHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "deleteEventWithID",
             "updated": {
                 "type": "parameter",
                 "parameter": {
-                    "type": "addition",
-                    "id": "ratingBetterThan",
-                    "added": {
-                        "name": "ratingBetterThan",
-                        "type": {
-                            "reference": "Rating"
-                        },
-                        "kind": "lightweight",
-                        "necessity": "optional"
-                    },
-                    "breaking": false,
+                    "type": "idChange",
+                    "from": "id",
+                    "to": "identifier",
+                    "similarity": 0.786667,
+                    "breaking": true,
                     "solvable": true
                 }
             }
@@ -1910,14 +2514,37 @@
                     "id": "EndpointPath",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
                             "value": "/categories/group/{groupCategory}"
                         },
                         "to": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
                             "value": "/categories/group"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoriesOfGroup",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GroupCategoriesHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GroupCategoriesHandler"
                         }
                     },
                     "breaking": true,
@@ -1962,7 +2589,7 @@
         },
         {
             "type": "update",
-            "id": "getCategoryWithID",
+            "id": "getParticipantsOfEventWithID",
             "updated": {
                 "type": "identifier",
                 "identifier": {
@@ -1970,14 +2597,12 @@
                     "id": "EndpointPath",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
-                            "value": "/categories/{id}"
+                            "value": "/events/{eventID}/participants"
                         },
                         "to": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
-                            "value": "/category"
+                            "value": "/events/{eventIdentifier}/participants"
                         }
                     },
                     "breaking": true,
@@ -1989,21 +2614,93 @@
         },
         {
             "type": "update",
-            "id": "getCategoryWithID",
+            "id": "getParticipantsOfEventWithID",
             "updated": {
-                "type": "parameter",
-                "parameter": {
+                "type": "identifier",
+                "identifier": {
                     "type": "update",
-                    "id": "id",
+                    "id": "HandlerName",
                     "updated": {
-                        "type": "parameterType",
-                        "from": "path",
-                        "to": "lightweight"
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetParticipantsOfEventHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetParticipantsOfEventHandler"
+                        }
                     },
                     "breaking": true,
                     "solvable": true
                 }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getParticipantsOfEventWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "idChange",
+                    "from": "eventID",
+                    "to": "eventIdentifier",
+                    "similarity": 0.818095,
+                    "breaking": true,
+                    "solvable": true
+                }
             }
+        },
+        {
+            "type": "update",
+            "id": "deleteUserWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.DeleteUserHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.DeleteUserHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "login",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.UserLoginHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.UserLoginHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
         },
         {
             "type": "update",
@@ -2015,14 +2712,37 @@
                     "id": "EndpointPath",
                     "updated": {
                         "from": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
                             "value": "/home-feed/{userID}"
                         },
                         "to": {
-                            "type": "endpoint",
                             "id": "EndpointPath",
                             "value": "/home/{userID}"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getHomeFeedForUserWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.HomeFeedHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.HomeFeedHandler"
                         }
                     },
                     "breaking": true,
@@ -2053,61 +2773,364 @@
                     "solvable": true
                 }
             }
+        },
+        {
+            "type": "update",
+            "id": "getAllCategories",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetCategoriesHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetCategoriesHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoryWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "EndpointPath",
+                    "updated": {
+                        "from": {
+                            "id": "EndpointPath",
+                            "value": "/categories/{id}"
+                        },
+                        "to": {
+                            "id": "EndpointPath",
+                            "value": "/category"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoryWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetCategoryHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetCategoryHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getCategoryWithID",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "id",
+                    "updated": {
+                        "type": "parameterType",
+                        "from": "path",
+                        "to": "lightweight"
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.AddReviewHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.AddReviewHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "addition",
+                    "id": "displayName",
+                    "added": {
+                        "name": "displayName",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "kind": "lightweight",
+                        "necessity": "optional"
+                    },
+                    "breaking": false,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "addReviewToEvent",
+            "updated": {
+                "type": "response",
+                "from": {
+                    "reference": "Review"
+                },
+                "to": {
+                    "reference": "ReviewForm"
+                },
+                "backwardsMigration": 28
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "createCategory",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.CreateCategoryHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.CreateCategoryHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "createCategory",
+            "updated": {
+                "type": "parameter",
+                "parameter": {
+                    "type": "update",
+                    "id": "event",
+                    "updated": {
+                        "type": "type",
+                        "from": {
+                            "reference": "EventCategory"
+                        },
+                        "to": {
+                            "reference": "EventCategoryMediator"
+                        },
+                        "forwardMigration": 29
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            }
+        },
+        {
+            "type": "update",
+            "id": "register",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.UserRegisterFormHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.UserRegisterFormHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "createEvent",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.CreateEventHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.CreateEventHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getUserWithID",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetUserHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetUserHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
+        },
+        {
+            "type": "update",
+            "id": "getAllUsers",
+            "updated": {
+                "type": "identifier",
+                "identifier": {
+                    "type": "update",
+                    "id": "HandlerName",
+                    "updated": {
+                        "from": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV1.GetAllUsersHandler"
+                        },
+                        "to": {
+                            "id": "HandlerName",
+                            "value": "QONECTIQV2.GetAllUsersHandler"
+                        }
+                    },
+                    "breaking": true,
+                    "solvable": true
+                }
+            },
+            "breaking": true,
+            "solvable": true
         }
     ],
     "scripts": {
-        "29": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"BAE534C4-37BC-4667-9096-8D5258C2990A\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"88E93A2A-B5AA-4CC4-91C1-FC6C91BFCC90\", 'reviewerID': \"226F4108-94A3-4954-9566-DCA88B680430\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
-        "4": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "11": "function convert(ignoredTo) {\n    return JSON.stringify(null)\n}",
-        "3": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "19": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "14": "function convert(ignoredFrom) {\n    return JSON.stringify(\"marketing\")\n}",
-        "25": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "13": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "27": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "20": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'id': parsedFrom.id, 'title': parsedFrom.title, 'group': parsedFrom.group})\n}",
-        "12": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "8": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "22": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "17": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "23": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
         "5": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "6": "function convert(ignoredFrom) {\n    return JSON.stringify(\"beginner\")\n}",
-        "1": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
-        "9": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
-        "16": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
-        "7": "function convert(ignoredTo) {\n    return JSON.stringify(\"beginner\")\n}",
-        "15": "function convert(ignoredTo) {\n    return JSON.stringify(\"marketing\")\n}",
-        "0": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "9": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "3": "function convert(ignoredTo) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "7": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "29": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
+        "15": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "20": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "2": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "11": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': parsedTo.id, 'title': parsedTo.title, 'group': parsedTo.group})\n}",
+        "12": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "14": "function convert(input) {\n    return JSON.stringify(JSON.parse(input))\n}",
+        "24": "function convert(ignoredFrom) {\n    return JSON.stringify(null)\n}",
+        "28": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': \"CC592C55-E15E-4000-AED0-418E34E04D10\", 'title': parsedTo.title, 'content': parsedTo.content, 'eventID': \"AC5B102C-D208-4C75-A9C3-29B347CEF3F3\", 'reviewerID': \"8051E0BB-5890-4E4D-9A3E-9A5170D3591C\", 'summary': parsedTo.summary, 'rating': parsedTo.rating, 'displayReviewerName': false})\n}",
+        "21": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "27": "function convert(ignoredTo) {\n    return JSON.stringify(\"beginner\")\n}",
         "18": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "24": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "10": "function convert(ignoredFrom) {\n    return JSON.stringify(null)\n}",
-        "28": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'title': parsedFrom.title, 'categoryGroup': \"marketing\"})\n}",
-        "2": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "26": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
-        "21": "function convert(to) {\n    let parsedTo = JSON.parse(to)\n    return JSON.stringify({'id': parsedTo.id, 'title': parsedTo.title, 'group': parsedTo.group})\n}"
+        "0": "function convert(ignoredFrom) {\n    return JSON.stringify(\"marketing\")\n}",
+        "25": "function convert(ignoredTo) {\n    return JSON.stringify(null)\n}",
+        "8": "function convert(ignoredFrom) {\n    return JSON.stringify(\"outstanding\")\n}",
+        "16": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "19": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "22": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "6": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "23": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "10": "function convert(from) {\n    let parsedFrom = JSON.parse(from)\n    return JSON.stringify({'id': parsedFrom.id, 'title': parsedFrom.title, 'group': parsedFrom.group})\n}",
+        "1": "function convert(ignoredTo) {\n    return JSON.stringify(\"marketing\")\n}",
+        "4": "function convert(ignoredFrom) {\n    return JSON.stringify([])\n}",
+        "13": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "17": "function convert(ignoredTo) {\n    return JSON.stringify([])\n}",
+        "26": "function convert(ignoredFrom) {\n    return JSON.stringify(\"beginner\")\n}"
     },
     "json-values": {
-        "5": "false",
-        "1": "0",
-        "4": "\"basic\"",
         "0": "\"available\"",
+        "6": "0",
+        "7": "false",
+        "1": "false",
+        "5": "\"\"",
+        "2": "\"basic\"",
         "3": "0",
-        "6": "\"basic\"",
-        "2": "\"\"",
-        "7": "false"
+        "4": "\"basic\""
     },
     "updated-json-representations": {
-        "QONECTIQV2.User": "{\n\"birthday\" : 665492400,\n\"email\" : \"\",\n\"experience\" : \"beginner\",\n\"homeFeed\" : null,\n\"id\" : \"C8FBB417-05CE-4F88-8420-46BB372F6FBA\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}",
+        "QONECTIQV2.Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"79345E1F-7864-4228-B7B1-BDBBA4048E6A\",\n\"id\" : \"BAB77580-4223-456C-B0EC-1DCB40363E9A\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"9E6C022B-BB72-4CF5-BD71-FCF7987FC98A\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
         "QONECTIQV2.EventMediator": "{\n\"date\" : null,\n\"duration\" : null,\n\"maxParticipants\" : 0\n}",
-        "QONECTIQV2.Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"35096DBF-00D7-40AF-86C3-0F7A78449358\",\n\"title\" : \"\"\n},\n\"date\" : 665492400,\n\"duration\" : 0,\n\"id\" : \"EAF4B7D5-EE61-4C35-B945-2BF97A31CB00\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"15B7EEF9-6D3E-42EF-AF12-ABA0FAD66AEF\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
-        "QONECTIQV2.HomeFeedCategory": "{\n\"categoryID\" : \"ACED2A9E-CBBD-48B7-AB38-449C2081AF7C\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.HomeFeedCategory": "{\n\"categoryID\" : \"F2933600-3A0C-4332-A770-F08475E202FB\",\n\"eventsAmount\" : 0,\n\"imageURL\" : \"https://github.com/Apodini/Apodini\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"F5957F89-0B45-4EE4-A2E1-C575E7B7BCD1\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"F99583D8-7018-434A-AD30-93D164298DFC\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"3C342CDF-5BE7-4D52-BFE0-EEC0F84119DF\"\n}",
         "QONECTIQV2.ReviewForm": "{\n\"content\" : \"\",\n\"rating\" : \"outstanding\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
+        "QONECTIQV2.Event": "{\n\"category\" : {\n\"group\" : \"marketing\",\n\"id\" : \"BA2F5D7A-BE28-46A9-9792-048D0408E431\",\n\"title\" : \"\"\n},\n\"date\" : 665838000,\n\"duration\" : 0,\n\"id\" : \"A35F71B2-A3BC-4162-A23B-5A9738E18FF3\",\n\"imagePath\" : \"https://github.com/Apodini/Apodini\",\n\"location\" : \"\",\n\"maxParticipants\" : 0,\n\"organizer\" : \"763C437C-08F4-45DC-9520-84A3D8703D63\",\n\"reviews\" : [],\n\"summary\" : \"\",\n\"tags\" : [],\n\"title\" : \"\"\n}",
+        "QONECTIQV2.HomeFeedEvent": "{\n\"eventID\" : \"774B8ACC-47FD-4F4C-9421-CBD6A3DCDE0B\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
         "QONECTIQV2.UserLogin": "{\n\"password\" : \"\",\n\"username\" : \"\"\n}",
-        "QONECTIQV2.EventCategory": "{\n\"group\" : \"marketing\",\n\"id\" : \"63E43AB9-C4A8-4A3A-AF84-E31E497A72D9\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.Review": "{\n\"content\" : \"\",\n\"displayReviewerName\" : false,\n\"eventID\" : \"874F458C-B072-4B95-947E-4C551B52238D\",\n\"id\" : \"D91E4362-4FCE-4424-9877-781015D582FB\",\n\"rating\" : \"outstanding\",\n\"reviewerID\" : \"13F91146-B075-48FA-B753-5DB45685388B\",\n\"summary\" : \"\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.HomeFeedEvent": "{\n\"eventID\" : \"5FDC2D18-18D2-4814-992C-D82A58927070\",\n\"eventsCount\" : 0,\n\"imageURL\" : \"\",\n\"secondaryTitle\" : \"\",\n\"title\" : \"\"\n}",
-        "QONECTIQV2.UserRegisterForm": "{\n\"birthday\" : 665492400,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
-        "QONECTIQV2.HomeFeed": "{\n\"categories\" : [],\n\"events\" : [],\n\"greeting\" : \"\",\n\"id\" : \"1D0C60D0-DFB9-488F-8322-6A68B076A32F\",\n\"searchBarText\" : \"\",\n\"subtitle\" : \"\",\n\"theme\" : \"basic\",\n\"userID\" : \"C338CD76-C882-4540-B63D-838AD66C7507\"\n}"
+        "QONECTIQV2.UserRegisterForm": "{\n\"birthday\" : 665838000,\n\"email\" : \"\",\n\"lastname\" : \"\",\n\"name\" : \"\",\n\"password\" : \"\",\n\"preferredTheme\" : \"basic\",\n\"subscribedToNewsLetter\" : false\n}",
+        "QONECTIQV2.User": "{\n\"birthday\" : 665838000,\n\"email\" : \"\",\n\"experience\" : \"beginner\",\n\"homeFeed\" : null,\n\"id\" : \"AF34CD81-32D7-4CEA-B87D-742897805C57\",\n\"interestedIn\" : [],\n\"myEvents\" : [],\n\"name\" : \"\",\n\"participatingEvents\" : [],\n\"password\" : \"\",\n\"reviews\" : [],\n\"subscribedToNewsLetter\" : false,\n\"surname\" : \"\"\n}"
     }
 }

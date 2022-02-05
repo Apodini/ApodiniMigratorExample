@@ -15,8 +15,17 @@
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
           "branch": "feature/apodini-migration-0.3.0",
-          "revision": "202f1ac9c13b20204f41bf769e9aad052315b5bd",
+          "revision": "e2e655739f16825e69d55f14ab541402e56f7892",
           "version": null
+        }
+      },
+      {
+        "package": "ApodiniDocumentExport",
+        "repositoryURL": "https://github.com/Apodini/ApodiniDocumentExport.git",
+        "state": {
+          "branch": null,
+          "revision": "0a3fe4195f011057ad2cd5150c9091f2a17c2ec1",
+          "version": "0.1.1"
         }
       },
       {
@@ -24,7 +33,7 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
           "branch": "feature/grpc-migrator",
-          "revision": "d3ceb28d5df6530457d027f4b1748ed91d864454",
+          "revision": "b3f80bb3e923cd6fed0b965e4885107295b22a56",
           "version": null
         }
       },
