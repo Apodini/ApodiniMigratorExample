@@ -16,8 +16,7 @@ SPDX-License-Identifier: MIT
 
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/Apodini/ApodiniMigratorExample/blob/develop/LICENSES)
 [![swift-version](https://img.shields.io/badge/Swift-5.5-orange.svg)](https://github.com/apple/swift)
-[![REUSE Compliance Check](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/reuseaction.yml/badge.svg)](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/reuseaction.yml)
-[![Build and Test](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build-and-test.yml)
+[![Build](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build.yml/badge.svg)](https://github.com/Apodini/ApodiniMigratorExample/actions/workflows/build.yml)
 
 This repository contains an example project that introduces `ApodiniMigrator` functionality in an [Apodini](https://github.com/Apodini/Apodini) Web Service. It consists of two targets `QONECTIQV1` and `QONECTIQV2`, both implementing an example Web Service and use `Migrator` configuration. Random changes in the models and `Handler`s have been applied on the first version `QONECTIQV1` that resulted in `QONECTIQV2`.
 
@@ -113,13 +112,16 @@ info org.apodini.application : Server starting on 0.0.0.0:80
 
 The configurations provided via CLI arguments overwrite the configuration in source code in the `configuration` property of the web service. Provided with a `Document` and a Migration guide, one can make use of `migrator` CLI (see [example](https://github.com/Apodini/ApodiniMigrator#apodinimigratorexample)) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
 
-The following script demonstrates pulling, building, and running the Apodini Migrator to generate a client library of version 1 of the web service migrated to talk to version 2:
+The following script demonstrates pulling, building, and running the Apodini Migrator to generate a client library of version 1 of the web service migrated to talk to version 2.
+You may replace `migrator migrate rest` with `migrator migrate grpc` to generate a grpc interface (assuming your Apodini WebService
+has `ApodiniGRPC` configured in both version 1 and version 2).
 ```console
 $ git clone https://github.com/Apodini/ApodiniMigrator
 $ cd ApodiniMigrator
 $ git checkout 0.2.1
-$ swift run migrator migrate --package-name ApodiniMigratorExampleClient --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
+$ swift run migrator migrate rest --package-name ApodiniMigratorExampleClient --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
 info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorExampleClient
+info org.apodini.migrator.rest : ...
 info org.apodini.migrator.rest : Package ApodiniMigratorExampleClient was migrated successfully. You can open the package via ApodiniMigratorExampleClient/Package.swift
 ```
 

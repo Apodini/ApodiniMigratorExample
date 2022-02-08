@@ -112,7 +112,7 @@ message Event {
   .google.protobuf.Timestamp date = 5;
   uint64 duration = 6;
   string imagePath = 7;
-  uint64 maxParticipants = 8;
+  optional uint64 maxParticipants = 8;
   string organizer = 9;
   repeated string tags = 10 [packed = false];
   .QONECTIQ.EventCategory category = 11;
@@ -129,8 +129,8 @@ message EventCategory {
 
 message EventMediator {
   .google.protobuf.Timestamp date = 1;
-  uint64 duration = 2;
-  uint64 maxParticipants = 3;
+  optional uint64 duration = 2;
+  optional uint64 maxParticipants = 3;
 }
 
 
