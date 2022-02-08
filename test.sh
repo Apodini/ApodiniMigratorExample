@@ -6,4 +6,4 @@
 # SPDX-License-Identifier: MIT
 #
 
-curl --fail http://localhost
+curl -k --fail https://localhost:8080
