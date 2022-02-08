@@ -13,6 +13,6 @@ import ApodiniGRPC
 
 extension AnyProtobufEnum where Self: CaseIterable, Self: Equatable {
     var rawValue: Int32 {
-        Int32(Self.allCases.firstIndex(of: self)!)
+        Int32(Self.allCases.firstIndex(of: self)!) // swiftlint:disable:this force_unwrapping
     }
 }

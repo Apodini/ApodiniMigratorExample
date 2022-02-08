@@ -45,7 +45,6 @@ struct CreateCategoryHandler: Handler {
 
 // MARK: - GetCategoriesHandler
 struct GetCategoriesHandler: Handler {
-
     func handle() throws -> [EventCategory] {
         [try .instance(or: notFound)]
     }
@@ -68,4 +67,3 @@ struct GroupCategoriesHandler: Handler {
         [try .instance(or: notFound)]
     }
 }
-

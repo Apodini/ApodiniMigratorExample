@@ -13,6 +13,7 @@ import ApodiniMigrator
 public protocol MigratorContent: Content, ApodiniMigratorCodable {}
 
 public extension MigratorContent {
+    /// Create an instance using `defaultValue` or return the given `ApodiniError`.
     static func instance(or apodiniError: ApodiniError) throws -> Self {
         do {
             return try defaultValue()
@@ -23,12 +24,14 @@ public extension MigratorContent {
 }
 
 public extension ApodiniMigratorEncodable {
+    /// The encoder
     static var encoder: JSONEncoder {
         .init()
     }
 }
 
 public extension ApodiniMigratorDecodable {
+    /// The decoder
     static var decoder: JSONDecoder {
         .init()
     }
