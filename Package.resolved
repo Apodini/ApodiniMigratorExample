@@ -14,9 +14,9 @@
         "package": "Apodini",
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
-          "branch": "feature/apodini-migration-0.3.0",
-          "revision": "b4d252bd81b8266eaad97a13506199f24b1a5372",
-          "version": null
+          "branch": null,
+          "revision": "3d71efcc9f222a71dfa71f53367a00b68352b863",
+          "version": "0.9.0"
         }
       },
       {
