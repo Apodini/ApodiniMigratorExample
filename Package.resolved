@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/Apodini/Apodini.git",
         "state": {
           "branch": "feature/apodini-migration-0.3.0",
-          "revision": "31448c4c9ba6a058f5e2217719ed7d678d9fe8fb",
+          "revision": "b4d252bd81b8266eaad97a13506199f24b1a5372",
           "version": null
         }
       },
@@ -32,18 +32,18 @@
         "package": "ApodiniMigrator",
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
-          "branch": "feature/grpc-migrator",
-          "revision": "6743c17f3262f8aea55c2513d62cd938dfa38d23",
-          "version": null
+          "branch": null,
+          "revision": "10671191ddd8a19a61ac6cae06060d259dbfe9ce",
+          "version": "0.3.0"
         }
       },
       {
         "package": "ApodiniTypeInformation",
         "repositoryURL": "https://github.com/Apodini/ApodiniTypeInformation.git",
         "state": {
-          "branch": "feature/apodini-migrator-0.3",
-          "revision": "778ee1984e0fbccbabc55eed80f75aa0e5120e28",
-          "version": null
+          "branch": null,
+          "revision": "40247bedd5153b7641e95a11bd826b16a15fd12e",
+          "version": "0.3.6"
         }
       },
       {
