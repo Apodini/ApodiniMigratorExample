@@ -25,7 +25,7 @@ struct QONECTIQV2: Apodini.WebService {
     var configuration: Configuration {
         if let cert = Bundle.module.path(forResource: "cert", ofType: "pem"),
            let key = Bundle.module.path(forResource: "key", ofType: "pem") {
-            HTTPConfiguration(bindAddress: .interface("127.0.0.1", port: 8080), tlsConfiguration: .init(certificatePath: cert, keyPath: key))
+            HTTPConfiguration(bindAddress: .interface(port: 8080), tlsConfiguration: .init(certificatePath: cert, keyPath: key))
         }
 
         REST()
