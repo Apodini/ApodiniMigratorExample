@@ -1,11 +1,11 @@
 {
-    "id": "69C4C72B-F389-42E7-8F8B-74743E030FB4",
+    "id": "C4CBDED4-D7CD-48BF-811F-4DD95B633A1F",
     "version": "2.1.0",
     "service": {
         "version": "v_2.0.0",
         "http": {
             "protocol": "https",
-            "hostname": "0.0.0.0",
+            "hostname": "localhost",
             "port": 8080
         },
         "exporters": {
@@ -50,50 +50,42 @@
                             }
                         }
                     },
-                    "QONECTIQV2.AddReviewHandler": {
+                    "QONECTIQV2.ReviewsHandler": {
                         "inputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].AddReviewHandlerInput"
+                                "GRPCName": "[QONECTIQ2].ReviewsHandlerInput"
                             },
                             "childrenIdentifiers": {
-                                "review": {
-                                    "GRPCFieldType": "11",
-                                    "GRPCNumber": "1"
-                                },
-                                "userID": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "3"
-                                },
                                 "eventID": {
                                     "GRPCFieldType": "9",
-                                    "GRPCNumber": "2"
-                                },
-                                "displayName": {
-                                    "GRPCFieldType": "8",
-                                    "GRPCNumber": "4"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.SearchEventsHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].SearchEventsHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "searchQuery": {
-                                    "GRPCFieldType": "9",
                                     "GRPCNumber": "1"
+                                },
+                                "ratingBetterThan": {
+                                    "GRPCFieldType": "14",
+                                    "GRPCNumber": "2"
                                 }
                             }
                         },
                         "outputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].SearchEventsHandlerResponse"
+                                "GRPCName": "[QONECTIQ2].ReviewsHandlerResponse"
                             },
                             "childrenIdentifiers": {
                                 "value": {
                                     "GRPCFieldType": "11",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.GetUserHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].GetUserHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "userID": {
+                                    "GRPCFieldType": "9",
                                     "GRPCNumber": "1"
                                 }
                             }
@@ -123,6 +115,61 @@
                             }
                         }
                     },
+                    "QONECTIQV2.UpdateEventHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].UpdateEventHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "eventID": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "2"
+                                },
+                                "eventMediator": {
+                                    "GRPCFieldType": "11",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.DeleteEventHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].DeleteEventHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "identifier": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.AddReviewHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].AddReviewHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "eventID": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "2"
+                                },
+                                "review": {
+                                    "GRPCFieldType": "11",
+                                    "GRPCNumber": "1"
+                                },
+                                "displayName": {
+                                    "GRPCFieldType": "8",
+                                    "GRPCNumber": "4"
+                                },
+                                "userID": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "3"
+                                }
+                            }
+                        }
+                    },
                     "QONECTIQV2.GetEventHandler": {
                         "inputIdentifiers": {
                             "identifiers": {
@@ -131,6 +178,56 @@
                             "childrenIdentifiers": {
                                 "id": {
                                     "GRPCFieldType": "9",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.DeleteUserHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].DeleteUserHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "userID": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.GetEventsHandler": {
+                        "outputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].GetEventsHandlerResponse"
+                            },
+                            "childrenIdentifiers": {
+                                "value": {
+                                    "GRPCFieldType": "11",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        }
+                    },
+                    "QONECTIQV2.ReviewsOfUserHandler": {
+                        "inputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerInput"
+                            },
+                            "childrenIdentifiers": {
+                                "userId": {
+                                    "GRPCFieldType": "9",
+                                    "GRPCNumber": "1"
+                                }
+                            }
+                        },
+                        "outputIdentifiers": {
+                            "identifiers": {
+                                "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerResponse"
+                            },
+                            "childrenIdentifiers": {
+                                "value": {
+                                    "GRPCFieldType": "11",
                                     "GRPCNumber": "1"
                                 }
                             }
@@ -160,58 +257,6 @@
                             }
                         }
                     },
-                    "QONECTIQV2.GetEventsHandler": {
-                        "outputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].GetEventsHandlerResponse"
-                            },
-                            "childrenIdentifiers": {
-                                "value": {
-                                    "GRPCFieldType": "11",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.GetCategoryHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].GetCategoryHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "id": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.DeleteEventHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].DeleteEventHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "identifier": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.DeleteUserHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].DeleteUserHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "userID": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        }
-                    },
                     "QONECTIQV2.HomeFeedHandler": {
                         "inputIdentifiers": {
                             "identifiers": {
@@ -229,51 +274,10 @@
                             }
                         }
                     },
-                    "QONECTIQV2.GetAllUsersHandler": {
+                    "QONECTIQV2.GetCategoriesHandler": {
                         "outputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].GetAllUsersHandlerResponse"
-                            },
-                            "childrenIdentifiers": {
-                                "value": {
-                                    "GRPCFieldType": "11",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.UpdateEventHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].UpdateEventHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "eventMediator": {
-                                    "GRPCFieldType": "11",
-                                    "GRPCNumber": "1"
-                                },
-                                "eventID": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "2"
-                                }
-                            }
-                        }
-                    },
-                    "QONECTIQV2.ReviewsOfUserHandler": {
-                        "inputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerInput"
-                            },
-                            "childrenIdentifiers": {
-                                "userId": {
-                                    "GRPCFieldType": "9",
-                                    "GRPCNumber": "1"
-                                }
-                            }
-                        },
-                        "outputIdentifiers": {
-                            "identifiers": {
-                                "GRPCName": "[QONECTIQ2].ReviewsOfUserHandlerResponse"
+                                "GRPCName": "[QONECTIQ2].GetCategoriesHandlerResponse"
                             },
                             "childrenIdentifiers": {
                                 "value": {
@@ -296,30 +300,26 @@
                             }
                         }
                     },
-                    "QONECTIQV2.GetUserHandler": {
+                    "QONECTIQV2.GetCategoryHandler": {
                         "inputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].GetUserHandlerInput"
+                                "GRPCName": "[QONECTIQ2].GetCategoryHandlerInput"
                             },
                             "childrenIdentifiers": {
-                                "userID": {
+                                "id": {
                                     "GRPCFieldType": "9",
                                     "GRPCNumber": "1"
                                 }
                             }
                         }
                     },
-                    "QONECTIQV2.ReviewsHandler": {
+                    "QONECTIQV2.SearchEventsHandler": {
                         "inputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].ReviewsHandlerInput"
+                                "GRPCName": "[QONECTIQ2].SearchEventsHandlerInput"
                             },
                             "childrenIdentifiers": {
-                                "ratingBetterThan": {
-                                    "GRPCFieldType": "14",
-                                    "GRPCNumber": "2"
-                                },
-                                "eventID": {
+                                "searchQuery": {
                                     "GRPCFieldType": "9",
                                     "GRPCNumber": "1"
                                 }
@@ -327,7 +327,7 @@
                         },
                         "outputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].ReviewsHandlerResponse"
+                                "GRPCName": "[QONECTIQ2].SearchEventsHandlerResponse"
                             },
                             "childrenIdentifiers": {
                                 "value": {
@@ -337,10 +337,10 @@
                             }
                         }
                     },
-                    "QONECTIQV2.GetCategoriesHandler": {
+                    "QONECTIQV2.GetAllUsersHandler": {
                         "outputIdentifiers": {
                             "identifiers": {
-                                "GRPCName": "[QONECTIQ2].GetCategoriesHandlerResponse"
+                                "GRPCName": "[QONECTIQ2].GetAllUsersHandlerResponse"
                             },
                             "childrenIdentifiers": {
                                 "value": {
@@ -1320,739 +1320,6 @@
         }
     ],
     "types": {
-        "HomeFeedTheme": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "HomeFeedTheme"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "basic",
-                        "rawValue": "basic",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
-                        }
-                    },
-                    {
-                        "name": "classic",
-                        "rawValue": "classic",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
-                        }
-                    },
-                    {
-                        "name": "dark",
-                        "rawValue": "dark",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
-                        }
-                    },
-                    {
-                        "name": "midnight",
-                        "rawValue": "midnight",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
-                        }
-                    },
-                    {
-                        "name": "sunset",
-                        "rawValue": "sunset",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkVGhlbWUifQ=="
-                }
-            }
-        },
-        "EventCategory": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "EventCategory"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "group",
-                        "type": {
-                            "reference": "EventCategoryGroup"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnkifQ=="
-                }
-            }
-        },
-        "ReviewForm": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "ReviewForm"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "content",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "rating",
-                        "type": {
-                            "reference": "Rating"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJldmlld0Zvcm0ifQ=="
-                }
-            }
-        },
-        "EventMediator": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "EventMediator"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "date",
-                        "type": {
-                            "optional": {
-                                "scalar": "Date"
-                            }
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
-                        }
-                    },
-                    {
-                        "name": "duration",
-                        "type": {
-                            "optional": {
-                                "scalar": "UInt"
-                            }
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    },
-                    {
-                        "name": "maxParticipants",
-                        "type": {
-                            "scalar": "UInt"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50TWVkaWF0b3IifQ=="
-                }
-            }
-        },
-        "Review": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "Review"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "content",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "eventID",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "reviewerID",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "rating",
-                        "type": {
-                            "reference": "Rating"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
-                        }
-                    },
-                    {
-                        "name": "displayReviewerName",
-                        "type": {
-                            "scalar": "Bool"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiI4In0="
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJldmlldyJ9"
-                }
-            }
-        },
-        "HomeFeedEvent": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "HomeFeedEvent"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "eventID",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "secondaryTitle",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "imageURL",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "eventsCount",
-                        "type": {
-                            "scalar": "UInt"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkRXZlbnQifQ=="
-                }
-            }
-        },
-        "HomeFeedCategory": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "HomeFeedCategory"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "categoryID",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "imageURL",
-                        "type": {
-                            "scalar": "URL"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "eventsAmount",
-                        "type": {
-                            "scalar": "UInt"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkQ2F0ZWdvcnkifQ=="
-                }
-            }
-        },
-        "Rating": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "Rating"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "outstanding",
-                        "rawValue": "outstanding",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
-                        }
-                    },
-                    {
-                        "name": "exceedsExpectation",
-                        "rawValue": "exceedsExpectation",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
-                        }
-                    },
-                    {
-                        "name": "meetsExpectation",
-                        "rawValue": "meetsExpectation",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
-                        }
-                    },
-                    {
-                        "name": "needsImprovement",
-                        "rawValue": "needsImprovement",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
-                        }
-                    },
-                    {
-                        "name": "terrible",
-                        "rawValue": "terrible",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJhdGluZyJ9"
-                }
-            }
-        },
-        "UserRegisterForm": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "UserRegisterForm"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "name",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "lastname",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "password",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "birthday",
-                        "type": {
-                            "scalar": "Date"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
-                        }
-                    },
-                    {
-                        "name": "email",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "subscribedToNewsLetter",
-                        "type": {
-                            "scalar": "Bool"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI4In0="
-                        }
-                    },
-                    {
-                        "name": "preferredTheme",
-                        "type": {
-                            "reference": "HomeFeedTheme"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJSZWdpc3RlckZvcm0ifQ=="
-                }
-            }
-        },
-        "Empty": {
-            "object": {
-                "typeName": {
-                    "defined-in": "Apodini",
-                    "rootComponent": {
-                        "name": "Empty"
-                    }
-                },
-                "context": {}
-            }
-        },
-        "Event": {
-            "object": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "Event"
-                    }
-                },
-                "properties": [
-                    {
-                        "name": "id",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "title",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "summary",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "reviews",
-                        "type": {
-                            "repeated": {
-                                "reference": "Review"
-                            }
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
-                        }
-                    },
-                    {
-                        "name": "date",
-                        "type": {
-                            "scalar": "Date"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
-                        }
-                    },
-                    {
-                        "name": "duration",
-                        "type": {
-                            "scalar": "UInt"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    },
-                    {
-                        "name": "imagePath",
-                        "type": {
-                            "scalar": "URL"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "maxParticipants",
-                        "type": {
-                            "scalar": "UInt"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiI0In0="
-                        }
-                    },
-                    {
-                        "name": "organizer",
-                        "type": {
-                            "scalar": "UUID"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
-                        }
-                    },
-                    {
-                        "name": "tags",
-                        "type": {
-                            "repeated": {
-                                "scalar": "String"
-                            }
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTAiLCJHUlBDRmllbGRUeXBlIjoiOSJ9"
-                        }
-                    },
-                    {
-                        "name": "location",
-                        "type": {
-                            "scalar": "String"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTEiLCJHUlBDRmllbGRUeXBlIjoiOSJ9"
-                        }
-                    },
-                    {
-                        "name": "category",
-                        "type": {
-                            "reference": "EventCategory"
-                        },
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTIiLCJHUlBDRmllbGRUeXBlIjoiMTEifQ=="
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50In0="
-                }
-            }
-        },
-        "EventCategoryGroup": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "EventCategoryGroup"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "marketing",
-                        "rawValue": "marketing",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
-                        }
-                    },
-                    {
-                        "name": "blogging",
-                        "rawValue": "blogging",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
-                        }
-                    },
-                    {
-                        "name": "coding",
-                        "rawValue": "coding",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
-                        }
-                    },
-                    {
-                        "name": "cooking",
-                        "rawValue": "cooking",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
-                        }
-                    },
-                    {
-                        "name": "dating",
-                        "rawValue": "dating",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
-                        }
-                    },
-                    {
-                        "name": "travel",
-                        "rawValue": "travel",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSJ9"
-                        }
-                    },
-                    {
-                        "name": "science",
-                        "rawValue": "science",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiJ9"
-                        }
-                    },
-                    {
-                        "name": "entertainment",
-                        "rawValue": "entertainment",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnlHcm91cCJ9"
-                }
-            }
-        },
         "User": {
             "object": {
                 "typeName": {
@@ -2195,12 +1462,519 @@
                 }
             }
         },
-        "EventCategoryMediator": {
+        "Rating": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Rating"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "outstanding",
+                        "rawValue": "outstanding",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
+                        }
+                    },
+                    {
+                        "name": "exceedsExpectation",
+                        "rawValue": "exceedsExpectation",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
+                        }
+                    },
+                    {
+                        "name": "meetsExpectation",
+                        "rawValue": "meetsExpectation",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    },
+                    {
+                        "name": "needsImprovement",
+                        "rawValue": "needsImprovement",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
+                        }
+                    },
+                    {
+                        "name": "terrible",
+                        "rawValue": "terrible",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJhdGluZyJ9"
+                }
+            }
+        },
+        "EventCategory": {
             "object": {
                 "typeName": {
                     "defined-in": "QONECTIQV2",
                     "rootComponent": {
-                        "name": "EventCategoryMediator"
+                        "name": "EventCategory"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "group",
+                        "type": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnkifQ=="
+                }
+            }
+        },
+        "Experience": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Experience"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "beginner",
+                        "rawValue": "beginner",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
+                        }
+                    },
+                    {
+                        "name": "expert",
+                        "rawValue": "expert",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
+                        }
+                    },
+                    {
+                        "name": "unclassified",
+                        "rawValue": "unclassified",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV4cGVyaWVuY2UifQ=="
+                }
+            }
+        },
+        "Event": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Event"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "summary",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "reviews",
+                        "type": {
+                            "repeated": {
+                                "reference": "Review"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "type": {
+                            "scalar": "Date"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "scalar": "UInt"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    },
+                    {
+                        "name": "imagePath",
+                        "type": {
+                            "scalar": "URL"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "scalar": "UInt"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    },
+                    {
+                        "name": "organizer",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "type": {
+                            "repeated": {
+                                "scalar": "String"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTAiLCJHUlBDRmllbGRUeXBlIjoiOSJ9"
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTEiLCJHUlBDRmllbGRUeXBlIjoiOSJ9"
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "type": {
+                            "reference": "EventCategory"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMTIiLCJHUlBDRmllbGRUeXBlIjoiMTEifQ=="
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50In0="
+                }
+            }
+        },
+        "UserRegisterForm": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserRegisterForm"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "name",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "birthday",
+                        "type": {
+                            "scalar": "Date"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "subscribedToNewsLetter",
+                        "type": {
+                            "scalar": "Bool"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI4In0="
+                        }
+                    },
+                    {
+                        "name": "preferredTheme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJSZWdpc3RlckZvcm0ifQ=="
+                }
+            }
+        },
+        "Empty": {
+            "object": {
+                "typeName": {
+                    "defined-in": "Apodini",
+                    "rootComponent": {
+                        "name": "Empty"
+                    }
+                },
+                "context": {}
+            }
+        },
+        "UserBadge": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "UserBadge"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "newbie",
+                        "rawValue": "newbie",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
+                        }
+                    },
+                    {
+                        "name": "explorer",
+                        "rawValue": "explorer",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
+                        }
+                    },
+                    {
+                        "name": "achiever",
+                        "rawValue": "achiever",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    },
+                    {
+                        "name": "worldSaver",
+                        "rawValue": "worldSaver",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJCYWRnZSJ9"
+                }
+            }
+        },
+        "HomeFeedCategory": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedCategory"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "categoryID",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "imageURL",
+                        "type": {
+                            "scalar": "URL"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "eventsAmount",
+                        "type": {
+                            "scalar": "UInt"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkQ2F0ZWdvcnkifQ=="
+                }
+            }
+        },
+        "HomeFeedEvent": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedEvent"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "eventID",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "secondaryTitle",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "imageURL",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "eventsCount",
+                        "type": {
+                            "scalar": "UInt"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkRXZlbnQifQ=="
+                }
+            }
+        },
+        "ReviewForm": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "ReviewForm"
                     }
                 },
                 "properties": [
@@ -2214,17 +1988,126 @@
                         }
                     },
                     {
-                        "name": "categoryGroup",
+                        "name": "content",
                         "type": {
-                            "reference": "EventCategoryGroup"
+                            "scalar": "String"
                         },
                         "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "summary",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "rating",
+                        "type": {
+                            "reference": "Rating"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
                         }
                     }
                 ],
                 "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnlNZWRpYXRvciJ9"
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJldmlld0Zvcm0ifQ=="
+                }
+            }
+        },
+        "HomeFeed": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeed"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "id",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "userID",
+                        "type": {
+                            "scalar": "UUID"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "greeting",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "subtitle",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "searchBarText",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "events",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedEvent"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "categories",
+                        "type": {
+                            "repeated": {
+                                "reference": "HomeFeedCategory"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "theme",
+                        "type": {
+                            "reference": "HomeFeedTheme"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkIn0="
                 }
             }
         },
@@ -2330,58 +2213,45 @@
                 }
             }
         },
-        "UserBadge": {
-            "enum": {
-                "typeName": {
-                    "defined-in": "QONECTIQV2",
-                    "rootComponent": {
-                        "name": "UserBadge"
-                    }
-                },
-                "rawValueType": {
-                    "scalar": "String"
-                },
-                "cases": [
-                    {
-                        "name": "newbie",
-                        "rawValue": "newbie",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
-                        }
-                    },
-                    {
-                        "name": "explorer",
-                        "rawValue": "explorer",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
-                        }
-                    },
-                    {
-                        "name": "achiever",
-                        "rawValue": "achiever",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
-                        }
-                    },
-                    {
-                        "name": "worldSaver",
-                        "rawValue": "worldSaver",
-                        "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
-                        }
-                    }
-                ],
-                "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlVzZXJCYWRnZSJ9"
-                }
-            }
-        },
-        "HomeFeed": {
+        "EventCategoryMediator": {
             "object": {
                 "typeName": {
                     "defined-in": "QONECTIQV2",
                     "rootComponent": {
-                        "name": "HomeFeed"
+                        "name": "EventCategoryMediator"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "title",
+                        "type": {
+                            "scalar": "String"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
+                        }
+                    },
+                    {
+                        "name": "categoryGroup",
+                        "type": {
+                            "reference": "EventCategoryGroup"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnlNZWRpYXRvciJ9"
+                }
+            }
+        },
+        "Review": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "Review"
                     }
                 },
                 "properties": [
@@ -2395,16 +2265,16 @@
                         }
                     },
                     {
-                        "name": "userID",
+                        "name": "title",
                         "type": {
-                            "scalar": "UUID"
+                            "scalar": "String"
                         },
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
                         }
                     },
                     {
-                        "name": "greeting",
+                        "name": "content",
                         "type": {
                             "scalar": "String"
                         },
@@ -2413,66 +2283,62 @@
                         }
                     },
                     {
-                        "name": "subtitle",
+                        "name": "eventID",
                         "type": {
-                            "scalar": "String"
+                            "scalar": "UUID"
                         },
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCIsIkdSUENGaWVsZFR5cGUiOiI5In0="
                         }
                     },
                     {
-                        "name": "searchBarText",
+                        "name": "reviewerID",
                         "type": {
-                            "scalar": "String"
+                            "scalar": "UUID"
                         },
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSIsIkdSUENGaWVsZFR5cGUiOiI5In0="
                         }
                     },
                     {
-                        "name": "events",
+                        "name": "summary",
                         "type": {
-                            "repeated": {
-                                "reference": "HomeFeedEvent"
-                            }
+                            "scalar": "String"
                         },
                         "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiIsIkdSUENGaWVsZFR5cGUiOiI5In0="
                         }
                     },
                     {
-                        "name": "categories",
+                        "name": "rating",
                         "type": {
-                            "repeated": {
-                                "reference": "HomeFeedCategory"
-                            }
+                            "reference": "Rating"
                         },
                         "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
                         }
                     },
                     {
-                        "name": "theme",
+                        "name": "displayReviewerName",
                         "type": {
-                            "reference": "HomeFeedTheme"
+                            "scalar": "Bool"
                         },
                         "context": {
-                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiIxNCJ9"
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiOCIsIkdSUENGaWVsZFR5cGUiOiI4In0="
                         }
                     }
                 ],
                 "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkIn0="
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLlJldmlldyJ9"
                 }
             }
         },
-        "Experience": {
+        "EventCategoryGroup": {
             "enum": {
                 "typeName": {
                     "defined-in": "QONECTIQV2",
                     "rootComponent": {
-                        "name": "Experience"
+                        "name": "EventCategoryGroup"
                     }
                 },
                 "rawValueType": {
@@ -2480,29 +2346,163 @@
                 },
                 "cases": [
                     {
-                        "name": "beginner",
-                        "rawValue": "beginner",
+                        "name": "marketing",
+                        "rawValue": "marketing",
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
                         }
                     },
                     {
-                        "name": "expert",
-                        "rawValue": "expert",
+                        "name": "blogging",
+                        "rawValue": "blogging",
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
                         }
                     },
                     {
-                        "name": "unclassified",
-                        "rawValue": "unclassified",
+                        "name": "coding",
+                        "rawValue": "coding",
                         "context": {
                             "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    },
+                    {
+                        "name": "cooking",
+                        "rawValue": "cooking",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
+                        }
+                    },
+                    {
+                        "name": "dating",
+                        "rawValue": "dating",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
+                        }
+                    },
+                    {
+                        "name": "travel",
+                        "rawValue": "travel",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNSJ9"
+                        }
+                    },
+                    {
+                        "name": "science",
+                        "rawValue": "science",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNiJ9"
+                        }
+                    },
+                    {
+                        "name": "entertainment",
+                        "rawValue": "entertainment",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNyJ9"
                         }
                     }
                 ],
                 "context": {
-                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV4cGVyaWVuY2UifQ=="
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50Q2F0ZWdvcnlHcm91cCJ9"
+                }
+            }
+        },
+        "HomeFeedTheme": {
+            "enum": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "HomeFeedTheme"
+                    }
+                },
+                "rawValueType": {
+                    "scalar": "String"
+                },
+                "cases": [
+                    {
+                        "name": "basic",
+                        "rawValue": "basic",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMCJ9"
+                        }
+                    },
+                    {
+                        "name": "classic",
+                        "rawValue": "classic",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSJ9"
+                        }
+                    },
+                    {
+                        "name": "dark",
+                        "rawValue": "dark",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiJ9"
+                        }
+                    },
+                    {
+                        "name": "midnight",
+                        "rawValue": "midnight",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyJ9"
+                        }
+                    },
+                    {
+                        "name": "sunset",
+                        "rawValue": "sunset",
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiNCJ9"
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkhvbWVGZWVkVGhlbWUifQ=="
+                }
+            }
+        },
+        "EventMediator": {
+            "object": {
+                "typeName": {
+                    "defined-in": "QONECTIQV2",
+                    "rootComponent": {
+                        "name": "EventMediator"
+                    }
+                },
+                "properties": [
+                    {
+                        "name": "date",
+                        "type": {
+                            "optional": {
+                                "scalar": "Date"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMSIsIkdSUENGaWVsZFR5cGUiOiIxMSJ9"
+                        }
+                    },
+                    {
+                        "name": "duration",
+                        "type": {
+                            "optional": {
+                                "scalar": "UInt"
+                            }
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMiIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    },
+                    {
+                        "name": "maxParticipants",
+                        "type": {
+                            "scalar": "UInt"
+                        },
+                        "context": {
+                            "TypeInformationIdentifierContextKey": "eyJHUlBDTnVtYmVyIjoiMyIsIkdSUENGaWVsZFR5cGUiOiI0In0="
+                        }
+                    }
+                ],
+                "context": {
+                    "TypeInformationIdentifierContextKey": "eyJHUlBDTmFtZSI6IltRT05FQ1RJUTJdLkV2ZW50TWVkaWF0b3IifQ=="
                 }
             }
         }

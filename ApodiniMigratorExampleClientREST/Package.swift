@@ -3,34 +3,27 @@
 //
 // This source file is part of the Apodini open source project
 //
-// SPDX-FileCopyrightText: 2019-2021 Paul Schmiedmayer and the Apodini project authors (see CONTRIBUTORS.md) <paul.schmiedmayer@tum.de>
+// SPDX-FileCopyrightText: 2019-2022 Paul Schmiedmayer and the Apodini project authors (see CONTRIBUTORS.md) <paul.schmiedmayer@tum.de>
 //
 // SPDX-License-Identifier: MIT
 //
 
-
 import PackageDescription
 
 let package = Package(
-    name: "ApodiniMigratorExampleClient",
+    name: "ApodiniMigratorExampleClientREST",
     platforms: [
         .macOS(.v11), .iOS(.v13)
     ],
     products: [
-        .library(name: "ApodiniMigratorExampleClient", targets: ["ApodiniMigratorExampleClient"])
+        .library(name: "ApodiniMigratorExampleClientREST", targets: ["ApodiniMigratorExampleClientREST"])
     ],
     dependencies: [
-        .package(url: "https://github.com/Apodini/ApodiniMigrator.git", .upToNextMinor(from: "0.2.0"))
+        .package(url: "https://github.com/Apodini/ApodiniMigrator.git", .upToNextMinor(from: "0.3.0"))
     ],
     targets: [
-        .executableTarget(
-            name: "ExampleClient",
-            dependencies: [
-                .target(name: "ApodiniMigratorExampleClient")
-            ]
-        ),
         .target(
-            name: "ApodiniMigratorExampleClient",
+            name: "ApodiniMigratorExampleClientREST",
             dependencies: [
                 .product(name: "ApodiniMigratorClientSupport", package: "ApodiniMigrator")
             ],
@@ -39,9 +32,9 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "ApodiniMigratorExampleClientTests",
+            name: "ApodiniMigratorExampleClientRESTTests",
             dependencies: [
-                .target(name: "ApodiniMigratorExampleClient")
+                .target(name: "ApodiniMigratorExampleClientREST")
             ]
         )
     ]

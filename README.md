@@ -112,17 +112,22 @@ info org.apodini.application : Server starting on 0.0.0.0:80
 
 The configurations provided via CLI arguments overwrite the configuration in source code in the `configuration` property of the web service. Provided with a `Document` and a Migration guide, one can make use of `migrator` CLI (see [example](https://github.com/Apodini/ApodiniMigrator#apodinimigratorexample)) to automatically generate or migrate an intermediary client library. Corresponding documents of this example project (documents of the first and second version and their migration guide) can be found in [Documents](https://github.com/Apodini/ApodiniMigratorExample/tree/develop/Documents).
 
+To use the `migrator` CLI install it according to the [Apodini Migrator README](https://github.com/Apodini/ApodiniMigrator#installationsetupintegration). 
 The following script demonstrates pulling, building, and running the Apodini Migrator to generate a client library of version 1 of the web service migrated to talk to version 2.
+```console
+$ migrator migrate rest --package-name ApodiniMigratorExampleClientREST --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
+info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorExampleClientREST
+info org.apodini.migrator.rest : ...
+info org.apodini.migrator.rest : Package ApodiniMigratorExampleClientREST was migrated successfully. You can open the package via ApodiniMigratorExampleClientREST/Package.swift
+```
+
 You may replace `migrator migrate rest` with `migrator migrate grpc` to generate a grpc interface (assuming your Apodini WebService
 has `ApodiniGRPC` configured in both version 1 and version 2).
 ```console
-$ git clone https://github.com/Apodini/ApodiniMigrator
-$ cd ApodiniMigrator
-$ git checkout 0.2.1
-$ swift run migrator migrate rest --package-name ApodiniMigratorExampleClient --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json
-info org.apodini.migrator.rest : Starting migration of package ApodiniMigratorExampleClient
+$ migrator migrate grpc --package-name ApodiniMigratorExampleClientGRPC --target-directory ../ --document-path ../Documents/api_v1.0.0.json --migration-guide-path ../Documents/migration_guide.json --proto-path ../Documents/api_v1.0.0.proto
+info org.apodini.migrator.grpc : Starting migration of package ApodiniMigratorExampleClientGRPC
 info org.apodini.migrator.rest : ...
-info org.apodini.migrator.rest : Package ApodiniMigratorExampleClient was migrated successfully. You can open the package via ApodiniMigratorExampleClient/Package.swift
+info org.apodini.migrator.grpc : Package ApodiniMigratorExampleClientGRPC was migrated successfully. You can open the package via ApodiniMigratorExampleClientGRPC/Package.swift
 ```
 
 The resulting client library can be inspected in the `ApodiniMigratorExampleClient` folder, the files have only been updated to contain a REUSE compatible licensing information.
