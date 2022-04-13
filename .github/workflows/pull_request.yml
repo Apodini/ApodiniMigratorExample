@@ -19,7 +19,6 @@ jobs:
     with:
       packagename: ApodiniMigratorExample
       test: false
-      testdocc: false
   reuse_action:
     name: REUSE Compliance Check
     uses: Apodini/.github/.github/workflows/reuse.yml@v1

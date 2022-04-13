@@ -6,4 +6,13 @@
 # SPDX-License-Identifier: MIT
 #
 
-curl -k --fail https://localhost:80
+curl -k --fail https://localhost:8080
+curl -k --fail https://localhost:8080/categories
+curl -k --fail https://localhost:8080/events
+curl -k --fail https://localhost:8080/users
+
+curl -k --fail https://localhost:8080/__apodini/grpc/schema/json/full
+curl -k --fail https://localhost:8080/__apodini/grpc/schema/files
+curl -k --fail https://localhost:8080/__apodini/grpc/schema/json/file/QONECTIQ2.proto
+curl -k --fail https://localhost:8080/__apodini/grpc/schema/proto/file/QONECTIQ2.proto
+curl -k --fail https://localhost:8080/migration-guide
