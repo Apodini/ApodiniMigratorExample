@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum CategoryStatus: String, Codable {
+enum CategoryStatus: String, Codable, CaseIterable, AnyProtobufEnum {
     case available
     case unavailable
 }

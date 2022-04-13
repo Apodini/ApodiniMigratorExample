@@ -14,6 +14,7 @@ import PackageDescription
 private let dependencies: [Target.Dependency] = [
     .product(name: "Apodini", package: "Apodini"),
     .product(name: "ApodiniREST", package: "Apodini"),
+    .product(name: "ApodiniGRPC", package: "Apodini"),
     .product(name: "ApodiniMigration", package: "Apodini"),
     .target(name: "Shared")
 ]
@@ -24,12 +25,15 @@ let package = Package(
         .macOS(.v11)
     ],
     dependencies: [
-        .package(url: "https://github.com/Apodini/Apodini.git", .upToNextMinor(from: "0.7.1"))
+        .package(url: "https://github.com/Apodini/Apodini.git", .upToNextMinor(from: "0.9.1"))
     ],
     targets: [
         .executableTarget(
             name: "QONECTIQV1",
-            dependencies: dependencies
+            dependencies: dependencies,
+            resources: [
+                .process("Resources")
+            ]
         ),
         .executableTarget(
             name: "QONECTIQV2",

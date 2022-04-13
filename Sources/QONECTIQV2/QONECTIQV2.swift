@@ -9,6 +9,7 @@
 import Foundation
 import Apodini
 import ApodiniREST
+import ApodiniGRPC
 import ApodiniMigration
 
 @main
@@ -22,7 +23,14 @@ struct QONECTIQV2: Apodini.WebService {
     }
     
     var configuration: Configuration {
+        if let cert = Bundle.module.path(forResource: "cert", ofType: "pem"),
+           let key = Bundle.module.path(forResource: "key", ofType: "pem") {
+            HTTPConfiguration(bindAddress: .interface(port: 8080), tlsConfiguration: .init(certificatePath: cert, keyPath: key))
+        }
+
         REST()
+
+        GRPC(packageName: "QONECTIQ2", serviceName: "QONECTIQ")
         
         Migrator(
             // exports the document of the current version at directory `data` in `json` format

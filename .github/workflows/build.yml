@@ -21,7 +21,6 @@ jobs:
     with:
       packagename: ApodiniMigratorExample
       test: false
-      testdocc: false
   docker-compose-test:
     name: Docker Compose Test
     uses: Apodini/.github/.github/workflows/docker-compose-test.yml@v1

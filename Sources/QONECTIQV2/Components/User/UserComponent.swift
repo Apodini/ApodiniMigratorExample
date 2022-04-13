@@ -29,7 +29,6 @@ struct UserComponent: Component {
                     StatisticsHandler(userIdentifier: $userID)
                         .identified(by: "statisticsOfUser")
                 }
-
             }
             
             GetAllUsersHandler()
@@ -71,7 +70,6 @@ struct DeleteUserHandler: Handler {
 
 // MARK: - GetAllUsersHandler
 struct GetAllUsersHandler: Handler {
-    
     func handle() throws -> [User] {
         [try .instance(or: notFound)]
     }

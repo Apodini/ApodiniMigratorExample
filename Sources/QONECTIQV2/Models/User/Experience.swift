@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum Experience: String, ApodiniContent, CustomStringConvertible, LosslessStringConvertible {
+enum Experience: String, ApodiniContent, CustomStringConvertible, LosslessStringConvertible, CaseIterable, AnyProtobufEnum {
     case beginner
     case expert
     case unclassified

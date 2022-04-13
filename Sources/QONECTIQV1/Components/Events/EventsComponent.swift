@@ -85,7 +85,6 @@ struct CreateEventHandler: Handler {
 
 // MARK: - GetEventsHandler
 struct GetEventsHandler: Handler {
-    
     func handle() throws -> [Event] {
         [try .instance(or: notFound)]
     }
@@ -108,4 +107,3 @@ struct DeleteEventHandler: Handler {
         try .instance(or: notFound)
     }
 }
-

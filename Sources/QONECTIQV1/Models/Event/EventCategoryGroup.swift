@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import ApodiniGRPC
 
-enum EventCategoryGroup: String, ApodiniContent, LosslessStringConvertible, CustomStringConvertible {
+enum EventCategoryGroup: String, ApodiniContent, CaseIterable, LosslessStringConvertible, CustomStringConvertible, AnyProtobufEnum {
     case marketing
     case blogging
     case coding
