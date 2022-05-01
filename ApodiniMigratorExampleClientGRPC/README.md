@@ -8,4 +8,4 @@ SPDX-License-Identifier: MIT
 
 -->
 
-#  QONECTIQ
+#  ApodiniMigratorExampleClientGRPC

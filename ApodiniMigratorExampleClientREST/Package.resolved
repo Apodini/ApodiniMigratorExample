@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "ApodiniDocumentExport",
+        "repositoryURL": "https://github.com/Apodini/ApodiniDocumentExport.git",
+        "state": {
+          "branch": null,
+          "revision": "0a3fe4195f011057ad2cd5150c9091f2a17c2ec1",
+          "version": "0.1.1"
+        }
+      },
+      {
         "package": "ApodiniMigrator",
         "repositoryURL": "https://github.com/Apodini/ApodiniMigrator.git",
         "state": {
           "branch": null,
-          "revision": "9863ba8296576753afbb453de091c7b0e40e3dc3",
-          "version": "0.2.1"
+          "revision": "10671191ddd8a19a61ac6cae06060d259dbfe9ce",
+          "version": "0.3.0"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/Apodini/ApodiniTypeInformation.git",
         "state": {
           "branch": null,
-          "revision": "b4e73a6f92bd0930c9f1f8a857504b85b943dd88",
-          "version": "0.3.0"
+          "revision": "40247bedd5153b7641e95a11bd826b16a15fd12e",
+          "version": "0.3.6"
         }
       },
       {
@@ -42,8 +51,8 @@
         "repositoryURL": "https://github.com/Apodini/MetadataSystem.git",
         "state": {
           "branch": null,
-          "revision": "06cac46a958fdf700054f12f682b5c8f27577c9f",
-          "version": "0.1.1"
+          "revision": "f655813f1953af8d3aaac432dad35f394e7bdf75",
+          "version": "0.1.6"
         }
       },
       {
@@ -107,6 +116,15 @@
           "branch": null,
           "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
           "version": "1.4.2"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "e1499bc69b9040b29184f7f2996f7bab467c1639",
+          "version": "1.19.0"
         }
       },
       {

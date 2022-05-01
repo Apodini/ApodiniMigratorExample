@@ -11,12 +11,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "QONECTIQ",
+    name: "ApodiniMigratorExampleClientGRPC",
     platforms: [
         .macOS(.v12), .iOS(.v15)
     ],
     products: [
-        .library(name: "QONECTIQ", targets: ["QONECTIQ"])
+        .library(name: "ApodiniMigratorExampleClientGRPC", targets: ["ApodiniMigratorExampleClientGRPC"])
     ],
     dependencies: [
         .package(url: "https://github.com/grpc/grpc-swift.git", .exact("1.6.0-async-await.1")),
@@ -24,18 +24,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "QONECTIQ",
+            name: "ApodiniMigratorExampleClientGRPC",
             dependencies: [
                 .product(name: "GRPC", package: "grpc-swift"),.product(name: "ApodiniMigratorClientSupport", package: "ApodiniMigrator")
             ],
             resources: [
                 .process("Resources")
-            ]
-        ),
-        .executableTarget(
-            name: "QONECTIQClient",
-            dependencies: [
-                .target(name: "QONECTIQ")
             ]
         )
     ]

@@ -8,5 +8,5 @@ SPDX-License-Identifier: MIT
 
 -->
 
-#  ApodiniMigratorExampleClient
+#  ApodiniMigratorExampleClientREST
 
