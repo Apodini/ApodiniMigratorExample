@@ -69,8 +69,8 @@
         "repositoryURL": "https://github.com/vapor/async-kit.git",
         "state": {
           "branch": null,
-          "revision": "e2f741640364c1d271405da637029ea6a33f754e",
-          "version": "1.11.1"
+          "revision": "017dc7da68c1ec9f0f46fcd1a8002d14a5662732",
+          "version": "1.12.0"
         }
       },
       {
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/vapor/fluent-kit.git",
         "state": {
           "branch": null,
-          "revision": "6fc2804a4d8b3f8a66f2d4bb3e3789aac3abd53d",
-          "version": "1.23.5"
+          "revision": "8958da5e2aec8d56ad45c340683117a074e2885a",
+          "version": "1.25.0"
         }
       },
       {
@@ -132,8 +132,8 @@
         "repositoryURL": "https://github.com/vapor/jwt-kit.git",
         "state": {
           "branch": null,
-          "revision": "5f9c44d4c196cc06c3fc601f279169f121d6f62d",
-          "version": "4.4.0"
+          "revision": "3537dd319dfbcc403a5165d8c19c4834e8e64730",
+          "version": "4.5.0"
         }
       },
       {
@@ -195,8 +195,8 @@
         "repositoryURL": "https://github.com/soto-project/soto.git",
         "state": {
           "branch": null,
-          "revision": "b98994beabdced18cbedbe50e947e6f2c8e0d602",
-          "version": "5.12.1"
+          "revision": "3648a7fcbaa1ac06b6ab2b4b227d521ed065e780",
+          "version": "5.13.1"
         }
       },
       {
